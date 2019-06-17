@@ -1,0 +1,557 @@
+
+advanced micro.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800100  00800100  00000346  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000002d2  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          0000003b  00800100  00800100  00000346  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000346  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000378  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000120  00000000  00000000  000003b8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   0000181c  00000000  00000000  000004d8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000b78  00000000  00000000  00001cf4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   000015a9  00000000  00000000  0000286c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000298  00000000  00000000  00003e18  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00010c08  00000000  00000000  000040b0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00000972  00000000  00000000  00014cb8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 000000e0  00000000  00000000  0001562a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_macro  0000442d  00000000  00000000  0001570a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	33 c0       	rjmp	.+102    	; 0x68 <__ctors_end>
+   2:	00 00       	nop
+   4:	4c c0       	rjmp	.+152    	; 0x9e <__bad_interrupt>
+   6:	00 00       	nop
+   8:	4a c0       	rjmp	.+148    	; 0x9e <__bad_interrupt>
+   a:	00 00       	nop
+   c:	48 c0       	rjmp	.+144    	; 0x9e <__bad_interrupt>
+   e:	00 00       	nop
+  10:	46 c0       	rjmp	.+140    	; 0x9e <__bad_interrupt>
+  12:	00 00       	nop
+  14:	44 c0       	rjmp	.+136    	; 0x9e <__bad_interrupt>
+  16:	00 00       	nop
+  18:	42 c0       	rjmp	.+132    	; 0x9e <__bad_interrupt>
+  1a:	00 00       	nop
+  1c:	40 c0       	rjmp	.+128    	; 0x9e <__bad_interrupt>
+  1e:	00 00       	nop
+  20:	3e c0       	rjmp	.+124    	; 0x9e <__bad_interrupt>
+  22:	00 00       	nop
+  24:	3c c0       	rjmp	.+120    	; 0x9e <__bad_interrupt>
+  26:	00 00       	nop
+  28:	3a c0       	rjmp	.+116    	; 0x9e <__bad_interrupt>
+  2a:	00 00       	nop
+  2c:	38 c0       	rjmp	.+112    	; 0x9e <__bad_interrupt>
+  2e:	00 00       	nop
+  30:	36 c0       	rjmp	.+108    	; 0x9e <__bad_interrupt>
+  32:	00 00       	nop
+  34:	34 c0       	rjmp	.+104    	; 0x9e <__bad_interrupt>
+  36:	00 00       	nop
+  38:	32 c0       	rjmp	.+100    	; 0x9e <__bad_interrupt>
+  3a:	00 00       	nop
+  3c:	30 c0       	rjmp	.+96     	; 0x9e <__bad_interrupt>
+  3e:	00 00       	nop
+  40:	2e c0       	rjmp	.+92     	; 0x9e <__bad_interrupt>
+  42:	00 00       	nop
+  44:	2c c0       	rjmp	.+88     	; 0x9e <__bad_interrupt>
+  46:	00 00       	nop
+  48:	2a c0       	rjmp	.+84     	; 0x9e <__bad_interrupt>
+  4a:	00 00       	nop
+  4c:	28 c0       	rjmp	.+80     	; 0x9e <__bad_interrupt>
+  4e:	00 00       	nop
+  50:	26 c0       	rjmp	.+76     	; 0x9e <__bad_interrupt>
+  52:	00 00       	nop
+  54:	24 c0       	rjmp	.+72     	; 0x9e <__bad_interrupt>
+  56:	00 00       	nop
+  58:	22 c0       	rjmp	.+68     	; 0x9e <__bad_interrupt>
+  5a:	00 00       	nop
+  5c:	20 c0       	rjmp	.+64     	; 0x9e <__bad_interrupt>
+  5e:	00 00       	nop
+  60:	1e c0       	rjmp	.+60     	; 0x9e <__bad_interrupt>
+  62:	00 00       	nop
+  64:	1c c0       	rjmp	.+56     	; 0x9e <__bad_interrupt>
+	...
+
+00000068 <__ctors_end>:
+  68:	11 24       	eor	r1, r1
+  6a:	1f be       	out	0x3f, r1	; 63
+  6c:	cf ef       	ldi	r28, 0xFF	; 255
+  6e:	d8 e0       	ldi	r29, 0x08	; 8
+  70:	de bf       	out	0x3e, r29	; 62
+  72:	cd bf       	out	0x3d, r28	; 61
+
+00000074 <__do_copy_data>:
+  74:	11 e0       	ldi	r17, 0x01	; 1
+  76:	a0 e0       	ldi	r26, 0x00	; 0
+  78:	b1 e0       	ldi	r27, 0x01	; 1
+  7a:	e2 ed       	ldi	r30, 0xD2	; 210
+  7c:	f2 e0       	ldi	r31, 0x02	; 2
+  7e:	02 c0       	rjmp	.+4      	; 0x84 <__do_copy_data+0x10>
+  80:	05 90       	lpm	r0, Z+
+  82:	0d 92       	st	X+, r0
+  84:	a0 30       	cpi	r26, 0x00	; 0
+  86:	b1 07       	cpc	r27, r17
+  88:	d9 f7       	brne	.-10     	; 0x80 <__do_copy_data+0xc>
+
+0000008a <__do_clear_bss>:
+  8a:	21 e0       	ldi	r18, 0x01	; 1
+  8c:	a0 e0       	ldi	r26, 0x00	; 0
+  8e:	b1 e0       	ldi	r27, 0x01	; 1
+  90:	01 c0       	rjmp	.+2      	; 0x94 <.do_clear_bss_start>
+
+00000092 <.do_clear_bss_loop>:
+  92:	1d 92       	st	X+, r1
+
+00000094 <.do_clear_bss_start>:
+  94:	ab 33       	cpi	r26, 0x3B	; 59
+  96:	b2 07       	cpc	r27, r18
+  98:	e1 f7       	brne	.-8      	; 0x92 <.do_clear_bss_loop>
+  9a:	dd d0       	rcall	.+442    	; 0x256 <main>
+  9c:	18 c1       	rjmp	.+560    	; 0x2ce <_exit>
+
+0000009e <__bad_interrupt>:
+  9e:	b0 cf       	rjmp	.-160    	; 0x0 <__vectors>
+
+000000a0 <SPI_MasterInit>:
+	SPCR = (1<<SPE)|(1<<MSTR)|(1<<SPR0)|(1<<SPR1);
+
+}
+void SPI_SlaveInit(void){
+	DDRB = (1<<DDB4); //set miso as output all other input 
+	SPCR = (1<<SPE); //enable spi
+  a0:	8c e2       	ldi	r24, 0x2C	; 44
+  a2:	84 b9       	out	0x04, r24	; 4
+  a4:	83 e5       	ldi	r24, 0x53	; 83
+  a6:	8c bd       	out	0x2c, r24	; 44
+  a8:	08 95       	ret
+
+000000aa <SPI_Slave_Select>:
+}
+void SPI_Slave_Select(uint8_t cond){
+	if(cond){
+  aa:	88 23       	and	r24, r24
+  ac:	11 f0       	breq	.+4      	; 0xb2 <SPI_Slave_Select+0x8>
+		PORTB &= ~(1<<SPI_SS); // Pull Slave_Select low
+  ae:	2a 98       	cbi	0x05, 2	; 5
+	}
+	if(!cond){
+		PORTB |= (1<<SPI_SS); // Pull Slave Select High
+	}
+}
+  b0:	08 95       	ret
+void SPI_Slave_Select(uint8_t cond){
+	if(cond){
+		PORTB &= ~(1<<SPI_SS); // Pull Slave_Select low
+	}
+	if(!cond){
+		PORTB |= (1<<SPI_SS); // Pull Slave Select High
+  b2:	2a 9a       	sbi	0x05, 2	; 5
+  b4:	08 95       	ret
+
+000000b6 <SPI_TransmitByte>:
+	}
+}
+void SPI_TransmitByte(uint8_t data)
+{
+	SPDR = data; // Start transmission
+  b6:	8e bd       	out	0x2e, r24	; 46
+	while( !(SPSR & (1<<SPIF)) ); // Wait for transmission complete
+  b8:	0d b4       	in	r0, 0x2d	; 45
+  ba:	07 fe       	sbrs	r0, 7
+  bc:	fd cf       	rjmp	.-6      	; 0xb8 <SPI_TransmitByte+0x2>
+}
+  be:	08 95       	ret
+
+000000c0 <sram_write>:
+ *  Author: Alex Valdes
+ */ 
+#include "SRAM.h"
+#include "uart.h"
+void sram_write(uint16_t address, uint8_t data){
+	DDRD = 0xff; //set DDRD to output
+  c0:	2f ef       	ldi	r18, 0xFF	; 255
+  c2:	2a b9       	out	0x0a, r18	; 10
+	PORTD = 0x00; //clear reg of old values
+  c4:	1b b8       	out	0x0b, r1	; 11
+	uint8_t address_lower = address & 0x00ff;
+	uint8_t address_upper = address >> 8;
+	PORTC |= (1<<SRAM_LE_LOW) | (1<<SRAM_LE_HIGH); //set latches to mirror
+  c6:	28 b1       	in	r18, 0x08	; 8
+  c8:	29 60       	ori	r18, 0x09	; 9
+  ca:	28 b9       	out	0x08, r18	; 8
+	PORTC |= (1<<SRAM_CE) | (1<<SRAM_WE); //set chip enable and WE to standby
+  cc:	28 b1       	in	r18, 0x08	; 8
+  ce:	26 60       	ori	r18, 0x06	; 6
+  d0:	28 b9       	out	0x08, r18	; 8
+	PORTD = address_lower;
+  d2:	8b b9       	out	0x0b, r24	; 11
+	PORTC &= ~(1<<SRAM_LE_LOW);
+  d4:	40 98       	cbi	0x08, 0	; 8
+	PORTD = address_upper;
+  d6:	9b b9       	out	0x0b, r25	; 11
+	PORTC &= ~(1<<SRAM_LE_HIGH);
+  d8:	43 98       	cbi	0x08, 3	; 8
+	PORTC &= ~(1<<SRAM_CE) & ~(1<<SRAM_WE);
+  da:	88 b1       	in	r24, 0x08	; 8
+  dc:	89 7f       	andi	r24, 0xF9	; 249
+  de:	88 b9       	out	0x08, r24	; 8
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  e0:	89 ef       	ldi	r24, 0xF9	; 249
+  e2:	90 e0       	ldi	r25, 0x00	; 0
+  e4:	01 97       	sbiw	r24, 0x01	; 1
+  e6:	f1 f7       	brne	.-4      	; 0xe4 <sram_write+0x24>
+  e8:	00 c0       	rjmp	.+0      	; 0xea <sram_write+0x2a>
+  ea:	00 00       	nop
+	_delay_ms(1);
+	PORTD = data;
+  ec:	6b b9       	out	0x0b, r22	; 11
+	PORTC |= (1<<SRAM_CE) | (1<<SRAM_WE);
+  ee:	88 b1       	in	r24, 0x08	; 8
+  f0:	86 60       	ori	r24, 0x06	; 6
+  f2:	88 b9       	out	0x08, r24	; 8
+  f4:	08 95       	ret
+
+000000f6 <sram_read>:
+}
+uint8_t sram_read(uint16_t address){
+	uint8_t data;
+	DDRD = 0xff; //set DDRD to output
+  f6:	2f ef       	ldi	r18, 0xFF	; 255
+  f8:	2a b9       	out	0x0a, r18	; 10
+	PORTD = 0x00; // clear reg of old values
+  fa:	1b b8       	out	0x0b, r1	; 11
+	uint8_t address_lower = address & 0x00ff;
+	uint8_t address_upper = address >> 8;
+	PORTC |= (1<<SRAM_LE_LOW) | (1<<SRAM_LE_HIGH); //set latches to mirror
+  fc:	28 b1       	in	r18, 0x08	; 8
+  fe:	29 60       	ori	r18, 0x09	; 9
+ 100:	28 b9       	out	0x08, r18	; 8
+	PORTC |= (1<<SRAM_CE) | (1<<SRAM_WE); //set chip enable and WE to standby
+ 102:	28 b1       	in	r18, 0x08	; 8
+ 104:	26 60       	ori	r18, 0x06	; 6
+ 106:	28 b9       	out	0x08, r18	; 8
+	PORTD = address_lower;
+ 108:	8b b9       	out	0x0b, r24	; 11
+	PORTC &= ~(1<<SRAM_LE_LOW);
+ 10a:	40 98       	cbi	0x08, 0	; 8
+	PORTD = address_upper;
+ 10c:	9b b9       	out	0x0b, r25	; 11
+	PORTC &= ~(1<<SRAM_LE_HIGH);
+ 10e:	43 98       	cbi	0x08, 3	; 8
+	DDRD = 0x00; //turn port into input
+ 110:	1a b8       	out	0x0a, r1	; 10
+	PORTC &= ~(1<<SRAM_CE);
+ 112:	41 98       	cbi	0x08, 1	; 8
+ 114:	89 ef       	ldi	r24, 0xF9	; 249
+ 116:	90 e0       	ldi	r25, 0x00	; 0
+ 118:	01 97       	sbiw	r24, 0x01	; 1
+ 11a:	f1 f7       	brne	.-4      	; 0x118 <sram_read+0x22>
+ 11c:	00 c0       	rjmp	.+0      	; 0x11e <sram_read+0x28>
+ 11e:	00 00       	nop
+	_delay_ms(1);
+	data = PIND;
+ 120:	89 b1       	in	r24, 0x09	; 9
+	PORTC |= (1<<SRAM_CE);
+ 122:	41 9a       	sbi	0x08, 1	; 8
+	return data;
+}
+ 124:	08 95       	ret
+
+00000126 <board_init>:
+		port_pin_flags_t flags)
+{
+	/* Select direction and initial pin state */
+	if (flags & IOPORT_DIR_OUTPUT) {
+		if (flags & IOPORT_INIT_HIGH) {
+			*((uint8_t *)port + 2) |= pin_mask;
+ 126:	95 b1       	in	r25, 0x05	; 5
+			*((uint8_t *)port + 2) &= ~pin_mask;
+		}
+
+		*((uint8_t *)port + 1) |= pin_mask;
+	} else {
+		*((uint8_t *)port + 1) &= ~pin_mask;
+ 128:	84 b1       	in	r24, 0x04	; 4
+ 12a:	80 62       	ori	r24, 0x20	; 32
+ 12c:	8f 77       	andi	r24, 0x7F	; 127
+ 12e:	84 b9       	out	0x04, r24	; 4
+		if (flags & IOPORT_PULL_UP) {
+			*((uint8_t *)port + 2) |= pin_mask;
+ 130:	89 2f       	mov	r24, r25
+ 132:	80 6a       	ori	r24, 0xA0	; 160
+ 134:	85 b9       	out	0x05, r24	; 5
+ 136:	08 95       	ret
+
+00000138 <mcp2515_bit_modify>:
+	received_message->length = mcp2515_read(0x65) & 0x0F; //rxb0dlc
+	received_message->data = mcp2515_readArray(0x65, received_message->length); //RXB0D0
+	received_message->idH = mcp2515_read(MCP_RXB0SIDH);
+	received_message->idL = mcp2515_read(0x62); //RXB0SIDL
+	
+}
+ 138:	1f 93       	push	r17
+ 13a:	cf 93       	push	r28
+ 13c:	df 93       	push	r29
+ 13e:	18 2f       	mov	r17, r24
+ 140:	d6 2f       	mov	r29, r22
+ 142:	c4 2f       	mov	r28, r20
+ 144:	81 e0       	ldi	r24, 0x01	; 1
+ 146:	b1 df       	rcall	.-158    	; 0xaa <SPI_Slave_Select>
+ 148:	85 e0       	ldi	r24, 0x05	; 5
+ 14a:	b5 df       	rcall	.-150    	; 0xb6 <SPI_TransmitByte>
+ 14c:	81 2f       	mov	r24, r17
+ 14e:	b3 df       	rcall	.-154    	; 0xb6 <SPI_TransmitByte>
+ 150:	8d 2f       	mov	r24, r29
+ 152:	b1 df       	rcall	.-158    	; 0xb6 <SPI_TransmitByte>
+ 154:	8c 2f       	mov	r24, r28
+ 156:	af df       	rcall	.-162    	; 0xb6 <SPI_TransmitByte>
+ 158:	80 e0       	ldi	r24, 0x00	; 0
+ 15a:	a7 df       	rcall	.-178    	; 0xaa <SPI_Slave_Select>
+ 15c:	df 91       	pop	r29
+ 15e:	cf 91       	pop	r28
+ 160:	1f 91       	pop	r17
+ 162:	08 95       	ret
+
+00000164 <mcp2515_reset>:
+ 164:	81 e0       	ldi	r24, 0x01	; 1
+ 166:	a1 df       	rcall	.-190    	; 0xaa <SPI_Slave_Select>
+ 168:	80 ec       	ldi	r24, 0xC0	; 192
+ 16a:	a5 df       	rcall	.-182    	; 0xb6 <SPI_TransmitByte>
+ 16c:	80 e0       	ldi	r24, 0x00	; 0
+ 16e:	9d cf       	rjmp	.-198    	; 0xaa <SPI_Slave_Select>
+ 170:	08 95       	ret
+
+00000172 <mcp_can_init>:
+ 172:	f8 df       	rcall	.-16     	; 0x164 <mcp2515_reset>
+ 174:	41 e0       	ldi	r20, 0x01	; 1
+ 176:	63 e0       	ldi	r22, 0x03	; 3
+ 178:	8b e2       	ldi	r24, 0x2B	; 43
+ 17a:	de df       	rcall	.-68     	; 0x138 <mcp2515_bit_modify>
+ 17c:	40 e6       	ldi	r20, 0x60	; 96
+ 17e:	64 e6       	ldi	r22, 0x64	; 100
+ 180:	80 e6       	ldi	r24, 0x60	; 96
+ 182:	da df       	rcall	.-76     	; 0x138 <mcp2515_bit_modify>
+ 184:	40 e0       	ldi	r20, 0x00	; 0
+ 186:	64 e0       	ldi	r22, 0x04	; 4
+ 188:	8b e2       	ldi	r24, 0x2B	; 43
+ 18a:	d6 df       	rcall	.-84     	; 0x138 <mcp2515_bit_modify>
+ 18c:	40 e0       	ldi	r20, 0x00	; 0
+ 18e:	6f ef       	ldi	r22, 0xFF	; 255
+ 190:	8a e2       	ldi	r24, 0x2A	; 42
+ 192:	d2 df       	rcall	.-92     	; 0x138 <mcp2515_bit_modify>
+ 194:	40 ef       	ldi	r20, 0xF0	; 240
+ 196:	6f ef       	ldi	r22, 0xFF	; 255
+ 198:	89 e2       	ldi	r24, 0x29	; 41
+ 19a:	ce df       	rcall	.-100    	; 0x138 <mcp2515_bit_modify>
+ 19c:	46 e8       	ldi	r20, 0x86	; 134
+ 19e:	6f ef       	ldi	r22, 0xFF	; 255
+ 1a0:	88 e2       	ldi	r24, 0x28	; 40
+ 1a2:	ca df       	rcall	.-108    	; 0x138 <mcp2515_bit_modify>
+ 1a4:	40 e0       	ldi	r20, 0x00	; 0
+ 1a6:	60 ee       	ldi	r22, 0xE0	; 224
+ 1a8:	8f e0       	ldi	r24, 0x0F	; 15
+ 1aa:	c6 cf       	rjmp	.-116    	; 0x138 <mcp2515_bit_modify>
+ 1ac:	08 95       	ret
+
+000001ae <port_init>:
+ 1ae:	8f ef       	ldi	r24, 0xFF	; 255
+ 1b0:	87 b9       	out	0x07, r24	; 7
+ 1b2:	84 b9       	out	0x04, r24	; 4
+ 1b4:	18 b8       	out	0x08, r1	; 8
+ 1b6:	1b b8       	out	0x0b, r1	; 11
+ 1b8:	15 b8       	out	0x05, r1	; 5
+ 1ba:	08 95       	ret
+
+000001bc <mcp2515_writeArray>:
+ 1bc:	ef 92       	push	r14
+ 1be:	ff 92       	push	r15
+ 1c0:	0f 93       	push	r16
+ 1c2:	1f 93       	push	r17
+ 1c4:	cf 93       	push	r28
+ 1c6:	df 93       	push	r29
+ 1c8:	c8 2f       	mov	r28, r24
+ 1ca:	7b 01       	movw	r14, r22
+ 1cc:	14 2f       	mov	r17, r20
+ 1ce:	81 e0       	ldi	r24, 0x01	; 1
+ 1d0:	6c df       	rcall	.-296    	; 0xaa <SPI_Slave_Select>
+ 1d2:	82 e0       	ldi	r24, 0x02	; 2
+ 1d4:	70 df       	rcall	.-288    	; 0xb6 <SPI_TransmitByte>
+ 1d6:	8c 2f       	mov	r24, r28
+ 1d8:	6e df       	rcall	.-292    	; 0xb6 <SPI_TransmitByte>
+ 1da:	11 23       	and	r17, r17
+ 1dc:	69 f0       	breq	.+26     	; 0x1f8 <mcp2515_writeArray+0x3c>
+ 1de:	e7 01       	movw	r28, r14
+ 1e0:	11 50       	subi	r17, 0x01	; 1
+ 1e2:	01 2f       	mov	r16, r17
+ 1e4:	10 e0       	ldi	r17, 0x00	; 0
+ 1e6:	0f 5f       	subi	r16, 0xFF	; 255
+ 1e8:	1f 4f       	sbci	r17, 0xFF	; 255
+ 1ea:	0e 0d       	add	r16, r14
+ 1ec:	1f 1d       	adc	r17, r15
+ 1ee:	89 91       	ld	r24, Y+
+ 1f0:	62 df       	rcall	.-316    	; 0xb6 <SPI_TransmitByte>
+ 1f2:	c0 17       	cp	r28, r16
+ 1f4:	d1 07       	cpc	r29, r17
+ 1f6:	d9 f7       	brne	.-10     	; 0x1ee <mcp2515_writeArray+0x32>
+ 1f8:	80 e0       	ldi	r24, 0x00	; 0
+ 1fa:	57 df       	rcall	.-338    	; 0xaa <SPI_Slave_Select>
+ 1fc:	df 91       	pop	r29
+ 1fe:	cf 91       	pop	r28
+ 200:	1f 91       	pop	r17
+ 202:	0f 91       	pop	r16
+ 204:	ff 90       	pop	r15
+ 206:	ef 90       	pop	r14
+ 208:	08 95       	ret
+
+0000020a <mcp_can_send_message>:
+ 20a:	0f 93       	push	r16
+ 20c:	1f 93       	push	r17
+ 20e:	cf 93       	push	r28
+ 210:	8c 01       	movw	r16, r24
+ 212:	fc 01       	movw	r30, r24
+ 214:	c4 81       	ldd	r28, Z+4	; 0x04
+ 216:	cf 70       	andi	r28, 0x0F	; 15
+ 218:	40 81       	ld	r20, Z
+ 21a:	6f ef       	ldi	r22, 0xFF	; 255
+ 21c:	81 e3       	ldi	r24, 0x31	; 49
+ 21e:	8c df       	rcall	.-232    	; 0x138 <mcp2515_bit_modify>
+ 220:	f8 01       	movw	r30, r16
+ 222:	41 81       	ldd	r20, Z+1	; 0x01
+ 224:	60 ee       	ldi	r22, 0xE0	; 224
+ 226:	82 e3       	ldi	r24, 0x32	; 50
+ 228:	87 df       	rcall	.-242    	; 0x138 <mcp2515_bit_modify>
+ 22a:	40 e4       	ldi	r20, 0x40	; 64
+ 22c:	60 e4       	ldi	r22, 0x40	; 64
+ 22e:	85 e3       	ldi	r24, 0x35	; 53
+ 230:	83 df       	rcall	.-250    	; 0x138 <mcp2515_bit_modify>
+ 232:	4c 2f       	mov	r20, r28
+ 234:	6f e0       	ldi	r22, 0x0F	; 15
+ 236:	85 e3       	ldi	r24, 0x35	; 53
+ 238:	7f df       	rcall	.-258    	; 0x138 <mcp2515_bit_modify>
+ 23a:	f8 01       	movw	r30, r16
+ 23c:	62 81       	ldd	r22, Z+2	; 0x02
+ 23e:	73 81       	ldd	r23, Z+3	; 0x03
+ 240:	4c 2f       	mov	r20, r28
+ 242:	86 e3       	ldi	r24, 0x36	; 54
+ 244:	bb df       	rcall	.-138    	; 0x1bc <mcp2515_writeArray>
+ 246:	4b e0       	ldi	r20, 0x0B	; 11
+ 248:	6b e0       	ldi	r22, 0x0B	; 11
+ 24a:	80 e3       	ldi	r24, 0x30	; 48
+ 24c:	75 df       	rcall	.-278    	; 0x138 <mcp2515_bit_modify>
+ 24e:	cf 91       	pop	r28
+ 250:	1f 91       	pop	r17
+ 252:	0f 91       	pop	r16
+ 254:	08 95       	ret
+
+00000256 <main>:
+
+int main (void)
+{
+ 256:	cf 93       	push	r28
+ 258:	df 93       	push	r29
+ 25a:	00 d0       	rcall	.+0      	; 0x25c <main+0x6>
+ 25c:	00 d0       	rcall	.+0      	; 0x25e <main+0x8>
+ 25e:	00 d0       	rcall	.+0      	; 0x260 <main+0xa>
+ 260:	cd b7       	in	r28, 0x3d	; 61
+ 262:	de b7       	in	r29, 0x3e	; 62
+	board_init();
+ 264:	60 df       	rcall	.-320    	; 0x126 <board_init>
+	port_init();
+ 266:	a3 df       	rcall	.-186    	; 0x1ae <port_init>
+	SPI_MasterInit();
+ 268:	1b df       	rcall	.-458    	; 0xa0 <SPI_MasterInit>
+ 26a:	6a ea       	ldi	r22, 0xAA	; 170
+	sram_write(0x0000,0xaa);
+ 26c:	80 e0       	ldi	r24, 0x00	; 0
+ 26e:	90 e0       	ldi	r25, 0x00	; 0
+ 270:	27 df       	rcall	.-434    	; 0xc0 <sram_write>
+ 272:	6b eb       	ldi	r22, 0xBB	; 187
+	sram_write(0x0001,0xbb);
+ 274:	81 e0       	ldi	r24, 0x01	; 1
+ 276:	90 e0       	ldi	r25, 0x00	; 0
+ 278:	23 df       	rcall	.-442    	; 0xc0 <sram_write>
+ 27a:	6c ec       	ldi	r22, 0xCC	; 204
+	sram_write(0x0002,0xcc);
+ 27c:	82 e0       	ldi	r24, 0x02	; 2
+ 27e:	90 e0       	ldi	r25, 0x00	; 0
+ 280:	1f df       	rcall	.-450    	; 0xc0 <sram_write>
+ 282:	80 e0       	ldi	r24, 0x00	; 0
+	test = sram_read(0x0000);
+ 284:	90 e0       	ldi	r25, 0x00	; 0
+ 286:	37 df       	rcall	.-402    	; 0xf6 <sram_read>
+ 288:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__data_end>
+ 28c:	81 e0       	ldi	r24, 0x01	; 1
+	test = sram_read(0x0001);
+ 28e:	90 e0       	ldi	r25, 0x00	; 0
+ 290:	32 df       	rcall	.-412    	; 0xf6 <sram_read>
+ 292:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__data_end>
+ 296:	82 e0       	ldi	r24, 0x02	; 2
+	test = sram_read(0x0002);
+ 298:	90 e0       	ldi	r25, 0x00	; 0
+ 29a:	2d df       	rcall	.-422    	; 0xf6 <sram_read>
+ 29c:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__data_end>
+ 2a0:	2a 9a       	sbi	0x05, 2	; 5
+ 2a2:	8a ea       	ldi	r24, 0xAA	; 170
+	PORTB |= (1<<SPI_SS); // Pull Slave Select High
+ 2a4:	8e 83       	std	Y+6, r24	; 0x06
+	uart_init();
+	stdout = stdin = stderr = &uart_str; // Set File outputs to point to UART stream 
+	fprintf(stdout, "Hello! \n");
+	*/
+	struct can_message mess;
+	uint8_t d_data= 0xaa;
+ 2a6:	19 82       	std	Y+1, r1	; 0x01
+ 2a8:	80 e4       	ldi	r24, 0x40	; 64
+	mess.idH = 0x00;
+	mess.idL = 0x40;
+ 2aa:	8a 83       	std	Y+2, r24	; 0x02
+ 2ac:	82 e0       	ldi	r24, 0x02	; 2
+	mess.length = 2;
+ 2ae:	8d 83       	std	Y+5, r24	; 0x05
+	mess.data = &d_data;
+ 2b0:	ce 01       	movw	r24, r28
+ 2b2:	06 96       	adiw	r24, 0x06	; 6
+ 2b4:	9c 83       	std	Y+4, r25	; 0x04
+	mcp_can_init();
+ 2b6:	8b 83       	std	Y+3, r24	; 0x03
+	mcp_can_send_message(&mess);
+ 2b8:	5c df       	rcall	.-328    	; 0x172 <mcp_can_init>
+ 2ba:	ce 01       	movw	r24, r28
+ 2bc:	01 96       	adiw	r24, 0x01	; 1
+ 2be:	a5 df       	rcall	.-182    	; 0x20a <mcp_can_send_message>
+	mcp_can_send_message(&mess);
+ 2c0:	ce 01       	movw	r24, r28
+ 2c2:	01 96       	adiw	r24, 0x01	; 1
+ 2c4:	a2 df       	rcall	.-188    	; 0x20a <mcp_can_send_message>
+ 2c6:	ce 01       	movw	r24, r28
+	mcp_can_send_message(&mess);
+ 2c8:	01 96       	adiw	r24, 0x01	; 1
+ 2ca:	9f df       	rcall	.-194    	; 0x20a <mcp_can_send_message>
+ 2cc:	ff cf       	rjmp	.-2      	; 0x2cc <main+0x76>
+
+000002ce <_exit>:
+ 2ce:	f8 94       	cli
+
+000002d0 <__stop_program>:
+ 2d0:	ff cf       	rjmp	.-2      	; 0x2d0 <__stop_program>

@@ -1,0 +1,909 @@
+
+NVM_QUICK_START1.elf:     file format elf32-littlearm
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000006bc  00000000  00000000  00010000  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .relocate     00000000  20000000  20000000  000106bc  2**0
+                  CONTENTS
+  2 .bss          00000024  20000000  20000000  00020000  2**2
+                  ALLOC
+  3 .stack        00002004  20000024  20000024  00020000  2**0
+                  ALLOC
+  4 .ARM.attributes 00000028  00000000  00000000  000106bc  2**0
+                  CONTENTS, READONLY
+  5 .comment      00000059  00000000  00000000  000106e4  2**0
+                  CONTENTS, READONLY
+  6 .debug_info   00007420  00000000  00000000  0001073d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 000009dc  00000000  00000000  00017b5d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_loc    000011b8  00000000  00000000  00018539  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_aranges 000000b8  00000000  00000000  000196f1  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_ranges 00000148  00000000  00000000  000197a9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_macro  00000f10  00000000  00000000  000198f1  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_line   00002009  00000000  00000000  0001a801  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_str    00087cf0  00000000  00000000  0001c80a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 14 .debug_frame  000001dc  00000000  00000000  000a44fc  2**2
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <exception_table>:
+   0:	28 20 00 20 b1 03 00 00 ad 03 00 00 ad 03 00 00     ( . ............
+	...
+  2c:	ad 03 00 00 00 00 00 00 00 00 00 00 ad 03 00 00     ................
+  3c:	ad 03 00 00 ad 03 00 00 ad 03 00 00 ad 03 00 00     ................
+  4c:	ad 03 00 00 ad 03 00 00 ad 03 00 00 ad 03 00 00     ................
+  5c:	ad 03 00 00 ad 03 00 00 ad 03 00 00 ad 03 00 00     ................
+  6c:	ad 03 00 00 ad 03 00 00 ad 03 00 00 ad 03 00 00     ................
+  7c:	ad 03 00 00 ad 03 00 00 ad 03 00 00 ad 03 00 00     ................
+  8c:	ad 03 00 00 ad 03 00 00 ad 03 00 00 ad 03 00 00     ................
+  9c:	ad 03 00 00 ad 03 00 00 ad 03 00 00 ad 03 00 00     ................
+  ac:	ad 03 00 00 00 00 00 00                             ........
+
+000000b4 <__do_global_dtors_aux>:
+  b4:	b510      	push	{r4, lr}
+  b6:	4c06      	ldr	r4, [pc, #24]	; (d0 <__do_global_dtors_aux+0x1c>)
+  b8:	7823      	ldrb	r3, [r4, #0]
+  ba:	2b00      	cmp	r3, #0
+  bc:	d107      	bne.n	ce <__do_global_dtors_aux+0x1a>
+  be:	4b05      	ldr	r3, [pc, #20]	; (d4 <__do_global_dtors_aux+0x20>)
+  c0:	2b00      	cmp	r3, #0
+  c2:	d002      	beq.n	ca <__do_global_dtors_aux+0x16>
+  c4:	4804      	ldr	r0, [pc, #16]	; (d8 <__do_global_dtors_aux+0x24>)
+  c6:	e000      	b.n	ca <__do_global_dtors_aux+0x16>
+  c8:	bf00      	nop
+  ca:	2301      	movs	r3, #1
+  cc:	7023      	strb	r3, [r4, #0]
+  ce:	bd10      	pop	{r4, pc}
+  d0:	20000000 	.word	0x20000000
+  d4:	00000000 	.word	0x00000000
+  d8:	000006bc 	.word	0x000006bc
+
+000000dc <frame_dummy>:
+  dc:	4b08      	ldr	r3, [pc, #32]	; (100 <frame_dummy+0x24>)
+  de:	b510      	push	{r4, lr}
+  e0:	2b00      	cmp	r3, #0
+  e2:	d003      	beq.n	ec <frame_dummy+0x10>
+  e4:	4907      	ldr	r1, [pc, #28]	; (104 <frame_dummy+0x28>)
+  e6:	4808      	ldr	r0, [pc, #32]	; (108 <frame_dummy+0x2c>)
+  e8:	e000      	b.n	ec <frame_dummy+0x10>
+  ea:	bf00      	nop
+  ec:	4807      	ldr	r0, [pc, #28]	; (10c <frame_dummy+0x30>)
+  ee:	6803      	ldr	r3, [r0, #0]
+  f0:	2b00      	cmp	r3, #0
+  f2:	d100      	bne.n	f6 <frame_dummy+0x1a>
+  f4:	bd10      	pop	{r4, pc}
+  f6:	4b06      	ldr	r3, [pc, #24]	; (110 <frame_dummy+0x34>)
+  f8:	2b00      	cmp	r3, #0
+  fa:	d0fb      	beq.n	f4 <frame_dummy+0x18>
+  fc:	4798      	blx	r3
+  fe:	e7f9      	b.n	f4 <frame_dummy+0x18>
+ 100:	00000000 	.word	0x00000000
+ 104:	20000004 	.word	0x20000004
+ 108:	000006bc 	.word	0x000006bc
+ 10c:	000006bc 	.word	0x000006bc
+ 110:	00000000 	.word	0x00000000
+
+00000114 <nvm_set_config>:
+	}
+
+	*((uint32_t *)NVMCTRL_AUX0_ADDRESS) = fusebits[0];
+    *(((uint32_t *)NVMCTRL_AUX0_ADDRESS) + 1) = fusebits[1];
+
+	error_code = nvm_execute_command(NVM_COMMAND_WRITE_AUX_ROW,NVMCTRL_AUX0_ADDRESS,0);
+ 114:	b510      	push	{r4, lr}
+ 116:	4a1e      	ldr	r2, [pc, #120]	; (190 <nvm_set_config+0x7c>)
+ 118:	69d3      	ldr	r3, [r2, #28]
+ 11a:	2104      	movs	r1, #4
+ 11c:	430b      	orrs	r3, r1
+ 11e:	61d3      	str	r3, [r2, #28]
+ 120:	4b1c      	ldr	r3, [pc, #112]	; (194 <nvm_set_config+0x80>)
+ 122:	2220      	movs	r2, #32
+ 124:	32ff      	adds	r2, #255	; 0xff
+ 126:	831a      	strh	r2, [r3, #24]
+ 128:	7d1a      	ldrb	r2, [r3, #20]
+ 12a:	2305      	movs	r3, #5
+ 12c:	07d2      	lsls	r2, r2, #31
+ 12e:	d401      	bmi.n	134 <nvm_set_config+0x20>
+ 130:	0018      	movs	r0, r3
+ 132:	bd10      	pop	{r4, pc}
+ 134:	7803      	ldrb	r3, [r0, #0]
+ 136:	021b      	lsls	r3, r3, #8
+ 138:	22c0      	movs	r2, #192	; 0xc0
+ 13a:	0092      	lsls	r2, r2, #2
+ 13c:	4013      	ands	r3, r2
+ 13e:	7841      	ldrb	r1, [r0, #1]
+ 140:	01c9      	lsls	r1, r1, #7
+ 142:	22ff      	movs	r2, #255	; 0xff
+			((config->manual_page_write & 0x01) << NVMCTRL_CTRLB_MANW_Pos) |
+ 144:	400a      	ands	r2, r1
+			NVMCTRL_CTRLB_SLEEPPRM(config->sleep_power_mode) |
+ 146:	4313      	orrs	r3, r2
+			NVMCTRL_CTRLB_RWS(config->wait_states) |
+ 148:	7881      	ldrb	r1, [r0, #2]
+ 14a:	0049      	lsls	r1, r1, #1
+ 14c:	221e      	movs	r2, #30
+ 14e:	400a      	ands	r2, r1
+			((config->manual_page_write & 0x01) << NVMCTRL_CTRLB_MANW_Pos) |
+ 150:	4313      	orrs	r3, r2
+			((config->disable_cache & 0x01) << NVMCTRL_CTRLB_CACHEDIS_Pos) |
+ 152:	78c2      	ldrb	r2, [r0, #3]
+ 154:	0492      	lsls	r2, r2, #18
+ 156:	2180      	movs	r1, #128	; 0x80
+ 158:	02c9      	lsls	r1, r1, #11
+ 15a:	400a      	ands	r2, r1
+			NVMCTRL_CTRLB_RWS(config->wait_states) |
+ 15c:	4313      	orrs	r3, r2
+			NVMCTRL_CTRLB_READMODE(config->cache_readmode);
+ 15e:	7902      	ldrb	r2, [r0, #4]
+ 160:	0412      	lsls	r2, r2, #16
+ 162:	21c0      	movs	r1, #192	; 0xc0
+ 164:	0289      	lsls	r1, r1, #10
+ 166:	400a      	ands	r2, r1
+			((config->disable_cache & 0x01) << NVMCTRL_CTRLB_CACHEDIS_Pos) |
+ 168:	4313      	orrs	r3, r2
+	nvm_module->CTRLB.reg =
+ 16a:	4a0a      	ldr	r2, [pc, #40]	; (194 <nvm_set_config+0x80>)
+ 16c:	6053      	str	r3, [r2, #4]
+	_nvm_dev.page_size         = (8 << nvm_module->PARAM.bit.PSZ);
+ 16e:	6893      	ldr	r3, [r2, #8]
+ 170:	035b      	lsls	r3, r3, #13
+ 172:	0f5b      	lsrs	r3, r3, #29
+ 174:	4908      	ldr	r1, [pc, #32]	; (198 <nvm_set_config+0x84>)
+ 176:	2408      	movs	r4, #8
+ 178:	409c      	lsls	r4, r3
+ 17a:	800c      	strh	r4, [r1, #0]
+	_nvm_dev.number_of_pages   = nvm_module->PARAM.bit.NVMP;
+ 17c:	6893      	ldr	r3, [r2, #8]
+ 17e:	804b      	strh	r3, [r1, #2]
+	_nvm_dev.manual_page_write = config->manual_page_write;
+ 180:	7843      	ldrb	r3, [r0, #1]
+ 182:	710b      	strb	r3, [r1, #4]
+	if (nvm_module->STATUS.reg & NVMCTRL_STATUS_SB) {
+ 184:	8b13      	ldrh	r3, [r2, #24]
+ 186:	05db      	lsls	r3, r3, #23
+	return STATUS_OK;
+ 188:	0fdb      	lsrs	r3, r3, #31
+ 18a:	011b      	lsls	r3, r3, #4
+ 18c:	e7d0      	b.n	130 <nvm_set_config+0x1c>
+ 18e:	46c0      	nop			; (mov r8, r8)
+ 190:	40000400 	.word	0x40000400
+ 194:	41004000 	.word	0x41004000
+ 198:	2000001c 	.word	0x2000001c
+
+0000019c <nvm_execute_command>:
+{
+ 19c:	b530      	push	{r4, r5, lr}
+ 19e:	0004      	movs	r4, r0
+	if (address > ((uint32_t)_nvm_dev.page_size * _nvm_dev.number_of_pages)
+ 1a0:	4a22      	ldr	r2, [pc, #136]	; (22c <nvm_execute_command+0x90>)
+ 1a2:	8810      	ldrh	r0, [r2, #0]
+ 1a4:	8853      	ldrh	r3, [r2, #2]
+ 1a6:	4343      	muls	r3, r0
+ 1a8:	428b      	cmp	r3, r1
+ 1aa:	d206      	bcs.n	1ba <nvm_execute_command+0x1e>
+		&& !(address >= NVMCTRL_AUX0_ADDRESS && address <= NVMCTRL_AUX1_ADDRESS )){
+ 1ac:	2280      	movs	r2, #128	; 0x80
+ 1ae:	0192      	lsls	r2, r2, #6
+		return STATUS_ERR_BAD_ADDRESS;
+ 1b0:	2018      	movs	r0, #24
+		&& !(address >= NVMCTRL_AUX0_ADDRESS && address <= NVMCTRL_AUX1_ADDRESS )){
+ 1b2:	4b1f      	ldr	r3, [pc, #124]	; (230 <nvm_execute_command+0x94>)
+ 1b4:	18cb      	adds	r3, r1, r3
+ 1b6:	4293      	cmp	r3, r2
+ 1b8:	d80e      	bhi.n	1d8 <nvm_execute_command+0x3c>
+	ctrlb_bak = nvm_module->CTRLB.reg;
+ 1ba:	4b1e      	ldr	r3, [pc, #120]	; (234 <nvm_execute_command+0x98>)
+ 1bc:	685d      	ldr	r5, [r3, #4]
+	nvm_module->CTRLB.reg = ctrlb_bak | NVMCTRL_CTRLB_CACHEDIS;
+ 1be:	2280      	movs	r2, #128	; 0x80
+ 1c0:	02d2      	lsls	r2, r2, #11
+ 1c2:	432a      	orrs	r2, r5
+ 1c4:	605a      	str	r2, [r3, #4]
+	nvm_module->STATUS.reg = NVMCTRL_STATUS_MASK;
+ 1c6:	2220      	movs	r2, #32
+ 1c8:	32ff      	adds	r2, #255	; 0xff
+ 1ca:	831a      	strh	r2, [r3, #24]
+static inline bool nvm_is_ready(void)
+{
+	/* Get a pointer to the module hardware instance */
+	Nvmctrl *const nvm_module = NVMCTRL;
+
+	return nvm_module->INTFLAG.reg & NVMCTRL_INTFLAG_READY;
+ 1cc:	7d1b      	ldrb	r3, [r3, #20]
+	if (!nvm_is_ready()) {
+ 1ce:	07db      	lsls	r3, r3, #31
+ 1d0:	d403      	bmi.n	1da <nvm_execute_command+0x3e>
+		nvm_module->CTRLB.reg = ctrlb_bak;
+ 1d2:	4b18      	ldr	r3, [pc, #96]	; (234 <nvm_execute_command+0x98>)
+ 1d4:	605d      	str	r5, [r3, #4]
+		return STATUS_BUSY;
+ 1d6:	2005      	movs	r0, #5
+}
+ 1d8:	bd30      	pop	{r4, r5, pc}
+	switch (command) {
+ 1da:	2c45      	cmp	r4, #69	; 0x45
+ 1dc:	d822      	bhi.n	224 <nvm_execute_command+0x88>
+ 1de:	00a3      	lsls	r3, r4, #2
+ 1e0:	4a15      	ldr	r2, [pc, #84]	; (238 <nvm_execute_command+0x9c>)
+ 1e2:	58d3      	ldr	r3, [r2, r3]
+ 1e4:	469f      	mov	pc, r3
+			if (nvm_module->STATUS.reg & NVMCTRL_STATUS_SB) {
+ 1e6:	4b13      	ldr	r3, [pc, #76]	; (234 <nvm_execute_command+0x98>)
+ 1e8:	8b1b      	ldrh	r3, [r3, #24]
+ 1ea:	05db      	lsls	r3, r3, #23
+ 1ec:	d503      	bpl.n	1f6 <nvm_execute_command+0x5a>
+				nvm_module->CTRLB.reg = ctrlb_bak;
+ 1ee:	4b11      	ldr	r3, [pc, #68]	; (234 <nvm_execute_command+0x98>)
+ 1f0:	605d      	str	r5, [r3, #4]
+				return STATUS_ERR_IO;
+ 1f2:	2010      	movs	r0, #16
+ 1f4:	e7f0      	b.n	1d8 <nvm_execute_command+0x3c>
+			nvm_module->ADDR.reg = (uintptr_t)&NVM_MEMORY[address / 4];
+ 1f6:	0889      	lsrs	r1, r1, #2
+ 1f8:	0049      	lsls	r1, r1, #1
+ 1fa:	4b0e      	ldr	r3, [pc, #56]	; (234 <nvm_execute_command+0x98>)
+ 1fc:	61d9      	str	r1, [r3, #28]
+			break;
+ 1fe:	e003      	b.n	208 <nvm_execute_command+0x6c>
+			nvm_module->ADDR.reg = (uintptr_t)&NVM_MEMORY[address / 4];
+ 200:	0889      	lsrs	r1, r1, #2
+ 202:	0049      	lsls	r1, r1, #1
+ 204:	4b0b      	ldr	r3, [pc, #44]	; (234 <nvm_execute_command+0x98>)
+ 206:	61d9      	str	r1, [r3, #28]
+	nvm_module->CTRLA.reg = command | NVMCTRL_CTRLA_CMDEX_KEY;
+ 208:	20a5      	movs	r0, #165	; 0xa5
+ 20a:	0200      	lsls	r0, r0, #8
+ 20c:	4304      	orrs	r4, r0
+ 20e:	4b09      	ldr	r3, [pc, #36]	; (234 <nvm_execute_command+0x98>)
+ 210:	801c      	strh	r4, [r3, #0]
+ 212:	0019      	movs	r1, r3
+	while (!nvm_is_ready()) {
+ 214:	2201      	movs	r2, #1
+ 216:	7d0b      	ldrb	r3, [r1, #20]
+ 218:	4213      	tst	r3, r2
+ 21a:	d0fc      	beq.n	216 <nvm_execute_command+0x7a>
+	nvm_module->CTRLB.reg = ctrlb_bak;
+ 21c:	4b05      	ldr	r3, [pc, #20]	; (234 <nvm_execute_command+0x98>)
+ 21e:	605d      	str	r5, [r3, #4]
+	return STATUS_OK;
+ 220:	2000      	movs	r0, #0
+ 222:	e7d9      	b.n	1d8 <nvm_execute_command+0x3c>
+			nvm_module->CTRLB.reg = ctrlb_bak;
+ 224:	4b03      	ldr	r3, [pc, #12]	; (234 <nvm_execute_command+0x98>)
+ 226:	605d      	str	r5, [r3, #4]
+			return STATUS_ERR_INVALID_ARG;
+ 228:	2017      	movs	r0, #23
+ 22a:	e7d5      	b.n	1d8 <nvm_execute_command+0x3c>
+ 22c:	2000001c 	.word	0x2000001c
+ 230:	ff7fc000 	.word	0xff7fc000
+ 234:	41004000 	.word	0x41004000
+ 238:	00000584 	.word	0x00000584
+
+0000023c <nvm_write_buffer>:
+{
+ 23c:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+			((uint32_t)_nvm_dev.page_size * _nvm_dev.number_of_pages)) {
+ 23e:	4b25      	ldr	r3, [pc, #148]	; (2d4 <nvm_write_buffer+0x98>)
+ 240:	881d      	ldrh	r5, [r3, #0]
+ 242:	885b      	ldrh	r3, [r3, #2]
+ 244:	436b      	muls	r3, r5
+		return STATUS_ERR_BAD_ADDRESS;
+ 246:	2418      	movs	r4, #24
+	if (destination_address >
+ 248:	4283      	cmp	r3, r0
+ 24a:	d201      	bcs.n	250 <nvm_write_buffer+0x14>
+}
+ 24c:	0020      	movs	r0, r4
+ 24e:	bdf8      	pop	{r3, r4, r5, r6, r7, pc}
+	if (destination_address & (_nvm_dev.page_size - 1)) {
+ 250:	1e6b      	subs	r3, r5, #1
+ 252:	4218      	tst	r0, r3
+ 254:	d1fa      	bne.n	24c <nvm_write_buffer+0x10>
+		return STATUS_ERR_INVALID_ARG;
+ 256:	3c01      	subs	r4, #1
+	if (length > _nvm_dev.page_size) {
+ 258:	4295      	cmp	r5, r2
+ 25a:	d3f7      	bcc.n	24c <nvm_write_buffer+0x10>
+ 25c:	4b1e      	ldr	r3, [pc, #120]	; (2d8 <nvm_write_buffer+0x9c>)
+ 25e:	7d1b      	ldrb	r3, [r3, #20]
+		return STATUS_BUSY;
+ 260:	3c12      	subs	r4, #18
+	if (!nvm_is_ready()) {
+ 262:	07db      	lsls	r3, r3, #31
+ 264:	d5f2      	bpl.n	24c <nvm_write_buffer+0x10>
+	nvm_module->CTRLA.reg = NVM_COMMAND_PAGE_BUFFER_CLEAR | NVMCTRL_CTRLA_CMDEX_KEY;
+ 266:	4c1d      	ldr	r4, [pc, #116]	; (2dc <nvm_write_buffer+0xa0>)
+ 268:	4b1b      	ldr	r3, [pc, #108]	; (2d8 <nvm_write_buffer+0x9c>)
+ 26a:	801c      	strh	r4, [r3, #0]
+ 26c:	001d      	movs	r5, r3
+	while (!nvm_is_ready()) {
+ 26e:	2401      	movs	r4, #1
+ 270:	7d2b      	ldrb	r3, [r5, #20]
+ 272:	4223      	tst	r3, r4
+ 274:	d0fc      	beq.n	270 <nvm_write_buffer+0x34>
+	nvm_module->STATUS.reg = NVMCTRL_STATUS_MASK;
+ 276:	2420      	movs	r4, #32
+ 278:	34ff      	adds	r4, #255	; 0xff
+ 27a:	4b17      	ldr	r3, [pc, #92]	; (2d8 <nvm_write_buffer+0x9c>)
+ 27c:	831c      	strh	r4, [r3, #24]
+	for (uint16_t i = 0; i < length; i += 2) {
+ 27e:	2a00      	cmp	r2, #0
+ 280:	d022      	beq.n	2c8 <nvm_write_buffer+0x8c>
+ 282:	2301      	movs	r3, #1
+ 284:	0005      	movs	r5, r0
+ 286:	439d      	bics	r5, r3
+ 288:	2300      	movs	r3, #0
+		if (i < (length - 1)) {
+ 28a:	1e57      	subs	r7, r2, #1
+ 28c:	e009      	b.n	2a2 <nvm_write_buffer+0x66>
+			data |= (buffer[i + 1] << 8);
+ 28e:	18ce      	adds	r6, r1, r3
+ 290:	7876      	ldrb	r6, [r6, #1]
+ 292:	0236      	lsls	r6, r6, #8
+ 294:	4334      	orrs	r4, r6
+		NVM_MEMORY[nvm_address++] = data;
+ 296:	802c      	strh	r4, [r5, #0]
+	for (uint16_t i = 0; i < length; i += 2) {
+ 298:	3302      	adds	r3, #2
+ 29a:	b29b      	uxth	r3, r3
+ 29c:	3502      	adds	r5, #2
+ 29e:	429a      	cmp	r2, r3
+ 2a0:	d904      	bls.n	2ac <nvm_write_buffer+0x70>
+		data = buffer[i];
+ 2a2:	5ccc      	ldrb	r4, [r1, r3]
+		if (i < (length - 1)) {
+ 2a4:	42bb      	cmp	r3, r7
+ 2a6:	dbf2      	blt.n	28e <nvm_write_buffer+0x52>
+		data = buffer[i];
+ 2a8:	b2a4      	uxth	r4, r4
+ 2aa:	e7f4      	b.n	296 <nvm_write_buffer+0x5a>
+	if ((_nvm_dev.manual_page_write == false) && (length < NVMCTRL_PAGE_SIZE)) {
+ 2ac:	4b09      	ldr	r3, [pc, #36]	; (2d4 <nvm_write_buffer+0x98>)
+ 2ae:	791b      	ldrb	r3, [r3, #4]
+	return STATUS_OK;
+ 2b0:	2400      	movs	r4, #0
+	if ((_nvm_dev.manual_page_write == false) && (length < NVMCTRL_PAGE_SIZE)) {
+ 2b2:	2b00      	cmp	r3, #0
+ 2b4:	d1ca      	bne.n	24c <nvm_write_buffer+0x10>
+ 2b6:	2a3f      	cmp	r2, #63	; 0x3f
+ 2b8:	d8c8      	bhi.n	24c <nvm_write_buffer+0x10>
+		return nvm_execute_command(NVM_COMMAND_WRITE_PAGE,
+ 2ba:	2200      	movs	r2, #0
+ 2bc:	0001      	movs	r1, r0
+ 2be:	2004      	movs	r0, #4
+ 2c0:	4b07      	ldr	r3, [pc, #28]	; (2e0 <nvm_write_buffer+0xa4>)
+ 2c2:	4798      	blx	r3
+ 2c4:	0004      	movs	r4, r0
+ 2c6:	e7c1      	b.n	24c <nvm_write_buffer+0x10>
+	if ((_nvm_dev.manual_page_write == false) && (length < NVMCTRL_PAGE_SIZE)) {
+ 2c8:	4b02      	ldr	r3, [pc, #8]	; (2d4 <nvm_write_buffer+0x98>)
+ 2ca:	791b      	ldrb	r3, [r3, #4]
+	return STATUS_OK;
+ 2cc:	2400      	movs	r4, #0
+	if ((_nvm_dev.manual_page_write == false) && (length < NVMCTRL_PAGE_SIZE)) {
+ 2ce:	2b00      	cmp	r3, #0
+ 2d0:	d0f3      	beq.n	2ba <nvm_write_buffer+0x7e>
+ 2d2:	e7bb      	b.n	24c <nvm_write_buffer+0x10>
+ 2d4:	2000001c 	.word	0x2000001c
+ 2d8:	41004000 	.word	0x41004000
+ 2dc:	ffffa544 	.word	0xffffa544
+ 2e0:	0000019d 	.word	0x0000019d
+
+000002e4 <nvm_read_buffer>:
+{
+ 2e4:	b570      	push	{r4, r5, r6, lr}
+			((uint32_t)_nvm_dev.page_size * _nvm_dev.number_of_pages)) {
+ 2e6:	4b18      	ldr	r3, [pc, #96]	; (348 <nvm_read_buffer+0x64>)
+ 2e8:	881d      	ldrh	r5, [r3, #0]
+ 2ea:	885b      	ldrh	r3, [r3, #2]
+ 2ec:	436b      	muls	r3, r5
+		return STATUS_ERR_BAD_ADDRESS;
+ 2ee:	2418      	movs	r4, #24
+	if (source_address >
+ 2f0:	4283      	cmp	r3, r0
+ 2f2:	d201      	bcs.n	2f8 <nvm_read_buffer+0x14>
+}
+ 2f4:	0020      	movs	r0, r4
+ 2f6:	bd70      	pop	{r4, r5, r6, pc}
+	if (source_address & (_nvm_dev.page_size - 1)) {
+ 2f8:	1e6b      	subs	r3, r5, #1
+ 2fa:	4218      	tst	r0, r3
+ 2fc:	d1fa      	bne.n	2f4 <nvm_read_buffer+0x10>
+		return STATUS_ERR_INVALID_ARG;
+ 2fe:	3c01      	subs	r4, #1
+	if (length > _nvm_dev.page_size) {
+ 300:	4295      	cmp	r5, r2
+ 302:	d3f7      	bcc.n	2f4 <nvm_read_buffer+0x10>
+ 304:	4b11      	ldr	r3, [pc, #68]	; (34c <nvm_read_buffer+0x68>)
+ 306:	7d1b      	ldrb	r3, [r3, #20]
+		return STATUS_BUSY;
+ 308:	3c12      	subs	r4, #18
+	if (!nvm_is_ready()) {
+ 30a:	07db      	lsls	r3, r3, #31
+ 30c:	d5f2      	bpl.n	2f4 <nvm_read_buffer+0x10>
+	nvm_module->STATUS.reg = NVMCTRL_STATUS_MASK;
+ 30e:	2420      	movs	r4, #32
+ 310:	34ff      	adds	r4, #255	; 0xff
+ 312:	4b0e      	ldr	r3, [pc, #56]	; (34c <nvm_read_buffer+0x68>)
+ 314:	831c      	strh	r4, [r3, #24]
+	for (uint16_t i = 0; i < length; i += 2) {
+ 316:	2a00      	cmp	r2, #0
+ 318:	d014      	beq.n	344 <nvm_read_buffer+0x60>
+ 31a:	2301      	movs	r3, #1
+ 31c:	4398      	bics	r0, r3
+ 31e:	2300      	movs	r3, #0
+		if (i < (length - 1)) {
+ 320:	1e56      	subs	r6, r2, #1
+ 322:	e004      	b.n	32e <nvm_read_buffer+0x4a>
+	for (uint16_t i = 0; i < length; i += 2) {
+ 324:	3302      	adds	r3, #2
+ 326:	b29b      	uxth	r3, r3
+ 328:	3002      	adds	r0, #2
+ 32a:	429a      	cmp	r2, r3
+ 32c:	d908      	bls.n	340 <nvm_read_buffer+0x5c>
+		uint16_t data = NVM_MEMORY[page_address++];
+ 32e:	8804      	ldrh	r4, [r0, #0]
+ 330:	b2a4      	uxth	r4, r4
+		buffer[i] = (data & 0xFF);
+ 332:	54cc      	strb	r4, [r1, r3]
+		if (i < (length - 1)) {
+ 334:	42b3      	cmp	r3, r6
+ 336:	daf5      	bge.n	324 <nvm_read_buffer+0x40>
+			buffer[i + 1] = (data >> 8);
+ 338:	18cd      	adds	r5, r1, r3
+ 33a:	0a24      	lsrs	r4, r4, #8
+ 33c:	706c      	strb	r4, [r5, #1]
+ 33e:	e7f1      	b.n	324 <nvm_read_buffer+0x40>
+	return STATUS_OK;
+ 340:	2400      	movs	r4, #0
+ 342:	e7d7      	b.n	2f4 <nvm_read_buffer+0x10>
+ 344:	2400      	movs	r4, #0
+ 346:	e7d5      	b.n	2f4 <nvm_read_buffer+0x10>
+ 348:	2000001c 	.word	0x2000001c
+ 34c:	41004000 	.word	0x41004000
+
+00000350 <nvm_erase_row>:
+			((uint32_t)_nvm_dev.page_size * _nvm_dev.number_of_pages)) {
+ 350:	4b13      	ldr	r3, [pc, #76]	; (3a0 <nvm_erase_row+0x50>)
+ 352:	881a      	ldrh	r2, [r3, #0]
+ 354:	885b      	ldrh	r3, [r3, #2]
+ 356:	4353      	muls	r3, r2
+		return STATUS_ERR_BAD_ADDRESS;
+ 358:	2118      	movs	r1, #24
+	if (row_address >
+ 35a:	4283      	cmp	r3, r0
+ 35c:	d201      	bcs.n	362 <nvm_erase_row+0x12>
+}
+ 35e:	0008      	movs	r0, r1
+ 360:	4770      	bx	lr
+	if (row_address & ((_nvm_dev.page_size * NVMCTRL_ROW_PAGES) - 1)) {
+ 362:	0092      	lsls	r2, r2, #2
+ 364:	3a01      	subs	r2, #1
+ 366:	4210      	tst	r0, r2
+ 368:	d1f9      	bne.n	35e <nvm_erase_row+0xe>
+ 36a:	4b0e      	ldr	r3, [pc, #56]	; (3a4 <nvm_erase_row+0x54>)
+ 36c:	7d1b      	ldrb	r3, [r3, #20]
+		return STATUS_BUSY;
+ 36e:	3913      	subs	r1, #19
+	if (!nvm_is_ready()) {
+ 370:	07db      	lsls	r3, r3, #31
+ 372:	d5f4      	bpl.n	35e <nvm_erase_row+0xe>
+	nvm_module->STATUS.reg = NVMCTRL_STATUS_MASK;
+ 374:	4b0b      	ldr	r3, [pc, #44]	; (3a4 <nvm_erase_row+0x54>)
+ 376:	2220      	movs	r2, #32
+ 378:	32ff      	adds	r2, #255	; 0xff
+ 37a:	831a      	strh	r2, [r3, #24]
+	nvm_module->ADDR.reg  = (uintptr_t)&NVM_MEMORY[row_address / 4];
+ 37c:	0880      	lsrs	r0, r0, #2
+ 37e:	0040      	lsls	r0, r0, #1
+ 380:	61d8      	str	r0, [r3, #28]
+	nvm_module->CTRLA.reg = NVM_COMMAND_ERASE_ROW | NVMCTRL_CTRLA_CMDEX_KEY;
+ 382:	4a09      	ldr	r2, [pc, #36]	; (3a8 <nvm_erase_row+0x58>)
+ 384:	801a      	strh	r2, [r3, #0]
+ 386:	0019      	movs	r1, r3
+	while (!nvm_is_ready()) {
+ 388:	2201      	movs	r2, #1
+ 38a:	7d0b      	ldrb	r3, [r1, #20]
+ 38c:	4213      	tst	r3, r2
+ 38e:	d0fc      	beq.n	38a <nvm_erase_row+0x3a>
+	if ((enum nvm_error)(nvm_module->STATUS.reg & NVM_ERRORS_MASK) != NVM_ERROR_NONE) {
+ 390:	4b04      	ldr	r3, [pc, #16]	; (3a4 <nvm_erase_row+0x54>)
+ 392:	8b19      	ldrh	r1, [r3, #24]
+ 394:	201c      	movs	r0, #28
+ 396:	4001      	ands	r1, r0
+	return STATUS_OK;
+ 398:	1e48      	subs	r0, r1, #1
+ 39a:	4181      	sbcs	r1, r0
+ 39c:	0089      	lsls	r1, r1, #2
+ 39e:	e7de      	b.n	35e <nvm_erase_row+0xe>
+ 3a0:	2000001c 	.word	0x2000001c
+ 3a4:	41004000 	.word	0x41004000
+ 3a8:	ffffa502 	.word	0xffffa502
+
+000003ac <Dummy_Handler>:
+
+/**
+ * \brief Default interrupt handler for unused IRQs.
+ */
+void Dummy_Handler(void)
+{
+ 3ac:	e7fe      	b.n	3ac <Dummy_Handler>
+	...
+
+000003b0 <Reset_Handler>:
+{
+ 3b0:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+        if (pSrc != pDest) {
+ 3b2:	4a2a      	ldr	r2, [pc, #168]	; (45c <Reset_Handler+0xac>)
+ 3b4:	4b2a      	ldr	r3, [pc, #168]	; (460 <Reset_Handler+0xb0>)
+ 3b6:	429a      	cmp	r2, r3
+ 3b8:	d011      	beq.n	3de <Reset_Handler+0x2e>
+                for (; pDest < &_erelocate;) {
+ 3ba:	001a      	movs	r2, r3
+ 3bc:	4b29      	ldr	r3, [pc, #164]	; (464 <Reset_Handler+0xb4>)
+ 3be:	429a      	cmp	r2, r3
+ 3c0:	d20d      	bcs.n	3de <Reset_Handler+0x2e>
+ 3c2:	4a29      	ldr	r2, [pc, #164]	; (468 <Reset_Handler+0xb8>)
+ 3c4:	3303      	adds	r3, #3
+ 3c6:	1a9b      	subs	r3, r3, r2
+ 3c8:	089b      	lsrs	r3, r3, #2
+ 3ca:	3301      	adds	r3, #1
+ 3cc:	009b      	lsls	r3, r3, #2
+ 3ce:	2200      	movs	r2, #0
+                        *pDest++ = *pSrc++;
+ 3d0:	4823      	ldr	r0, [pc, #140]	; (460 <Reset_Handler+0xb0>)
+ 3d2:	4922      	ldr	r1, [pc, #136]	; (45c <Reset_Handler+0xac>)
+ 3d4:	588c      	ldr	r4, [r1, r2]
+ 3d6:	5084      	str	r4, [r0, r2]
+ 3d8:	3204      	adds	r2, #4
+                for (; pDest < &_erelocate;) {
+ 3da:	429a      	cmp	r2, r3
+ 3dc:	d1fa      	bne.n	3d4 <Reset_Handler+0x24>
+        for (pDest = &_szero; pDest < &_ezero;) {
+ 3de:	4a23      	ldr	r2, [pc, #140]	; (46c <Reset_Handler+0xbc>)
+ 3e0:	4b23      	ldr	r3, [pc, #140]	; (470 <Reset_Handler+0xc0>)
+ 3e2:	429a      	cmp	r2, r3
+ 3e4:	d20a      	bcs.n	3fc <Reset_Handler+0x4c>
+ 3e6:	43d3      	mvns	r3, r2
+ 3e8:	4921      	ldr	r1, [pc, #132]	; (470 <Reset_Handler+0xc0>)
+ 3ea:	185b      	adds	r3, r3, r1
+ 3ec:	2103      	movs	r1, #3
+ 3ee:	438b      	bics	r3, r1
+ 3f0:	3304      	adds	r3, #4
+ 3f2:	189b      	adds	r3, r3, r2
+                *pDest++ = 0;
+ 3f4:	2100      	movs	r1, #0
+ 3f6:	c202      	stmia	r2!, {r1}
+        for (pDest = &_szero; pDest < &_ezero;) {
+ 3f8:	4293      	cmp	r3, r2
+ 3fa:	d1fc      	bne.n	3f6 <Reset_Handler+0x46>
+        SCB->VTOR = ((uint32_t) pSrc & SCB_VTOR_TBLOFF_Msk);
+ 3fc:	4a1d      	ldr	r2, [pc, #116]	; (474 <Reset_Handler+0xc4>)
+ 3fe:	21ff      	movs	r1, #255	; 0xff
+ 400:	4b1d      	ldr	r3, [pc, #116]	; (478 <Reset_Handler+0xc8>)
+ 402:	438b      	bics	r3, r1
+ 404:	6093      	str	r3, [r2, #8]
+        SBMATRIX->SFR[SBMATRIX_SLAVE_HMCRAMC0].reg = 2;
+ 406:	39fd      	subs	r1, #253	; 0xfd
+ 408:	2390      	movs	r3, #144	; 0x90
+ 40a:	005b      	lsls	r3, r3, #1
+ 40c:	4a1b      	ldr	r2, [pc, #108]	; (47c <Reset_Handler+0xcc>)
+ 40e:	50d1      	str	r1, [r2, r3]
+        USB->DEVICE.QOSCTRL.bit.CQOS = 2;
+ 410:	4a1b      	ldr	r2, [pc, #108]	; (480 <Reset_Handler+0xd0>)
+ 412:	78d3      	ldrb	r3, [r2, #3]
+ 414:	2503      	movs	r5, #3
+ 416:	43ab      	bics	r3, r5
+ 418:	2402      	movs	r4, #2
+ 41a:	4323      	orrs	r3, r4
+ 41c:	70d3      	strb	r3, [r2, #3]
+        USB->DEVICE.QOSCTRL.bit.DQOS = 2;
+ 41e:	78d3      	ldrb	r3, [r2, #3]
+ 420:	270c      	movs	r7, #12
+ 422:	43bb      	bics	r3, r7
+ 424:	2608      	movs	r6, #8
+ 426:	4333      	orrs	r3, r6
+ 428:	70d3      	strb	r3, [r2, #3]
+        DMAC->QOSCTRL.bit.DQOS = 2;
+ 42a:	4b16      	ldr	r3, [pc, #88]	; (484 <Reset_Handler+0xd4>)
+ 42c:	7b98      	ldrb	r0, [r3, #14]
+ 42e:	2230      	movs	r2, #48	; 0x30
+ 430:	4390      	bics	r0, r2
+ 432:	2220      	movs	r2, #32
+ 434:	4310      	orrs	r0, r2
+ 436:	7398      	strb	r0, [r3, #14]
+        DMAC->QOSCTRL.bit.FQOS = 2;
+ 438:	7b99      	ldrb	r1, [r3, #14]
+ 43a:	43b9      	bics	r1, r7
+ 43c:	4331      	orrs	r1, r6
+ 43e:	7399      	strb	r1, [r3, #14]
+        DMAC->QOSCTRL.bit.WRBQOS = 2;
+ 440:	7b9a      	ldrb	r2, [r3, #14]
+ 442:	43aa      	bics	r2, r5
+ 444:	4322      	orrs	r2, r4
+ 446:	739a      	strb	r2, [r3, #14]
+        NVMCTRL->CTRLB.bit.MANW = 1;
+ 448:	4a0f      	ldr	r2, [pc, #60]	; (488 <Reset_Handler+0xd8>)
+ 44a:	6853      	ldr	r3, [r2, #4]
+ 44c:	2180      	movs	r1, #128	; 0x80
+ 44e:	430b      	orrs	r3, r1
+ 450:	6053      	str	r3, [r2, #4]
+        __libc_init_array();
+ 452:	4b0e      	ldr	r3, [pc, #56]	; (48c <Reset_Handler+0xdc>)
+ 454:	4798      	blx	r3
+        main();
+ 456:	4b0e      	ldr	r3, [pc, #56]	; (490 <Reset_Handler+0xe0>)
+ 458:	4798      	blx	r3
+ 45a:	e7fe      	b.n	45a <Reset_Handler+0xaa>
+ 45c:	000006bc 	.word	0x000006bc
+ 460:	20000000 	.word	0x20000000
+ 464:	20000000 	.word	0x20000000
+ 468:	20000004 	.word	0x20000004
+ 46c:	20000000 	.word	0x20000000
+ 470:	20000024 	.word	0x20000024
+ 474:	e000ed00 	.word	0xe000ed00
+ 478:	00000000 	.word	0x00000000
+ 47c:	41007000 	.word	0x41007000
+ 480:	41005000 	.word	0x41005000
+ 484:	41004800 	.word	0x41004800
+ 488:	41004000 	.word	0x41004000
+ 48c:	0000053d 	.word	0x0000053d
+ 490:	000004c5 	.word	0x000004c5
+
+00000494 <configure_nvm>:
+uint8_t read_buffer[NVMCTRL_PAGE_SIZE];
+void configure_nvm(void);
+
+//! [setup]
+void configure_nvm(void)
+{
+ 494:	b500      	push	{lr}
+ 496:	b083      	sub	sp, #12
+	config->sleep_power_mode  = NVM_SLEEP_POWER_MODE_WAKEONACCESS;
+ 498:	2200      	movs	r2, #0
+ 49a:	466b      	mov	r3, sp
+ 49c:	701a      	strb	r2, [r3, #0]
+	config->wait_states       = NVMCTRL->CTRLB.bit.RWS;
+ 49e:	4b07      	ldr	r3, [pc, #28]	; (4bc <configure_nvm+0x28>)
+ 4a0:	685b      	ldr	r3, [r3, #4]
+ 4a2:	06db      	lsls	r3, r3, #27
+ 4a4:	0f1b      	lsrs	r3, r3, #28
+ 4a6:	4669      	mov	r1, sp
+ 4a8:	708b      	strb	r3, [r1, #2]
+	config->disable_cache     = false;
+ 4aa:	70ca      	strb	r2, [r1, #3]
+	config->cache_readmode    = NVM_CACHE_READMODE_NO_MISS_PENALTY;
+ 4ac:	710a      	strb	r2, [r1, #4]
+	struct nvm_config config_nvm;
+	nvm_get_config_defaults(&config_nvm);
+	config_nvm.manual_page_write = false;
+ 4ae:	704a      	strb	r2, [r1, #1]
+	nvm_set_config(&config_nvm);
+ 4b0:	4668      	mov	r0, sp
+ 4b2:	4b03      	ldr	r3, [pc, #12]	; (4c0 <configure_nvm+0x2c>)
+ 4b4:	4798      	blx	r3
+}
+ 4b6:	b003      	add	sp, #12
+ 4b8:	bd00      	pop	{pc}
+ 4ba:	46c0      	nop			; (mov r8, r8)
+ 4bc:	41004000 	.word	0x41004000
+ 4c0:	00000115 	.word	0x00000115
+
+000004c4 <main>:
+
+int main(void)
+{
+ 4c4:	b530      	push	{r4, r5, lr}
+ 4c6:	b091      	sub	sp, #68	; 0x44
+	configure_nvm();
+ 4c8:	4b18      	ldr	r3, [pc, #96]	; (52c <main+0x68>)
+ 4ca:	4798      	blx	r3
+
+ 	uint8_t page_buffer[NVMCTRL_PAGE_SIZE];
+	for (uint32_t i = 0; i < NVMCTRL_PAGE_SIZE; i++) {
+ 4cc:	2300      	movs	r3, #0
+		page_buffer[i] = i;
+ 4ce:	466a      	mov	r2, sp
+ 4d0:	549b      	strb	r3, [r3, r2]
+	for (uint32_t i = 0; i < NVMCTRL_PAGE_SIZE; i++) {
+ 4d2:	3301      	adds	r3, #1
+ 4d4:	2b40      	cmp	r3, #64	; 0x40
+ 4d6:	d1fa      	bne.n	4ce <main+0xa>
+	}
+	enum status_code error_code;
+	do
+	{
+		error_code = nvm_erase_row(100 * NVMCTRL_ROW_PAGES * NVMCTRL_PAGE_SIZE);
+ 4d8:	25c8      	movs	r5, #200	; 0xc8
+ 4da:	01ed      	lsls	r5, r5, #7
+ 4dc:	4c14      	ldr	r4, [pc, #80]	; (530 <main+0x6c>)
+ 4de:	0028      	movs	r0, r5
+ 4e0:	47a0      	blx	r4
+	} while (error_code == STATUS_BUSY);
+ 4e2:	2805      	cmp	r0, #5
+ 4e4:	d0fb      	beq.n	4de <main+0x1a>
+	do
+	{
+		error_code = nvm_write_buffer(100 * NVMCTRL_ROW_PAGES * NVMCTRL_PAGE_SIZE,page_buffer, NVMCTRL_PAGE_SIZE);
+ 4e6:	25c8      	movs	r5, #200	; 0xc8
+ 4e8:	01ed      	lsls	r5, r5, #7
+ 4ea:	4c12      	ldr	r4, [pc, #72]	; (534 <main+0x70>)
+ 4ec:	2240      	movs	r2, #64	; 0x40
+ 4ee:	4669      	mov	r1, sp
+ 4f0:	0028      	movs	r0, r5
+ 4f2:	47a0      	blx	r4
+	} while (error_code == STATUS_BUSY);
+ 4f4:	2805      	cmp	r0, #5
+ 4f6:	d0f9      	beq.n	4ec <main+0x28>
+	do
+	{
+		error_code = nvm_read_buffer(100 * NVMCTRL_ROW_PAGES * NVMCTRL_PAGE_SIZE,page_buffer, NVMCTRL_PAGE_SIZE);
+ 4f8:	25c8      	movs	r5, #200	; 0xc8
+ 4fa:	01ed      	lsls	r5, r5, #7
+ 4fc:	4c0e      	ldr	r4, [pc, #56]	; (538 <main+0x74>)
+ 4fe:	2240      	movs	r2, #64	; 0x40
+ 500:	4669      	mov	r1, sp
+ 502:	0028      	movs	r0, r5
+ 504:	47a0      	blx	r4
+	} while (error_code == STATUS_BUSY);
+ 506:	2805      	cmp	r0, #5
+ 508:	d0f9      	beq.n	4fe <main+0x3a>
+	error_code = nvm_read_buffer(100 * NVMCTRL_ROW_PAGES * NVMCTRL_PAGE_SIZE,page_buffer, NVMCTRL_PAGE_SIZE);
+ 50a:	25c8      	movs	r5, #200	; 0xc8
+ 50c:	01ed      	lsls	r5, r5, #7
+ 50e:	2240      	movs	r2, #64	; 0x40
+ 510:	4669      	mov	r1, sp
+ 512:	0028      	movs	r0, r5
+ 514:	4c08      	ldr	r4, [pc, #32]	; (538 <main+0x74>)
+ 516:	47a0      	blx	r4
+	error_code = nvm_read_buffer(100 * NVMCTRL_ROW_PAGES * NVMCTRL_PAGE_SIZE,page_buffer, NVMCTRL_PAGE_SIZE);
+ 518:	2240      	movs	r2, #64	; 0x40
+ 51a:	4669      	mov	r1, sp
+ 51c:	0028      	movs	r0, r5
+ 51e:	47a0      	blx	r4
+	error_code = nvm_read_buffer(100 * NVMCTRL_ROW_PAGES * NVMCTRL_PAGE_SIZE,page_buffer, NVMCTRL_PAGE_SIZE);
+ 520:	2240      	movs	r2, #64	; 0x40
+ 522:	4669      	mov	r1, sp
+ 524:	0028      	movs	r0, r5
+ 526:	47a0      	blx	r4
+ 528:	e7fe      	b.n	528 <main+0x64>
+ 52a:	46c0      	nop			; (mov r8, r8)
+ 52c:	00000495 	.word	0x00000495
+ 530:	00000351 	.word	0x00000351
+ 534:	0000023d 	.word	0x0000023d
+ 538:	000002e5 	.word	0x000002e5
+
+0000053c <__libc_init_array>:
+ 53c:	b570      	push	{r4, r5, r6, lr}
+ 53e:	2600      	movs	r6, #0
+ 540:	4d0c      	ldr	r5, [pc, #48]	; (574 <__libc_init_array+0x38>)
+ 542:	4c0d      	ldr	r4, [pc, #52]	; (578 <__libc_init_array+0x3c>)
+ 544:	1b64      	subs	r4, r4, r5
+ 546:	10a4      	asrs	r4, r4, #2
+ 548:	42a6      	cmp	r6, r4
+ 54a:	d109      	bne.n	560 <__libc_init_array+0x24>
+ 54c:	2600      	movs	r6, #0
+ 54e:	f000 f8a5 	bl	69c <_init>
+ 552:	4d0a      	ldr	r5, [pc, #40]	; (57c <__libc_init_array+0x40>)
+ 554:	4c0a      	ldr	r4, [pc, #40]	; (580 <__libc_init_array+0x44>)
+ 556:	1b64      	subs	r4, r4, r5
+ 558:	10a4      	asrs	r4, r4, #2
+ 55a:	42a6      	cmp	r6, r4
+ 55c:	d105      	bne.n	56a <__libc_init_array+0x2e>
+ 55e:	bd70      	pop	{r4, r5, r6, pc}
+ 560:	00b3      	lsls	r3, r6, #2
+ 562:	58eb      	ldr	r3, [r5, r3]
+ 564:	4798      	blx	r3
+ 566:	3601      	adds	r6, #1
+ 568:	e7ee      	b.n	548 <__libc_init_array+0xc>
+ 56a:	00b3      	lsls	r3, r6, #2
+ 56c:	58eb      	ldr	r3, [r5, r3]
+ 56e:	4798      	blx	r3
+ 570:	3601      	adds	r6, #1
+ 572:	e7f2      	b.n	55a <__libc_init_array+0x1e>
+ 574:	000006a8 	.word	0x000006a8
+ 578:	000006a8 	.word	0x000006a8
+ 57c:	000006a8 	.word	0x000006a8
+ 580:	000006ac 	.word	0x000006ac
+ 584:	00000224 	.word	0x00000224
+ 588:	00000224 	.word	0x00000224
+ 58c:	00000200 	.word	0x00000200
+ 590:	00000224 	.word	0x00000224
+ 594:	00000200 	.word	0x00000200
+ 598:	000001e6 	.word	0x000001e6
+ 59c:	000001e6 	.word	0x000001e6
+ 5a0:	00000224 	.word	0x00000224
+ 5a4:	00000224 	.word	0x00000224
+ 5a8:	00000224 	.word	0x00000224
+ 5ac:	00000224 	.word	0x00000224
+ 5b0:	00000224 	.word	0x00000224
+ 5b4:	00000224 	.word	0x00000224
+ 5b8:	00000224 	.word	0x00000224
+ 5bc:	00000224 	.word	0x00000224
+ 5c0:	00000224 	.word	0x00000224
+ 5c4:	00000224 	.word	0x00000224
+ 5c8:	00000224 	.word	0x00000224
+ 5cc:	00000224 	.word	0x00000224
+ 5d0:	00000224 	.word	0x00000224
+ 5d4:	00000224 	.word	0x00000224
+ 5d8:	00000224 	.word	0x00000224
+ 5dc:	00000224 	.word	0x00000224
+ 5e0:	00000224 	.word	0x00000224
+ 5e4:	00000224 	.word	0x00000224
+ 5e8:	00000224 	.word	0x00000224
+ 5ec:	00000224 	.word	0x00000224
+ 5f0:	00000224 	.word	0x00000224
+ 5f4:	00000224 	.word	0x00000224
+ 5f8:	00000224 	.word	0x00000224
+ 5fc:	00000224 	.word	0x00000224
+ 600:	00000224 	.word	0x00000224
+ 604:	00000224 	.word	0x00000224
+ 608:	00000224 	.word	0x00000224
+ 60c:	00000224 	.word	0x00000224
+ 610:	00000224 	.word	0x00000224
+ 614:	00000224 	.word	0x00000224
+ 618:	00000224 	.word	0x00000224
+ 61c:	00000224 	.word	0x00000224
+ 620:	00000224 	.word	0x00000224
+ 624:	00000224 	.word	0x00000224
+ 628:	00000224 	.word	0x00000224
+ 62c:	00000224 	.word	0x00000224
+ 630:	00000224 	.word	0x00000224
+ 634:	00000224 	.word	0x00000224
+ 638:	00000224 	.word	0x00000224
+ 63c:	00000224 	.word	0x00000224
+ 640:	00000224 	.word	0x00000224
+ 644:	00000224 	.word	0x00000224
+ 648:	00000224 	.word	0x00000224
+ 64c:	00000224 	.word	0x00000224
+ 650:	00000224 	.word	0x00000224
+ 654:	00000224 	.word	0x00000224
+ 658:	00000224 	.word	0x00000224
+ 65c:	00000224 	.word	0x00000224
+ 660:	00000224 	.word	0x00000224
+ 664:	00000224 	.word	0x00000224
+ 668:	00000224 	.word	0x00000224
+ 66c:	00000224 	.word	0x00000224
+ 670:	00000224 	.word	0x00000224
+ 674:	00000224 	.word	0x00000224
+ 678:	00000224 	.word	0x00000224
+ 67c:	00000224 	.word	0x00000224
+ 680:	00000224 	.word	0x00000224
+ 684:	00000200 	.word	0x00000200
+ 688:	00000200 	.word	0x00000200
+ 68c:	00000208 	.word	0x00000208
+ 690:	00000208 	.word	0x00000208
+ 694:	00000208 	.word	0x00000208
+ 698:	00000208 	.word	0x00000208
+
+0000069c <_init>:
+ 69c:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+ 69e:	46c0      	nop			; (mov r8, r8)
+ 6a0:	bcf8      	pop	{r3, r4, r5, r6, r7}
+ 6a2:	bc08      	pop	{r3}
+ 6a4:	469e      	mov	lr, r3
+ 6a6:	4770      	bx	lr
+
+000006a8 <__init_array_start>:
+ 6a8:	000000dd 	.word	0x000000dd
+
+000006ac <_fini>:
+ 6ac:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+ 6ae:	46c0      	nop			; (mov r8, r8)
+ 6b0:	bcf8      	pop	{r3, r4, r5, r6, r7}
+ 6b2:	bc08      	pop	{r3}
+ 6b4:	469e      	mov	lr, r3
+ 6b6:	4770      	bx	lr
+
+000006b8 <__fini_array_start>:
+ 6b8:	000000b5 	.word	0x000000b5

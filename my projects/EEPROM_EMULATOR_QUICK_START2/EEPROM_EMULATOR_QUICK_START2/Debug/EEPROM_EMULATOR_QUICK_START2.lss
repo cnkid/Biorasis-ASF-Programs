@@ -1,0 +1,3517 @@
+
+EEPROM_EMULATOR_QUICK_START2.elf:     file format elf32-littlearm
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000012c8  00000000  00000000  00010000  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .relocate     00000004  20000000  000012c8  00020000  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000110  20000004  000012cc  00020004  2**2
+                  ALLOC
+  3 .stack        00002004  20000114  000013dc  00020004  2**0
+                  ALLOC
+  4 .ARM.attributes 00000028  00000000  00000000  00020004  2**0
+                  CONTENTS, READONLY
+  5 .comment      00000059  00000000  00000000  0002002c  2**0
+                  CONTENTS, READONLY
+  6 .debug_info   00016b86  00000000  00000000  00020085  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 000026b3  00000000  00000000  00036c0b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_aranges 00000330  00000000  00000000  000392be  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_ranges 00000520  00000000  00000000  000395ee  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_macro  00018c9a  00000000  00000000  00039b0e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_line   00007d23  00000000  00000000  000527a8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_str    0008b9cd  00000000  00000000  0005a4cb  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_frame  00000824  00000000  00000000  000e5e98  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 14 .debug_loc    00003a97  00000000  00000000  000e66bc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <exception_table>:
+       0:	18 21 00 20 25 0f 00 00 21 0f 00 00 21 0f 00 00     .!. %...!...!...
+	...
+      2c:	21 0f 00 00 00 00 00 00 00 00 00 00 21 0f 00 00     !...........!...
+      3c:	21 0f 00 00 21 0f 00 00 2d 10 00 00 21 0f 00 00     !...!...-...!...
+      4c:	21 0f 00 00 21 0f 00 00 21 0f 00 00 21 0f 00 00     !...!...!...!...
+      5c:	21 0f 00 00 21 0f 00 00 21 0f 00 00 21 0f 00 00     !...!...!...!...
+      6c:	21 0f 00 00 21 0f 00 00 21 0f 00 00 21 0f 00 00     !...!...!...!...
+      7c:	21 0f 00 00 21 0f 00 00 21 0f 00 00 21 0f 00 00     !...!...!...!...
+      8c:	21 0f 00 00 21 0f 00 00 21 0f 00 00 21 0f 00 00     !...!...!...!...
+      9c:	21 0f 00 00 21 0f 00 00 21 0f 00 00 21 0f 00 00     !...!...!...!...
+      ac:	21 0f 00 00 00 00 00 00                             !.......
+
+000000b4 <__do_global_dtors_aux>:
+      b4:	b510      	push	{r4, lr}
+      b6:	4c06      	ldr	r4, [pc, #24]	; (d0 <__do_global_dtors_aux+0x1c>)
+      b8:	7823      	ldrb	r3, [r4, #0]
+      ba:	2b00      	cmp	r3, #0
+      bc:	d107      	bne.n	ce <__do_global_dtors_aux+0x1a>
+      be:	4b05      	ldr	r3, [pc, #20]	; (d4 <__do_global_dtors_aux+0x20>)
+      c0:	2b00      	cmp	r3, #0
+      c2:	d002      	beq.n	ca <__do_global_dtors_aux+0x16>
+      c4:	4804      	ldr	r0, [pc, #16]	; (d8 <__do_global_dtors_aux+0x24>)
+      c6:	e000      	b.n	ca <__do_global_dtors_aux+0x16>
+      c8:	bf00      	nop
+      ca:	2301      	movs	r3, #1
+      cc:	7023      	strb	r3, [r4, #0]
+      ce:	bd10      	pop	{r4, pc}
+      d0:	20000004 	.word	0x20000004
+      d4:	00000000 	.word	0x00000000
+      d8:	000012c8 	.word	0x000012c8
+
+000000dc <frame_dummy>:
+      dc:	4b08      	ldr	r3, [pc, #32]	; (100 <frame_dummy+0x24>)
+      de:	b510      	push	{r4, lr}
+      e0:	2b00      	cmp	r3, #0
+      e2:	d003      	beq.n	ec <frame_dummy+0x10>
+      e4:	4907      	ldr	r1, [pc, #28]	; (104 <frame_dummy+0x28>)
+      e6:	4808      	ldr	r0, [pc, #32]	; (108 <frame_dummy+0x2c>)
+      e8:	e000      	b.n	ec <frame_dummy+0x10>
+      ea:	bf00      	nop
+      ec:	4807      	ldr	r0, [pc, #28]	; (10c <frame_dummy+0x30>)
+      ee:	6803      	ldr	r3, [r0, #0]
+      f0:	2b00      	cmp	r3, #0
+      f2:	d100      	bne.n	f6 <frame_dummy+0x1a>
+      f4:	bd10      	pop	{r4, pc}
+      f6:	4b06      	ldr	r3, [pc, #24]	; (110 <frame_dummy+0x34>)
+      f8:	2b00      	cmp	r3, #0
+      fa:	d0fb      	beq.n	f4 <frame_dummy+0x18>
+      fc:	4798      	blx	r3
+      fe:	e7f9      	b.n	f4 <frame_dummy+0x18>
+     100:	00000000 	.word	0x00000000
+     104:	20000008 	.word	0x20000008
+     108:	000012c8 	.word	0x000012c8
+     10c:	000012c8 	.word	0x000012c8
+     110:	00000000 	.word	0x00000000
+
+00000114 <cpu_irq_enter_critical>:
+volatile bool g_interrupt_enabled = true;
+#endif
+
+void cpu_irq_enter_critical(void)
+{
+	if (cpu_irq_critical_section_counter == 0) {
+     114:	4b0c      	ldr	r3, [pc, #48]	; (148 <cpu_irq_enter_critical+0x34>)
+     116:	681b      	ldr	r3, [r3, #0]
+     118:	2b00      	cmp	r3, #0
+     11a:	d106      	bne.n	12a <cpu_irq_enter_critical+0x16>
+ */
+__attribute__( ( always_inline ) ) __STATIC_INLINE uint32_t __get_PRIMASK(void)
+{
+  uint32_t result;
+
+  __ASM volatile ("MRS %0, primask" : "=r" (result) );
+     11c:	f3ef 8310 	mrs	r3, PRIMASK
+		if (cpu_irq_is_enabled()) {
+     120:	2b00      	cmp	r3, #0
+     122:	d007      	beq.n	134 <cpu_irq_enter_critical+0x20>
+			cpu_irq_disable();
+			cpu_irq_prev_interrupt_state = true;
+		} else {
+			/* Make sure the to save the prev state as false */
+			cpu_irq_prev_interrupt_state = false;
+     124:	2200      	movs	r2, #0
+     126:	4b09      	ldr	r3, [pc, #36]	; (14c <cpu_irq_enter_critical+0x38>)
+     128:	701a      	strb	r2, [r3, #0]
+		}
+
+	}
+
+	cpu_irq_critical_section_counter++;
+     12a:	4a07      	ldr	r2, [pc, #28]	; (148 <cpu_irq_enter_critical+0x34>)
+     12c:	6813      	ldr	r3, [r2, #0]
+     12e:	3301      	adds	r3, #1
+     130:	6013      	str	r3, [r2, #0]
+}
+     132:	4770      	bx	lr
+  __ASM volatile ("cpsid i" : : : "memory");
+     134:	b672      	cpsid	i
+    This function ensures the apparent order of the explicit memory operations before
+    and after the instruction, without ensuring their completion.
+ */
+__attribute__( ( always_inline ) ) __STATIC_INLINE void __DMB(void)
+{
+  __ASM volatile ("dmb");
+     136:	f3bf 8f5f 	dmb	sy
+			cpu_irq_disable();
+     13a:	2200      	movs	r2, #0
+     13c:	4b04      	ldr	r3, [pc, #16]	; (150 <cpu_irq_enter_critical+0x3c>)
+     13e:	701a      	strb	r2, [r3, #0]
+			cpu_irq_prev_interrupt_state = true;
+     140:	3201      	adds	r2, #1
+     142:	4b02      	ldr	r3, [pc, #8]	; (14c <cpu_irq_enter_critical+0x38>)
+     144:	701a      	strb	r2, [r3, #0]
+     146:	e7f0      	b.n	12a <cpu_irq_enter_critical+0x16>
+     148:	20000020 	.word	0x20000020
+     14c:	20000024 	.word	0x20000024
+     150:	20000000 	.word	0x20000000
+
+00000154 <cpu_irq_leave_critical>:
+void cpu_irq_leave_critical(void)
+{
+	/* Check if the user is trying to leave a critical section when not in a critical section */
+	Assert(cpu_irq_critical_section_counter > 0);
+
+	cpu_irq_critical_section_counter--;
+     154:	4b08      	ldr	r3, [pc, #32]	; (178 <cpu_irq_leave_critical+0x24>)
+     156:	681a      	ldr	r2, [r3, #0]
+     158:	3a01      	subs	r2, #1
+     15a:	601a      	str	r2, [r3, #0]
+
+	/* Only enable global interrupts when the counter reaches 0 and the state of the global interrupt flag
+	   was enabled when entering critical state */
+	if ((cpu_irq_critical_section_counter == 0) && (cpu_irq_prev_interrupt_state)) {
+     15c:	681b      	ldr	r3, [r3, #0]
+     15e:	2b00      	cmp	r3, #0
+     160:	d109      	bne.n	176 <cpu_irq_leave_critical+0x22>
+     162:	4b06      	ldr	r3, [pc, #24]	; (17c <cpu_irq_leave_critical+0x28>)
+     164:	781b      	ldrb	r3, [r3, #0]
+     166:	2b00      	cmp	r3, #0
+     168:	d005      	beq.n	176 <cpu_irq_leave_critical+0x22>
+		cpu_irq_enable();
+     16a:	2201      	movs	r2, #1
+     16c:	4b04      	ldr	r3, [pc, #16]	; (180 <cpu_irq_leave_critical+0x2c>)
+     16e:	701a      	strb	r2, [r3, #0]
+     170:	f3bf 8f5f 	dmb	sy
+  __ASM volatile ("cpsie i" : : : "memory");
+     174:	b662      	cpsie	i
+	}
+}
+     176:	4770      	bx	lr
+     178:	20000020 	.word	0x20000020
+     17c:	20000024 	.word	0x20000024
+     180:	20000000 	.word	0x20000000
+
+00000184 <system_board_init>:
+void board_init(void);
+#  pragma weak board_init=system_board_init
+#endif
+
+void system_board_init(void)
+{
+     184:	b5f0      	push	{r4, r5, r6, r7, lr}
+     186:	b083      	sub	sp, #12
+	/* Sanity check arguments */
+	Assert(config);
+
+	/* Default configuration values */
+	config->direction  = PORT_PIN_DIR_INPUT;
+	config->input_pull = PORT_PIN_PULL_UP;
+     188:	ac01      	add	r4, sp, #4
+     18a:	2501      	movs	r5, #1
+     18c:	7065      	strb	r5, [r4, #1]
+	config->powersave  = false;
+     18e:	2700      	movs	r7, #0
+     190:	70a7      	strb	r7, [r4, #2]
+	struct port_config pin_conf;
+	port_get_config_defaults(&pin_conf);
+
+	/* Configure LEDs as outputs, turn them off */
+	pin_conf.direction  = PORT_PIN_DIR_OUTPUT;
+     192:	7025      	strb	r5, [r4, #0]
+	port_pin_set_config(LED_0_PIN, &pin_conf);
+     194:	0021      	movs	r1, r4
+     196:	203e      	movs	r0, #62	; 0x3e
+     198:	4e06      	ldr	r6, [pc, #24]	; (1b4 <system_board_init+0x30>)
+     19a:	47b0      	blx	r6
+	PortGroup *const port_base = port_get_group_from_gpio_pin(gpio_pin);
+	uint32_t pin_mask  = (1UL << (gpio_pin % 32));
+
+	/* Set the pin to high or low atomically based on the requested level */
+	if (level) {
+		port_base->OUTSET.reg = pin_mask;
+     19c:	2280      	movs	r2, #128	; 0x80
+     19e:	05d2      	lsls	r2, r2, #23
+     1a0:	4b05      	ldr	r3, [pc, #20]	; (1b8 <system_board_init+0x34>)
+     1a2:	619a      	str	r2, [r3, #24]
+	port_pin_set_output_level(LED_0_PIN, LED_0_INACTIVE);
+
+	/* Set buttons as inputs */
+	pin_conf.direction  = PORT_PIN_DIR_INPUT;
+     1a4:	7027      	strb	r7, [r4, #0]
+	pin_conf.input_pull = PORT_PIN_PULL_UP;
+     1a6:	7065      	strb	r5, [r4, #1]
+	port_pin_set_config(BUTTON_0_PIN, &pin_conf);
+     1a8:	0021      	movs	r1, r4
+     1aa:	200f      	movs	r0, #15
+     1ac:	47b0      	blx	r6
+	port_pin_set_output_level(AT86RFX_RST_PIN, true);
+	port_pin_set_output_level(AT86RFX_SLP_PIN, true);
+	pin_conf.direction  = PORT_PIN_DIR_INPUT;
+	port_pin_set_config(AT86RFX_SPI_MISO, &pin_conf);
+#endif	
+}
+     1ae:	b003      	add	sp, #12
+     1b0:	bdf0      	pop	{r4, r5, r6, r7, pc}
+     1b2:	46c0      	nop			; (mov r8, r8)
+     1b4:	00000521 	.word	0x00000521
+     1b8:	41004480 	.word	0x41004480
+
+000001bc <bod_set_config>:
+ * \retval STATUS_ERR_INVALID_OPTION  The requested BOD level was outside the acceptable range
+ */
+enum status_code bod_set_config(
+		const enum bod bod_id,
+		struct bod_config *const conf)
+{
+     1bc:	b510      	push	{r4, lr}
+	Assert(conf);
+
+	uint32_t temp = 0;
+
+	/* Check if module is enabled. */
+	if (SYSCTRL->BOD33.reg & SYSCTRL_BOD33_ENABLE) {
+     1be:	4b1b      	ldr	r3, [pc, #108]	; (22c <bod_set_config+0x70>)
+     1c0:	6b5b      	ldr	r3, [r3, #52]	; 0x34
+     1c2:	079b      	lsls	r3, r3, #30
+     1c4:	d504      	bpl.n	1d0 <bod_set_config+0x14>
+		SYSCTRL->BOD33.reg &= ~SYSCTRL_BOD33_ENABLE;
+     1c6:	4a19      	ldr	r2, [pc, #100]	; (22c <bod_set_config+0x70>)
+     1c8:	6b53      	ldr	r3, [r2, #52]	; 0x34
+     1ca:	2402      	movs	r4, #2
+     1cc:	43a3      	bics	r3, r4
+     1ce:	6353      	str	r3, [r2, #52]	; 0x34
+	}
+
+	/* Convert BOD prescaler, trigger action and mode to a bitmask */
+	temp |= (uint32_t)conf->prescaler | (uint32_t)conf->action |
+			(uint32_t)conf->mode;
+     1d0:	884a      	ldrh	r2, [r1, #2]
+	temp |= (uint32_t)conf->prescaler | (uint32_t)conf->action |
+     1d2:	880b      	ldrh	r3, [r1, #0]
+     1d4:	790c      	ldrb	r4, [r1, #4]
+     1d6:	4323      	orrs	r3, r4
+     1d8:	4313      	orrs	r3, r2
+
+	if (conf->mode == BOD_MODE_SAMPLED) {
+     1da:	2480      	movs	r4, #128	; 0x80
+     1dc:	0064      	lsls	r4, r4, #1
+     1de:	42a2      	cmp	r2, r4
+     1e0:	d00d      	beq.n	1fe <bod_set_config+0x42>
+		/* Enable sampling clock if sampled mode */
+		temp |= SYSCTRL_BOD33_CEN;
+	}
+
+	if (conf->hysteresis == true) {
+     1e2:	798a      	ldrb	r2, [r1, #6]
+     1e4:	2a00      	cmp	r2, #0
+     1e6:	d001      	beq.n	1ec <bod_set_config+0x30>
+		temp |= SYSCTRL_BOD33_HYST;
+     1e8:	2204      	movs	r2, #4
+     1ea:	4313      	orrs	r3, r2
+	}
+
+	if (conf->run_in_standby == true) {
+     1ec:	79ca      	ldrb	r2, [r1, #7]
+     1ee:	2a00      	cmp	r2, #0
+     1f0:	d001      	beq.n	1f6 <bod_set_config+0x3a>
+		temp |= SYSCTRL_BOD33_RUNSTDBY;
+     1f2:	2240      	movs	r2, #64	; 0x40
+     1f4:	4313      	orrs	r3, r2
+	}
+
+	switch (bod_id) {
+     1f6:	2800      	cmp	r0, #0
+     1f8:	d005      	beq.n	206 <bod_set_config+0x4a>
+			while (!(SYSCTRL->PCLKSR.reg & SYSCTRL_PCLKSR_B33SRDY)) {
+				/* Wait for BOD33 register sync ready */
+			}
+			break;
+		default:
+			return STATUS_ERR_INVALID_ARG;
+     1fa:	2017      	movs	r0, #23
+	}
+
+	return STATUS_OK;
+}
+     1fc:	bd10      	pop	{r4, pc}
+		temp |= SYSCTRL_BOD33_CEN;
+     1fe:	2280      	movs	r2, #128	; 0x80
+     200:	0092      	lsls	r2, r2, #2
+     202:	4313      	orrs	r3, r2
+     204:	e7ed      	b.n	1e2 <bod_set_config+0x26>
+			if (conf->level > 0x3F) {
+     206:	794a      	ldrb	r2, [r1, #5]
+				return STATUS_ERR_INVALID_ARG;
+     208:	3017      	adds	r0, #23
+			if (conf->level > 0x3F) {
+     20a:	2a3f      	cmp	r2, #63	; 0x3f
+     20c:	d8f6      	bhi.n	1fc <bod_set_config+0x40>
+			SYSCTRL->BOD33.reg = SYSCTRL_BOD33_LEVEL(conf->level) | temp;
+     20e:	0412      	lsls	r2, r2, #16
+     210:	21fc      	movs	r1, #252	; 0xfc
+     212:	0389      	lsls	r1, r1, #14
+     214:	400a      	ands	r2, r1
+     216:	4313      	orrs	r3, r2
+     218:	4a04      	ldr	r2, [pc, #16]	; (22c <bod_set_config+0x70>)
+     21a:	6353      	str	r3, [r2, #52]	; 0x34
+			while (!(SYSCTRL->PCLKSR.reg & SYSCTRL_PCLKSR_B33SRDY)) {
+     21c:	0011      	movs	r1, r2
+     21e:	2280      	movs	r2, #128	; 0x80
+     220:	0112      	lsls	r2, r2, #4
+     222:	68cb      	ldr	r3, [r1, #12]
+     224:	4213      	tst	r3, r2
+     226:	d0fc      	beq.n	222 <bod_set_config+0x66>
+	return STATUS_OK;
+     228:	2000      	movs	r0, #0
+     22a:	e7e7      	b.n	1fc <bod_set_config+0x40>
+     22c:	40000800 	.word	0x40000800
+
+00000230 <nvm_set_config>:
+ *                        EEPROM and/or auxiliary space configuration from being
+ *                        altered
+ */
+enum status_code nvm_set_config(
+		const struct nvm_config *const config)
+{
+     230:	b510      	push	{r4, lr}
+		case SYSTEM_CLOCK_APB_APBA:
+			PM->APBAMASK.reg |= mask;
+			break;
+
+		case SYSTEM_CLOCK_APB_APBB:
+			PM->APBBMASK.reg |= mask;
+     232:	4a1e      	ldr	r2, [pc, #120]	; (2ac <nvm_set_config+0x7c>)
+     234:	69d3      	ldr	r3, [r2, #28]
+     236:	2104      	movs	r1, #4
+     238:	430b      	orrs	r3, r1
+     23a:	61d3      	str	r3, [r2, #28]
+	/* Turn on the digital interface clock */
+	system_apb_clock_set_mask(SYSTEM_CLOCK_APB_APBB, PM_APBBMASK_NVMCTRL);
+#endif
+
+	/* Clear error flags */
+	nvm_module->STATUS.reg = NVMCTRL_STATUS_MASK;
+     23c:	4b1c      	ldr	r3, [pc, #112]	; (2b0 <nvm_set_config+0x80>)
+     23e:	2220      	movs	r2, #32
+     240:	32ff      	adds	r2, #255	; 0xff
+     242:	831a      	strh	r2, [r3, #24]
+static inline bool nvm_is_ready(void)
+{
+	/* Get a pointer to the module hardware instance */
+	Nvmctrl *const nvm_module = NVMCTRL;
+
+	return nvm_module->INTFLAG.reg & NVMCTRL_INTFLAG_READY;
+     244:	7d1a      	ldrb	r2, [r3, #20]
+
+	/* Check if the module is busy */
+	if (!nvm_is_ready()) {
+		return STATUS_BUSY;
+     246:	2305      	movs	r3, #5
+	if (!nvm_is_ready()) {
+     248:	07d2      	lsls	r2, r2, #31
+     24a:	d401      	bmi.n	250 <nvm_set_config+0x20>
+	if (nvm_module->STATUS.reg & NVMCTRL_STATUS_SB) {
+		return STATUS_ERR_IO;
+	}
+
+	return STATUS_OK;
+}
+     24c:	0018      	movs	r0, r3
+     24e:	bd10      	pop	{r4, pc}
+			NVMCTRL_CTRLB_SLEEPPRM(config->sleep_power_mode) |
+     250:	7803      	ldrb	r3, [r0, #0]
+     252:	021b      	lsls	r3, r3, #8
+     254:	22c0      	movs	r2, #192	; 0xc0
+     256:	0092      	lsls	r2, r2, #2
+     258:	4013      	ands	r3, r2
+			((config->manual_page_write & 0x01) << NVMCTRL_CTRLB_MANW_Pos) |
+     25a:	7841      	ldrb	r1, [r0, #1]
+     25c:	01c9      	lsls	r1, r1, #7
+     25e:	22ff      	movs	r2, #255	; 0xff
+     260:	400a      	ands	r2, r1
+			NVMCTRL_CTRLB_SLEEPPRM(config->sleep_power_mode) |
+     262:	4313      	orrs	r3, r2
+			NVMCTRL_CTRLB_RWS(config->wait_states) |
+     264:	7881      	ldrb	r1, [r0, #2]
+     266:	0049      	lsls	r1, r1, #1
+     268:	221e      	movs	r2, #30
+     26a:	400a      	ands	r2, r1
+			((config->manual_page_write & 0x01) << NVMCTRL_CTRLB_MANW_Pos) |
+     26c:	4313      	orrs	r3, r2
+			((config->disable_cache & 0x01) << NVMCTRL_CTRLB_CACHEDIS_Pos) |
+     26e:	78c2      	ldrb	r2, [r0, #3]
+     270:	0492      	lsls	r2, r2, #18
+     272:	2180      	movs	r1, #128	; 0x80
+     274:	02c9      	lsls	r1, r1, #11
+     276:	400a      	ands	r2, r1
+			NVMCTRL_CTRLB_RWS(config->wait_states) |
+     278:	4313      	orrs	r3, r2
+			NVMCTRL_CTRLB_READMODE(config->cache_readmode);
+     27a:	7902      	ldrb	r2, [r0, #4]
+     27c:	0412      	lsls	r2, r2, #16
+     27e:	21c0      	movs	r1, #192	; 0xc0
+     280:	0289      	lsls	r1, r1, #10
+     282:	400a      	ands	r2, r1
+			((config->disable_cache & 0x01) << NVMCTRL_CTRLB_CACHEDIS_Pos) |
+     284:	4313      	orrs	r3, r2
+	nvm_module->CTRLB.reg =
+     286:	4a0a      	ldr	r2, [pc, #40]	; (2b0 <nvm_set_config+0x80>)
+     288:	6053      	str	r3, [r2, #4]
+	_nvm_dev.page_size         = (8 << nvm_module->PARAM.bit.PSZ);
+     28a:	6893      	ldr	r3, [r2, #8]
+     28c:	035b      	lsls	r3, r3, #13
+     28e:	0f5b      	lsrs	r3, r3, #29
+     290:	4908      	ldr	r1, [pc, #32]	; (2b4 <nvm_set_config+0x84>)
+     292:	2408      	movs	r4, #8
+     294:	409c      	lsls	r4, r3
+     296:	800c      	strh	r4, [r1, #0]
+	_nvm_dev.number_of_pages   = nvm_module->PARAM.bit.NVMP;
+     298:	6893      	ldr	r3, [r2, #8]
+     29a:	804b      	strh	r3, [r1, #2]
+	_nvm_dev.manual_page_write = config->manual_page_write;
+     29c:	7843      	ldrb	r3, [r0, #1]
+     29e:	710b      	strb	r3, [r1, #4]
+	if (nvm_module->STATUS.reg & NVMCTRL_STATUS_SB) {
+     2a0:	8b13      	ldrh	r3, [r2, #24]
+     2a2:	05db      	lsls	r3, r3, #23
+	return STATUS_OK;
+     2a4:	0fdb      	lsrs	r3, r3, #31
+     2a6:	011b      	lsls	r3, r3, #4
+     2a8:	e7d0      	b.n	24c <nvm_set_config+0x1c>
+     2aa:	46c0      	nop			; (mov r8, r8)
+     2ac:	40000400 	.word	0x40000400
+     2b0:	41004000 	.word	0x41004000
+     2b4:	20000028 	.word	0x20000028
+
+000002b8 <nvm_execute_command>:
+ */
+enum status_code nvm_execute_command(
+		const enum nvm_command command,
+		const uint32_t address,
+		const uint32_t parameter)
+{
+     2b8:	b530      	push	{r4, r5, lr}
+     2ba:	0004      	movs	r4, r0
+	uint32_t ctrlb_bak;
+
+	/* Check that the address given is valid  */
+	if (address > ((uint32_t)_nvm_dev.page_size * _nvm_dev.number_of_pages)
+     2bc:	4a22      	ldr	r2, [pc, #136]	; (348 <nvm_execute_command+0x90>)
+     2be:	8810      	ldrh	r0, [r2, #0]
+     2c0:	8853      	ldrh	r3, [r2, #2]
+     2c2:	4343      	muls	r3, r0
+     2c4:	428b      	cmp	r3, r1
+     2c6:	d206      	bcs.n	2d6 <nvm_execute_command+0x1e>
+		&& !(address >= NVMCTRL_AUX0_ADDRESS && address <= NVMCTRL_AUX1_ADDRESS )){
+     2c8:	2280      	movs	r2, #128	; 0x80
+     2ca:	0192      	lsls	r2, r2, #6
+		if (address >= ((uint32_t)NVMCTRL_RWW_EEPROM_SIZE + NVMCTRL_RWW_EEPROM_ADDR)
+			|| address < NVMCTRL_RWW_EEPROM_ADDR){
+			return STATUS_ERR_BAD_ADDRESS;
+		}
+#else
+		return STATUS_ERR_BAD_ADDRESS;
+     2cc:	2018      	movs	r0, #24
+		&& !(address >= NVMCTRL_AUX0_ADDRESS && address <= NVMCTRL_AUX1_ADDRESS )){
+     2ce:	4b1f      	ldr	r3, [pc, #124]	; (34c <nvm_execute_command+0x94>)
+     2d0:	18cb      	adds	r3, r1, r3
+     2d2:	4293      	cmp	r3, r2
+     2d4:	d80e      	bhi.n	2f4 <nvm_execute_command+0x3c>
+
+	/* Get a pointer to the module hardware instance */
+	Nvmctrl *const nvm_module = NVMCTRL;
+
+	/* Turn off cache before issuing flash commands */
+	ctrlb_bak = nvm_module->CTRLB.reg;
+     2d6:	4b1e      	ldr	r3, [pc, #120]	; (350 <nvm_execute_command+0x98>)
+     2d8:	685d      	ldr	r5, [r3, #4]
+#if (SAMC20) || (SAMC21)
+	nvm_module->CTRLB.reg = ((ctrlb_bak &(~(NVMCTRL_CTRLB_CACHEDIS(0x2)))) 
+							| NVMCTRL_CTRLB_CACHEDIS(0x1));
+#else
+	nvm_module->CTRLB.reg = ctrlb_bak | NVMCTRL_CTRLB_CACHEDIS;
+     2da:	2280      	movs	r2, #128	; 0x80
+     2dc:	02d2      	lsls	r2, r2, #11
+     2de:	432a      	orrs	r2, r5
+     2e0:	605a      	str	r2, [r3, #4]
+#endif
+
+	/* Clear error flags */
+	nvm_module->STATUS.reg = NVMCTRL_STATUS_MASK;
+     2e2:	2220      	movs	r2, #32
+     2e4:	32ff      	adds	r2, #255	; 0xff
+     2e6:	831a      	strh	r2, [r3, #24]
+     2e8:	7d1b      	ldrb	r3, [r3, #20]
+
+	/* Check if the module is busy */
+	if (!nvm_is_ready()) {
+     2ea:	07db      	lsls	r3, r3, #31
+     2ec:	d403      	bmi.n	2f6 <nvm_execute_command+0x3e>
+		/* Restore the setting */
+		nvm_module->CTRLB.reg = ctrlb_bak;
+     2ee:	4b18      	ldr	r3, [pc, #96]	; (350 <nvm_execute_command+0x98>)
+     2f0:	605d      	str	r5, [r3, #4]
+		return STATUS_BUSY;
+     2f2:	2005      	movs	r0, #5
+
+	/* Restore the setting */
+	nvm_module->CTRLB.reg = ctrlb_bak;
+
+	return STATUS_OK;
+}
+     2f4:	bd30      	pop	{r4, r5, pc}
+	switch (command) {
+     2f6:	2c45      	cmp	r4, #69	; 0x45
+     2f8:	d822      	bhi.n	340 <nvm_execute_command+0x88>
+     2fa:	00a3      	lsls	r3, r4, #2
+     2fc:	4a15      	ldr	r2, [pc, #84]	; (354 <nvm_execute_command+0x9c>)
+     2fe:	58d3      	ldr	r3, [r2, r3]
+     300:	469f      	mov	pc, r3
+			if (nvm_module->STATUS.reg & NVMCTRL_STATUS_SB) {
+     302:	4b13      	ldr	r3, [pc, #76]	; (350 <nvm_execute_command+0x98>)
+     304:	8b1b      	ldrh	r3, [r3, #24]
+     306:	05db      	lsls	r3, r3, #23
+     308:	d503      	bpl.n	312 <nvm_execute_command+0x5a>
+				nvm_module->CTRLB.reg = ctrlb_bak;
+     30a:	4b11      	ldr	r3, [pc, #68]	; (350 <nvm_execute_command+0x98>)
+     30c:	605d      	str	r5, [r3, #4]
+				return STATUS_ERR_IO;
+     30e:	2010      	movs	r0, #16
+     310:	e7f0      	b.n	2f4 <nvm_execute_command+0x3c>
+			nvm_module->ADDR.reg = (uintptr_t)&NVM_MEMORY[address / 4];
+     312:	0889      	lsrs	r1, r1, #2
+     314:	0049      	lsls	r1, r1, #1
+     316:	4b0e      	ldr	r3, [pc, #56]	; (350 <nvm_execute_command+0x98>)
+     318:	61d9      	str	r1, [r3, #28]
+			break;
+     31a:	e003      	b.n	324 <nvm_execute_command+0x6c>
+			nvm_module->ADDR.reg = (uintptr_t)&NVM_MEMORY[address / 4];
+     31c:	0889      	lsrs	r1, r1, #2
+     31e:	0049      	lsls	r1, r1, #1
+     320:	4b0b      	ldr	r3, [pc, #44]	; (350 <nvm_execute_command+0x98>)
+     322:	61d9      	str	r1, [r3, #28]
+	nvm_module->CTRLA.reg = command | NVMCTRL_CTRLA_CMDEX_KEY;
+     324:	20a5      	movs	r0, #165	; 0xa5
+     326:	0200      	lsls	r0, r0, #8
+     328:	4304      	orrs	r4, r0
+     32a:	4b09      	ldr	r3, [pc, #36]	; (350 <nvm_execute_command+0x98>)
+     32c:	801c      	strh	r4, [r3, #0]
+     32e:	0019      	movs	r1, r3
+	while (!nvm_is_ready()) {
+     330:	2201      	movs	r2, #1
+     332:	7d0b      	ldrb	r3, [r1, #20]
+     334:	4213      	tst	r3, r2
+     336:	d0fc      	beq.n	332 <nvm_execute_command+0x7a>
+	nvm_module->CTRLB.reg = ctrlb_bak;
+     338:	4b05      	ldr	r3, [pc, #20]	; (350 <nvm_execute_command+0x98>)
+     33a:	605d      	str	r5, [r3, #4]
+	return STATUS_OK;
+     33c:	2000      	movs	r0, #0
+     33e:	e7d9      	b.n	2f4 <nvm_execute_command+0x3c>
+			nvm_module->CTRLB.reg = ctrlb_bak;
+     340:	4b03      	ldr	r3, [pc, #12]	; (350 <nvm_execute_command+0x98>)
+     342:	605d      	str	r5, [r3, #4]
+			return STATUS_ERR_INVALID_ARG;
+     344:	2017      	movs	r0, #23
+     346:	e7d5      	b.n	2f4 <nvm_execute_command+0x3c>
+     348:	20000028 	.word	0x20000028
+     34c:	ff7fc000 	.word	0xff7fc000
+     350:	41004000 	.word	0x41004000
+     354:	00001160 	.word	0x00001160
+
+00000358 <nvm_write_buffer>:
+ */
+enum status_code nvm_write_buffer(
+		const uint32_t destination_address,
+		const uint8_t *buffer,
+		uint16_t length)
+{
+     358:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+	bool is_rww_eeprom = false;
+#endif
+
+	/* Check if the destination address is valid */
+	if (destination_address >
+			((uint32_t)_nvm_dev.page_size * _nvm_dev.number_of_pages)) {
+     35a:	4b25      	ldr	r3, [pc, #148]	; (3f0 <nvm_write_buffer+0x98>)
+     35c:	881d      	ldrh	r5, [r3, #0]
+     35e:	885b      	ldrh	r3, [r3, #2]
+     360:	436b      	muls	r3, r5
+			|| destination_address < NVMCTRL_RWW_EEPROM_ADDR){
+			return STATUS_ERR_BAD_ADDRESS;
+		}
+		is_rww_eeprom = true;
+#else
+		return STATUS_ERR_BAD_ADDRESS;
+     362:	2418      	movs	r4, #24
+	if (destination_address >
+     364:	4283      	cmp	r3, r0
+     366:	d201      	bcs.n	36c <nvm_write_buffer+0x14>
+				destination_address, 0);
+#endif
+	}
+
+	return STATUS_OK;
+}
+     368:	0020      	movs	r0, r4
+     36a:	bdf8      	pop	{r3, r4, r5, r6, r7, pc}
+	if (destination_address & (_nvm_dev.page_size - 1)) {
+     36c:	1e6b      	subs	r3, r5, #1
+     36e:	4218      	tst	r0, r3
+     370:	d1fa      	bne.n	368 <nvm_write_buffer+0x10>
+		return STATUS_ERR_INVALID_ARG;
+     372:	3c01      	subs	r4, #1
+	if (length > _nvm_dev.page_size) {
+     374:	4295      	cmp	r5, r2
+     376:	d3f7      	bcc.n	368 <nvm_write_buffer+0x10>
+     378:	4b1e      	ldr	r3, [pc, #120]	; (3f4 <nvm_write_buffer+0x9c>)
+     37a:	7d1b      	ldrb	r3, [r3, #20]
+		return STATUS_BUSY;
+     37c:	3c12      	subs	r4, #18
+	if (!nvm_is_ready()) {
+     37e:	07db      	lsls	r3, r3, #31
+     380:	d5f2      	bpl.n	368 <nvm_write_buffer+0x10>
+	nvm_module->CTRLA.reg = NVM_COMMAND_PAGE_BUFFER_CLEAR | NVMCTRL_CTRLA_CMDEX_KEY;
+     382:	4c1d      	ldr	r4, [pc, #116]	; (3f8 <nvm_write_buffer+0xa0>)
+     384:	4b1b      	ldr	r3, [pc, #108]	; (3f4 <nvm_write_buffer+0x9c>)
+     386:	801c      	strh	r4, [r3, #0]
+     388:	001d      	movs	r5, r3
+	while (!nvm_is_ready()) {
+     38a:	2401      	movs	r4, #1
+     38c:	7d2b      	ldrb	r3, [r5, #20]
+     38e:	4223      	tst	r3, r4
+     390:	d0fc      	beq.n	38c <nvm_write_buffer+0x34>
+	nvm_module->STATUS.reg = NVMCTRL_STATUS_MASK;
+     392:	2420      	movs	r4, #32
+     394:	34ff      	adds	r4, #255	; 0xff
+     396:	4b17      	ldr	r3, [pc, #92]	; (3f4 <nvm_write_buffer+0x9c>)
+     398:	831c      	strh	r4, [r3, #24]
+	for (uint16_t i = 0; i < length; i += 2) {
+     39a:	2a00      	cmp	r2, #0
+     39c:	d022      	beq.n	3e4 <nvm_write_buffer+0x8c>
+     39e:	2301      	movs	r3, #1
+     3a0:	0005      	movs	r5, r0
+     3a2:	439d      	bics	r5, r3
+     3a4:	2300      	movs	r3, #0
+		if (i < (length - 1)) {
+     3a6:	1e57      	subs	r7, r2, #1
+     3a8:	e009      	b.n	3be <nvm_write_buffer+0x66>
+			data |= (buffer[i + 1] << 8);
+     3aa:	18ce      	adds	r6, r1, r3
+     3ac:	7876      	ldrb	r6, [r6, #1]
+     3ae:	0236      	lsls	r6, r6, #8
+     3b0:	4334      	orrs	r4, r6
+		NVM_MEMORY[nvm_address++] = data;
+     3b2:	802c      	strh	r4, [r5, #0]
+	for (uint16_t i = 0; i < length; i += 2) {
+     3b4:	3302      	adds	r3, #2
+     3b6:	b29b      	uxth	r3, r3
+     3b8:	3502      	adds	r5, #2
+     3ba:	429a      	cmp	r2, r3
+     3bc:	d904      	bls.n	3c8 <nvm_write_buffer+0x70>
+		data = buffer[i];
+     3be:	5ccc      	ldrb	r4, [r1, r3]
+		if (i < (length - 1)) {
+     3c0:	42bb      	cmp	r3, r7
+     3c2:	dbf2      	blt.n	3aa <nvm_write_buffer+0x52>
+		data = buffer[i];
+     3c4:	b2a4      	uxth	r4, r4
+     3c6:	e7f4      	b.n	3b2 <nvm_write_buffer+0x5a>
+	if ((_nvm_dev.manual_page_write == false) && (length < NVMCTRL_PAGE_SIZE)) {
+     3c8:	4b09      	ldr	r3, [pc, #36]	; (3f0 <nvm_write_buffer+0x98>)
+     3ca:	791b      	ldrb	r3, [r3, #4]
+	return STATUS_OK;
+     3cc:	2400      	movs	r4, #0
+	if ((_nvm_dev.manual_page_write == false) && (length < NVMCTRL_PAGE_SIZE)) {
+     3ce:	2b00      	cmp	r3, #0
+     3d0:	d1ca      	bne.n	368 <nvm_write_buffer+0x10>
+     3d2:	2a3f      	cmp	r2, #63	; 0x3f
+     3d4:	d8c8      	bhi.n	368 <nvm_write_buffer+0x10>
+		return nvm_execute_command(NVM_COMMAND_WRITE_PAGE,
+     3d6:	2200      	movs	r2, #0
+     3d8:	0001      	movs	r1, r0
+     3da:	2004      	movs	r0, #4
+     3dc:	4b07      	ldr	r3, [pc, #28]	; (3fc <nvm_write_buffer+0xa4>)
+     3de:	4798      	blx	r3
+     3e0:	0004      	movs	r4, r0
+     3e2:	e7c1      	b.n	368 <nvm_write_buffer+0x10>
+	if ((_nvm_dev.manual_page_write == false) && (length < NVMCTRL_PAGE_SIZE)) {
+     3e4:	4b02      	ldr	r3, [pc, #8]	; (3f0 <nvm_write_buffer+0x98>)
+     3e6:	791b      	ldrb	r3, [r3, #4]
+	return STATUS_OK;
+     3e8:	2400      	movs	r4, #0
+	if ((_nvm_dev.manual_page_write == false) && (length < NVMCTRL_PAGE_SIZE)) {
+     3ea:	2b00      	cmp	r3, #0
+     3ec:	d0f3      	beq.n	3d6 <nvm_write_buffer+0x7e>
+     3ee:	e7bb      	b.n	368 <nvm_write_buffer+0x10>
+     3f0:	20000028 	.word	0x20000028
+     3f4:	41004000 	.word	0x41004000
+     3f8:	ffffa544 	.word	0xffffa544
+     3fc:	000002b9 	.word	0x000002b9
+
+00000400 <nvm_read_buffer>:
+ */
+enum status_code nvm_read_buffer(
+		const uint32_t source_address,
+		uint8_t *const buffer,
+		uint16_t length)
+{
+     400:	b570      	push	{r4, r5, r6, lr}
+	/* Check if the source address is valid */
+	if (source_address >
+			((uint32_t)_nvm_dev.page_size * _nvm_dev.number_of_pages)) {
+     402:	4b18      	ldr	r3, [pc, #96]	; (464 <nvm_read_buffer+0x64>)
+     404:	881d      	ldrh	r5, [r3, #0]
+     406:	885b      	ldrh	r3, [r3, #2]
+     408:	436b      	muls	r3, r5
+		if (source_address >= ((uint32_t)NVMCTRL_RWW_EEPROM_SIZE + NVMCTRL_RWW_EEPROM_ADDR)
+			|| source_address < NVMCTRL_RWW_EEPROM_ADDR){
+			return STATUS_ERR_BAD_ADDRESS;
+		}
+#else
+		return STATUS_ERR_BAD_ADDRESS;
+     40a:	2418      	movs	r4, #24
+	if (source_address >
+     40c:	4283      	cmp	r3, r0
+     40e:	d201      	bcs.n	414 <nvm_read_buffer+0x14>
+			buffer[i + 1] = (data >> 8);
+		}
+	}
+
+	return STATUS_OK;
+}
+     410:	0020      	movs	r0, r4
+     412:	bd70      	pop	{r4, r5, r6, pc}
+	if (source_address & (_nvm_dev.page_size - 1)) {
+     414:	1e6b      	subs	r3, r5, #1
+     416:	4218      	tst	r0, r3
+     418:	d1fa      	bne.n	410 <nvm_read_buffer+0x10>
+		return STATUS_ERR_INVALID_ARG;
+     41a:	3c01      	subs	r4, #1
+	if (length > _nvm_dev.page_size) {
+     41c:	4295      	cmp	r5, r2
+     41e:	d3f7      	bcc.n	410 <nvm_read_buffer+0x10>
+     420:	4b11      	ldr	r3, [pc, #68]	; (468 <nvm_read_buffer+0x68>)
+     422:	7d1b      	ldrb	r3, [r3, #20]
+		return STATUS_BUSY;
+     424:	3c12      	subs	r4, #18
+	if (!nvm_is_ready()) {
+     426:	07db      	lsls	r3, r3, #31
+     428:	d5f2      	bpl.n	410 <nvm_read_buffer+0x10>
+	nvm_module->STATUS.reg = NVMCTRL_STATUS_MASK;
+     42a:	2420      	movs	r4, #32
+     42c:	34ff      	adds	r4, #255	; 0xff
+     42e:	4b0e      	ldr	r3, [pc, #56]	; (468 <nvm_read_buffer+0x68>)
+     430:	831c      	strh	r4, [r3, #24]
+	for (uint16_t i = 0; i < length; i += 2) {
+     432:	2a00      	cmp	r2, #0
+     434:	d014      	beq.n	460 <nvm_read_buffer+0x60>
+     436:	2301      	movs	r3, #1
+     438:	4398      	bics	r0, r3
+     43a:	2300      	movs	r3, #0
+		if (i < (length - 1)) {
+     43c:	1e56      	subs	r6, r2, #1
+     43e:	e004      	b.n	44a <nvm_read_buffer+0x4a>
+	for (uint16_t i = 0; i < length; i += 2) {
+     440:	3302      	adds	r3, #2
+     442:	b29b      	uxth	r3, r3
+     444:	3002      	adds	r0, #2
+     446:	429a      	cmp	r2, r3
+     448:	d908      	bls.n	45c <nvm_read_buffer+0x5c>
+		uint16_t data = NVM_MEMORY[page_address++];
+     44a:	8804      	ldrh	r4, [r0, #0]
+     44c:	b2a4      	uxth	r4, r4
+		buffer[i] = (data & 0xFF);
+     44e:	54cc      	strb	r4, [r1, r3]
+		if (i < (length - 1)) {
+     450:	42b3      	cmp	r3, r6
+     452:	daf5      	bge.n	440 <nvm_read_buffer+0x40>
+			buffer[i + 1] = (data >> 8);
+     454:	18cd      	adds	r5, r1, r3
+     456:	0a24      	lsrs	r4, r4, #8
+     458:	706c      	strb	r4, [r5, #1]
+     45a:	e7f1      	b.n	440 <nvm_read_buffer+0x40>
+	return STATUS_OK;
+     45c:	2400      	movs	r4, #0
+     45e:	e7d7      	b.n	410 <nvm_read_buffer+0x10>
+     460:	2400      	movs	r4, #0
+     462:	e7d5      	b.n	410 <nvm_read_buffer+0x10>
+     464:	20000028 	.word	0x20000028
+     468:	41004000 	.word	0x41004000
+
+0000046c <nvm_erase_row>:
+		bool is_rww_eeprom = false;
+#endif
+
+	/* Check if the row address is valid */
+	if (row_address >
+			((uint32_t)_nvm_dev.page_size * _nvm_dev.number_of_pages)) {
+     46c:	4b13      	ldr	r3, [pc, #76]	; (4bc <nvm_erase_row+0x50>)
+     46e:	881a      	ldrh	r2, [r3, #0]
+     470:	885b      	ldrh	r3, [r3, #2]
+     472:	4353      	muls	r3, r2
+			|| row_address < NVMCTRL_RWW_EEPROM_ADDR){
+			return STATUS_ERR_BAD_ADDRESS;
+		}
+		is_rww_eeprom = true;
+#else
+		return STATUS_ERR_BAD_ADDRESS;
+     474:	2118      	movs	r1, #24
+	if (row_address >
+     476:	4283      	cmp	r3, r0
+     478:	d201      	bcs.n	47e <nvm_erase_row+0x12>
+	if ((enum nvm_error)(nvm_module->STATUS.reg & NVM_ERRORS_MASK) != NVM_ERROR_NONE) {
+		return STATUS_ABORTED;
+	}
+
+	return STATUS_OK;
+}
+     47a:	0008      	movs	r0, r1
+     47c:	4770      	bx	lr
+	if (row_address & ((_nvm_dev.page_size * NVMCTRL_ROW_PAGES) - 1)) {
+     47e:	0092      	lsls	r2, r2, #2
+     480:	3a01      	subs	r2, #1
+     482:	4210      	tst	r0, r2
+     484:	d1f9      	bne.n	47a <nvm_erase_row+0xe>
+     486:	4b0e      	ldr	r3, [pc, #56]	; (4c0 <nvm_erase_row+0x54>)
+     488:	7d1b      	ldrb	r3, [r3, #20]
+		return STATUS_BUSY;
+     48a:	3913      	subs	r1, #19
+	if (!nvm_is_ready()) {
+     48c:	07db      	lsls	r3, r3, #31
+     48e:	d5f4      	bpl.n	47a <nvm_erase_row+0xe>
+	nvm_module->STATUS.reg = NVMCTRL_STATUS_MASK;
+     490:	4b0b      	ldr	r3, [pc, #44]	; (4c0 <nvm_erase_row+0x54>)
+     492:	2220      	movs	r2, #32
+     494:	32ff      	adds	r2, #255	; 0xff
+     496:	831a      	strh	r2, [r3, #24]
+	nvm_module->ADDR.reg  = (uintptr_t)&NVM_MEMORY[row_address / 4];
+     498:	0880      	lsrs	r0, r0, #2
+     49a:	0040      	lsls	r0, r0, #1
+     49c:	61d8      	str	r0, [r3, #28]
+	nvm_module->CTRLA.reg = NVM_COMMAND_ERASE_ROW | NVMCTRL_CTRLA_CMDEX_KEY;
+     49e:	4a09      	ldr	r2, [pc, #36]	; (4c4 <nvm_erase_row+0x58>)
+     4a0:	801a      	strh	r2, [r3, #0]
+     4a2:	0019      	movs	r1, r3
+	while (!nvm_is_ready()) {
+     4a4:	2201      	movs	r2, #1
+     4a6:	7d0b      	ldrb	r3, [r1, #20]
+     4a8:	4213      	tst	r3, r2
+     4aa:	d0fc      	beq.n	4a6 <nvm_erase_row+0x3a>
+	if ((enum nvm_error)(nvm_module->STATUS.reg & NVM_ERRORS_MASK) != NVM_ERROR_NONE) {
+     4ac:	4b04      	ldr	r3, [pc, #16]	; (4c0 <nvm_erase_row+0x54>)
+     4ae:	8b19      	ldrh	r1, [r3, #24]
+     4b0:	201c      	movs	r0, #28
+     4b2:	4001      	ands	r1, r0
+	return STATUS_OK;
+     4b4:	1e48      	subs	r0, r1, #1
+     4b6:	4181      	sbcs	r1, r0
+     4b8:	0089      	lsls	r1, r1, #2
+     4ba:	e7de      	b.n	47a <nvm_erase_row+0xe>
+     4bc:	20000028 	.word	0x20000028
+     4c0:	41004000 	.word	0x41004000
+     4c4:	ffffa502 	.word	0xffffa502
+
+000004c8 <nvm_get_parameters>:
+
+	/* Get a pointer to the module hardware instance */
+	Nvmctrl *const nvm_module = NVMCTRL;
+
+	/* Clear error flags */
+	nvm_module->STATUS.reg = NVMCTRL_STATUS_MASK;
+     4c8:	4b13      	ldr	r3, [pc, #76]	; (518 <nvm_get_parameters+0x50>)
+     4ca:	2220      	movs	r2, #32
+     4cc:	32ff      	adds	r2, #255	; 0xff
+     4ce:	831a      	strh	r2, [r3, #24]
+
+	/* Read out from the PARAM register */
+	uint32_t param_reg = nvm_module->PARAM.reg;
+     4d0:	6899      	ldr	r1, [r3, #8]
+
+	/* Mask out page size exponent and convert to a number of bytes */
+	parameters->page_size =
+			8 << ((param_reg & NVMCTRL_PARAM_PSZ_Msk) >> NVMCTRL_PARAM_PSZ_Pos);
+     4d2:	034a      	lsls	r2, r1, #13
+     4d4:	0f52      	lsrs	r2, r2, #29
+     4d6:	2308      	movs	r3, #8
+     4d8:	4093      	lsls	r3, r2
+	parameters->page_size =
+     4da:	7003      	strb	r3, [r0, #0]
+
+	/* Mask out number of pages count */
+	parameters->nvm_number_of_pages =
+     4dc:	8041      	strh	r1, [r0, #2]
+			(param_reg & NVMCTRL_PARAM_RWWEEP_Msk) >> NVMCTRL_PARAM_RWWEEP_Pos;
+#endif
+
+	/* Read the current EEPROM fuse value from the USER row */
+	uint16_t eeprom_fuse_value =
+			(NVM_USER_MEMORY[NVMCTRL_FUSES_EEPROM_SIZE_Pos / 16] &
+     4de:	4b0f      	ldr	r3, [pc, #60]	; (51c <nvm_get_parameters+0x54>)
+     4e0:	881b      	ldrh	r3, [r3, #0]
+	uint16_t eeprom_fuse_value =
+     4e2:	065b      	lsls	r3, r3, #25
+     4e4:	0f5b      	lsrs	r3, r3, #29
+			NVMCTRL_FUSES_EEPROM_SIZE_Msk) >> NVMCTRL_FUSES_EEPROM_SIZE_Pos;
+
+	/* Translate the EEPROM fuse byte value to a number of NVM pages */
+	if (eeprom_fuse_value == 7) {
+     4e6:	2b07      	cmp	r3, #7
+     4e8:	d010      	beq.n	50c <nvm_get_parameters+0x44>
+		parameters->eeprom_number_of_pages = 0;
+	}
+	else {
+		parameters->eeprom_number_of_pages =
+				NVMCTRL_ROW_PAGES << (6 - eeprom_fuse_value);
+     4ea:	2206      	movs	r2, #6
+     4ec:	1ad2      	subs	r2, r2, r3
+     4ee:	2304      	movs	r3, #4
+     4f0:	4093      	lsls	r3, r2
+		parameters->eeprom_number_of_pages =
+     4f2:	6043      	str	r3, [r0, #4]
+	}
+
+	/* Read the current BOOTSZ fuse value from the USER row */
+	uint16_t boot_fuse_value =
+			(NVM_USER_MEMORY[NVMCTRL_FUSES_BOOTPROT_Pos / 16] &
+     4f4:	4b09      	ldr	r3, [pc, #36]	; (51c <nvm_get_parameters+0x54>)
+     4f6:	881b      	ldrh	r3, [r3, #0]
+	uint16_t boot_fuse_value =
+     4f8:	2207      	movs	r2, #7
+     4fa:	4013      	ands	r3, r2
+			NVMCTRL_FUSES_BOOTPROT_Msk) >> NVMCTRL_FUSES_BOOTPROT_Pos;
+
+	/* Translate the BOOTSZ fuse byte value to a number of NVM pages */
+	if (boot_fuse_value == 7) {
+     4fc:	2b07      	cmp	r3, #7
+     4fe:	d008      	beq.n	512 <nvm_get_parameters+0x4a>
+		parameters->bootloader_number_of_pages = 0;
+	}
+	else {
+		parameters->bootloader_number_of_pages =
+				NVMCTRL_ROW_PAGES << (7 - boot_fuse_value);
+     500:	2207      	movs	r2, #7
+     502:	1ad2      	subs	r2, r2, r3
+     504:	2304      	movs	r3, #4
+     506:	4093      	lsls	r3, r2
+		parameters->bootloader_number_of_pages =
+     508:	6083      	str	r3, [r0, #8]
+	}
+}
+     50a:	4770      	bx	lr
+		parameters->eeprom_number_of_pages = 0;
+     50c:	2300      	movs	r3, #0
+     50e:	6043      	str	r3, [r0, #4]
+     510:	e7f0      	b.n	4f4 <nvm_get_parameters+0x2c>
+		parameters->bootloader_number_of_pages = 0;
+     512:	2300      	movs	r3, #0
+     514:	6083      	str	r3, [r0, #8]
+     516:	e7f8      	b.n	50a <nvm_get_parameters+0x42>
+     518:	41004000 	.word	0x41004000
+     51c:	00804000 	.word	0x00804000
+
+00000520 <port_pin_set_config>:
+ *  \param[in] config    Configuration settings for the pin
+ */
+void port_pin_set_config(
+		const uint8_t gpio_pin,
+		const struct port_config *const config)
+{
+     520:	b500      	push	{lr}
+     522:	b083      	sub	sp, #12
+{
+	/* Sanity check arguments */
+	Assert(config);
+
+	/* Default configuration values */
+	config->mux_position = SYSTEM_PINMUX_GPIO;
+     524:	ab01      	add	r3, sp, #4
+     526:	2280      	movs	r2, #128	; 0x80
+     528:	701a      	strb	r2, [r3, #0]
+
+	struct system_pinmux_config pinmux_config;
+	system_pinmux_get_config_defaults(&pinmux_config);
+
+	pinmux_config.mux_position = SYSTEM_PINMUX_GPIO;
+	pinmux_config.direction    = (enum system_pinmux_pin_dir)config->direction;
+     52a:	780a      	ldrb	r2, [r1, #0]
+     52c:	705a      	strb	r2, [r3, #1]
+	pinmux_config.input_pull   = (enum system_pinmux_pin_pull)config->input_pull;
+     52e:	784a      	ldrb	r2, [r1, #1]
+     530:	709a      	strb	r2, [r3, #2]
+	pinmux_config.powersave    = config->powersave;
+     532:	788a      	ldrb	r2, [r1, #2]
+     534:	70da      	strb	r2, [r3, #3]
+
+	system_pinmux_pin_set_config(gpio_pin, &pinmux_config);
+     536:	0019      	movs	r1, r3
+     538:	4b01      	ldr	r3, [pc, #4]	; (540 <port_pin_set_config+0x20>)
+     53a:	4798      	blx	r3
+}
+     53c:	b003      	add	sp, #12
+     53e:	bd00      	pop	{pc}
+     540:	00000901 	.word	0x00000901
+
+00000544 <system_clock_source_osc8m_set_config>:
+ *
+ * \param[in] config  OSC8M configuration structure containing the new config
+ */
+void system_clock_source_osc8m_set_config(
+		struct system_clock_source_osc8m_config *const config)
+{
+     544:	b570      	push	{r4, r5, r6, lr}
+	SYSCTRL_OSC8M_Type temp = SYSCTRL->OSC8M;
+     546:	490c      	ldr	r1, [pc, #48]	; (578 <system_clock_source_osc8m_set_config+0x34>)
+     548:	6a0b      	ldr	r3, [r1, #32]
+
+	/* Use temporary struct to reduce register access */
+	temp.bit.PRESC    = config->prescaler;
+     54a:	7804      	ldrb	r4, [r0, #0]
+	temp.bit.ONDEMAND = config->on_demand;
+     54c:	7885      	ldrb	r5, [r0, #2]
+	temp.bit.RUNSTDBY = config->run_in_standby;
+
+	SYSCTRL->OSC8M = temp;
+     54e:	7840      	ldrb	r0, [r0, #1]
+     550:	2201      	movs	r2, #1
+     552:	4010      	ands	r0, r2
+     554:	0180      	lsls	r0, r0, #6
+     556:	2640      	movs	r6, #64	; 0x40
+     558:	43b3      	bics	r3, r6
+     55a:	4303      	orrs	r3, r0
+     55c:	402a      	ands	r2, r5
+     55e:	01d2      	lsls	r2, r2, #7
+     560:	2080      	movs	r0, #128	; 0x80
+     562:	4383      	bics	r3, r0
+     564:	4313      	orrs	r3, r2
+     566:	2203      	movs	r2, #3
+     568:	4022      	ands	r2, r4
+     56a:	0212      	lsls	r2, r2, #8
+     56c:	4803      	ldr	r0, [pc, #12]	; (57c <system_clock_source_osc8m_set_config+0x38>)
+     56e:	4003      	ands	r3, r0
+     570:	4313      	orrs	r3, r2
+     572:	620b      	str	r3, [r1, #32]
+}
+     574:	bd70      	pop	{r4, r5, r6, pc}
+     576:	46c0      	nop			; (mov r8, r8)
+     578:	40000800 	.word	0x40000800
+     57c:	fffffcff 	.word	0xfffffcff
+
+00000580 <system_clock_source_enable>:
+ *                                 device
+ */
+enum status_code system_clock_source_enable(
+		const enum system_clock_source clock_source)
+{
+	switch (clock_source) {
+     580:	2808      	cmp	r0, #8
+     582:	d803      	bhi.n	58c <system_clock_source_enable+0xc>
+     584:	0080      	lsls	r0, r0, #2
+     586:	4b25      	ldr	r3, [pc, #148]	; (61c <system_clock_source_enable+0x9c>)
+     588:	581b      	ldr	r3, [r3, r0]
+     58a:	469f      	mov	pc, r3
+		/* Always enabled */
+		return STATUS_OK;
+
+	default:
+		Assert(false);
+		return STATUS_ERR_INVALID_ARG;
+     58c:	2017      	movs	r0, #23
+     58e:	e044      	b.n	61a <system_clock_source_enable+0x9a>
+		SYSCTRL->OSC8M.reg |= SYSCTRL_OSC8M_ENABLE;
+     590:	4a23      	ldr	r2, [pc, #140]	; (620 <system_clock_source_enable+0xa0>)
+     592:	6a13      	ldr	r3, [r2, #32]
+     594:	2102      	movs	r1, #2
+     596:	430b      	orrs	r3, r1
+     598:	6213      	str	r3, [r2, #32]
+		return STATUS_OK;
+     59a:	2000      	movs	r0, #0
+     59c:	e03d      	b.n	61a <system_clock_source_enable+0x9a>
+		SYSCTRL->OSC32K.reg |= SYSCTRL_OSC32K_ENABLE;
+     59e:	4a20      	ldr	r2, [pc, #128]	; (620 <system_clock_source_enable+0xa0>)
+     5a0:	6993      	ldr	r3, [r2, #24]
+     5a2:	2102      	movs	r1, #2
+     5a4:	430b      	orrs	r3, r1
+     5a6:	6193      	str	r3, [r2, #24]
+	}
+
+	return STATUS_OK;
+     5a8:	2000      	movs	r0, #0
+		break;
+     5aa:	e036      	b.n	61a <system_clock_source_enable+0x9a>
+		SYSCTRL->XOSC.reg |= SYSCTRL_XOSC_ENABLE;
+     5ac:	4a1c      	ldr	r2, [pc, #112]	; (620 <system_clock_source_enable+0xa0>)
+     5ae:	8a13      	ldrh	r3, [r2, #16]
+     5b0:	2102      	movs	r1, #2
+     5b2:	430b      	orrs	r3, r1
+     5b4:	8213      	strh	r3, [r2, #16]
+	return STATUS_OK;
+     5b6:	2000      	movs	r0, #0
+		break;
+     5b8:	e02f      	b.n	61a <system_clock_source_enable+0x9a>
+		SYSCTRL->XOSC32K.reg |= SYSCTRL_XOSC32K_ENABLE;
+     5ba:	4a19      	ldr	r2, [pc, #100]	; (620 <system_clock_source_enable+0xa0>)
+     5bc:	8a93      	ldrh	r3, [r2, #20]
+     5be:	2102      	movs	r1, #2
+     5c0:	430b      	orrs	r3, r1
+     5c2:	8293      	strh	r3, [r2, #20]
+	return STATUS_OK;
+     5c4:	2000      	movs	r0, #0
+		break;
+     5c6:	e028      	b.n	61a <system_clock_source_enable+0x9a>
+		_system_clock_inst.dfll.control |= SYSCTRL_DFLLCTRL_ENABLE;
+     5c8:	4916      	ldr	r1, [pc, #88]	; (624 <system_clock_source_enable+0xa4>)
+     5ca:	680b      	ldr	r3, [r1, #0]
+     5cc:	2202      	movs	r2, #2
+     5ce:	4313      	orrs	r3, r2
+     5d0:	600b      	str	r3, [r1, #0]
+	SYSCTRL->DFLLCTRL.reg = SYSCTRL_DFLLCTRL_ENABLE;
+     5d2:	4b13      	ldr	r3, [pc, #76]	; (620 <system_clock_source_enable+0xa0>)
+     5d4:	849a      	strh	r2, [r3, #36]	; 0x24
+	while (!(SYSCTRL->PCLKSR.reg & SYSCTRL_PCLKSR_DFLLRDY)) {
+     5d6:	0019      	movs	r1, r3
+     5d8:	320e      	adds	r2, #14
+     5da:	68cb      	ldr	r3, [r1, #12]
+     5dc:	421a      	tst	r2, r3
+     5de:	d0fc      	beq.n	5da <system_clock_source_enable+0x5a>
+	SYSCTRL->DFLLMUL.reg = _system_clock_inst.dfll.mul;
+     5e0:	4a10      	ldr	r2, [pc, #64]	; (624 <system_clock_source_enable+0xa4>)
+     5e2:	6891      	ldr	r1, [r2, #8]
+     5e4:	4b0e      	ldr	r3, [pc, #56]	; (620 <system_clock_source_enable+0xa0>)
+     5e6:	62d9      	str	r1, [r3, #44]	; 0x2c
+	SYSCTRL->DFLLVAL.reg = _system_clock_inst.dfll.val;
+     5e8:	6852      	ldr	r2, [r2, #4]
+     5ea:	629a      	str	r2, [r3, #40]	; 0x28
+	SYSCTRL->DFLLCTRL.reg = 0;
+     5ec:	2200      	movs	r2, #0
+     5ee:	849a      	strh	r2, [r3, #36]	; 0x24
+	while (!(SYSCTRL->PCLKSR.reg & SYSCTRL_PCLKSR_DFLLRDY)) {
+     5f0:	0019      	movs	r1, r3
+     5f2:	3210      	adds	r2, #16
+     5f4:	68cb      	ldr	r3, [r1, #12]
+     5f6:	421a      	tst	r2, r3
+     5f8:	d0fc      	beq.n	5f4 <system_clock_source_enable+0x74>
+	SYSCTRL->DFLLCTRL.reg = _system_clock_inst.dfll.control;
+     5fa:	4b0a      	ldr	r3, [pc, #40]	; (624 <system_clock_source_enable+0xa4>)
+     5fc:	681b      	ldr	r3, [r3, #0]
+     5fe:	b29b      	uxth	r3, r3
+     600:	4a07      	ldr	r2, [pc, #28]	; (620 <system_clock_source_enable+0xa0>)
+     602:	8493      	strh	r3, [r2, #36]	; 0x24
+	return STATUS_OK;
+     604:	2000      	movs	r0, #0
+     606:	e008      	b.n	61a <system_clock_source_enable+0x9a>
+		SYSCTRL->DPLLCTRLA.reg |= SYSCTRL_DPLLCTRLA_ENABLE;
+     608:	4905      	ldr	r1, [pc, #20]	; (620 <system_clock_source_enable+0xa0>)
+     60a:	2244      	movs	r2, #68	; 0x44
+     60c:	5c8b      	ldrb	r3, [r1, r2]
+     60e:	2002      	movs	r0, #2
+     610:	4303      	orrs	r3, r0
+     612:	548b      	strb	r3, [r1, r2]
+	return STATUS_OK;
+     614:	2000      	movs	r0, #0
+		break;
+     616:	e000      	b.n	61a <system_clock_source_enable+0x9a>
+		return STATUS_OK;
+     618:	2000      	movs	r0, #0
+}
+     61a:	4770      	bx	lr
+     61c:	00001278 	.word	0x00001278
+     620:	40000800 	.word	0x40000800
+     624:	20000030 	.word	0x20000030
+
+00000628 <system_clock_init>:
+ * \note OSC8M is always enabled and if user selects other clocks for GCLK generators,
+ * the OSC8M default enable can be disabled after system_clock_init. Make sure the
+ * clock switch successfully before disabling OSC8M.
+ */
+void system_clock_init(void)
+{
+     628:	b530      	push	{r4, r5, lr}
+     62a:	b085      	sub	sp, #20
+	/* Various bits in the INTFLAG register can be set to one at startup.
+	   This will ensure that these bits are cleared */
+	SYSCTRL->INTFLAG.reg = SYSCTRL_INTFLAG_BOD33RDY | SYSCTRL_INTFLAG_BOD33DET |
+     62c:	22c2      	movs	r2, #194	; 0xc2
+     62e:	00d2      	lsls	r2, r2, #3
+     630:	4b1a      	ldr	r3, [pc, #104]	; (69c <system_clock_init+0x74>)
+     632:	609a      	str	r2, [r3, #8]
+static inline void system_flash_set_waitstates(uint8_t wait_states)
+{
+	Assert(NVMCTRL_CTRLB_RWS((uint32_t)wait_states) ==
+			((uint32_t)wait_states << NVMCTRL_CTRLB_RWS_Pos));
+
+	NVMCTRL->CTRLB.bit.RWS = wait_states;
+     634:	4a1a      	ldr	r2, [pc, #104]	; (6a0 <system_clock_init+0x78>)
+     636:	6853      	ldr	r3, [r2, #4]
+     638:	211e      	movs	r1, #30
+     63a:	438b      	bics	r3, r1
+     63c:	6053      	str	r3, [r2, #4]
+	gclk_conf.source_generator = GCLK_GENERATOR_1;
+     63e:	2301      	movs	r3, #1
+     640:	466a      	mov	r2, sp
+     642:	7013      	strb	r3, [r2, #0]
+	for (gclk_id = 0; gclk_id < GCLK_NUM; gclk_id++) {
+     644:	2400      	movs	r4, #0
+		system_gclk_chan_set_config(gclk_id, &gclk_conf);
+     646:	4d17      	ldr	r5, [pc, #92]	; (6a4 <system_clock_init+0x7c>)
+     648:	b2e0      	uxtb	r0, r4
+     64a:	4669      	mov	r1, sp
+     64c:	47a8      	blx	r5
+	for (gclk_id = 0; gclk_id < GCLK_NUM; gclk_id++) {
+     64e:	3401      	adds	r4, #1
+     650:	2c25      	cmp	r4, #37	; 0x25
+     652:	d1f9      	bne.n	648 <system_clock_init+0x20>
+	config->run_in_standby  = false;
+     654:	a803      	add	r0, sp, #12
+     656:	2400      	movs	r4, #0
+     658:	7044      	strb	r4, [r0, #1]
+	config->on_demand       = true;
+     65a:	2501      	movs	r5, #1
+     65c:	7085      	strb	r5, [r0, #2]
+
+	/* OSC8M */
+	struct system_clock_source_osc8m_config osc8m_conf;
+	system_clock_source_osc8m_get_config_defaults(&osc8m_conf);
+
+	osc8m_conf.prescaler       = CONF_CLOCK_OSC8M_PRESCALER;
+     65e:	7004      	strb	r4, [r0, #0]
+	osc8m_conf.on_demand       = CONF_CLOCK_OSC8M_ON_DEMAND;
+	osc8m_conf.run_in_standby  = CONF_CLOCK_OSC8M_RUN_IN_STANDBY;
+
+	system_clock_source_osc8m_set_config(&osc8m_conf);
+     660:	4b11      	ldr	r3, [pc, #68]	; (6a8 <system_clock_init+0x80>)
+     662:	4798      	blx	r3
+	system_clock_source_enable(SYSTEM_CLOCK_SOURCE_OSC8M);
+     664:	2006      	movs	r0, #6
+     666:	4b11      	ldr	r3, [pc, #68]	; (6ac <system_clock_init+0x84>)
+     668:	4798      	blx	r3
+
+
+	/* GCLK */
+#if CONF_CLOCK_CONFIGURE_GCLK == true
+	system_gclk_init();
+     66a:	4b11      	ldr	r3, [pc, #68]	; (6b0 <system_clock_init+0x88>)
+     66c:	4798      	blx	r3
+	PM->CPUSEL.reg = (uint32_t)divider;
+     66e:	4b11      	ldr	r3, [pc, #68]	; (6b4 <system_clock_init+0x8c>)
+     670:	721c      	strb	r4, [r3, #8]
+			PM->APBASEL.reg = (uint32_t)divider;
+     672:	725c      	strb	r4, [r3, #9]
+			PM->APBBSEL.reg = (uint32_t)divider;
+     674:	729c      	strb	r4, [r3, #10]
+			PM->APBCSEL.reg = (uint32_t)divider;
+     676:	72dc      	strb	r4, [r3, #11]
+{
+	/* Sanity check arguments */
+	Assert(config);
+
+	/* Default configuration values */
+	config->division_factor    = 1;
+     678:	9501      	str	r5, [sp, #4]
+	config->high_when_disabled = false;
+     67a:	466b      	mov	r3, sp
+     67c:	705c      	strb	r4, [r3, #1]
+#if SAML21 || SAML22  || SAMR30
+	config->source_clock       = GCLK_SOURCE_OSC16M;
+#elif (SAMC20) || (SAMC21)
+	config->source_clock       = GCLK_SOURCE_OSC48M;
+#else
+	config->source_clock       = GCLK_SOURCE_OSC8M;
+     67e:	2306      	movs	r3, #6
+     680:	466a      	mov	r2, sp
+     682:	7013      	strb	r3, [r2, #0]
+#endif
+	config->run_in_standby     = false;
+     684:	7214      	strb	r4, [r2, #8]
+	config->output_enable      = false;
+     686:	7254      	strb	r4, [r2, #9]
+	system_apb_clock_set_divider(SYSTEM_CLOCK_APB_APBC, CONF_CLOCK_APBC_DIVIDER);
+
+	/* GCLK 0 */
+#if CONF_CLOCK_CONFIGURE_GCLK == true
+	/* Configure the main GCLK last as it might depend on other generators */
+	_CONF_CLOCK_GCLK_CONFIG(0, ~);
+     688:	4669      	mov	r1, sp
+     68a:	2000      	movs	r0, #0
+     68c:	4b0a      	ldr	r3, [pc, #40]	; (6b8 <system_clock_init+0x90>)
+     68e:	4798      	blx	r3
+     690:	2000      	movs	r0, #0
+     692:	4b0a      	ldr	r3, [pc, #40]	; (6bc <system_clock_init+0x94>)
+     694:	4798      	blx	r3
+#endif
+}
+     696:	b005      	add	sp, #20
+     698:	bd30      	pop	{r4, r5, pc}
+     69a:	46c0      	nop			; (mov r8, r8)
+     69c:	40000800 	.word	0x40000800
+     6a0:	41004000 	.word	0x41004000
+     6a4:	0000083d 	.word	0x0000083d
+     6a8:	00000545 	.word	0x00000545
+     6ac:	00000581 	.word	0x00000581
+     6b0:	000006c1 	.word	0x000006c1
+     6b4:	40000400 	.word	0x40000400
+     6b8:	000006e5 	.word	0x000006e5
+     6bc:	0000079d 	.word	0x0000079d
+
+000006c0 <system_gclk_init>:
+			PM->APBAMASK.reg |= mask;
+     6c0:	4a06      	ldr	r2, [pc, #24]	; (6dc <system_gclk_init+0x1c>)
+     6c2:	6993      	ldr	r3, [r2, #24]
+     6c4:	2108      	movs	r1, #8
+     6c6:	430b      	orrs	r3, r1
+     6c8:	6193      	str	r3, [r2, #24]
+{
+	/* Turn on the digital interface clock */
+	system_apb_clock_set_mask(SYSTEM_CLOCK_APB_APBA, PM_APBAMASK_GCLK);
+
+	/* Software reset the module to ensure it is re-initialized correctly */
+	GCLK->CTRL.reg = GCLK_CTRL_SWRST;
+     6ca:	2201      	movs	r2, #1
+     6cc:	4b04      	ldr	r3, [pc, #16]	; (6e0 <system_gclk_init+0x20>)
+     6ce:	701a      	strb	r2, [r3, #0]
+	while (GCLK->CTRL.reg & GCLK_CTRL_SWRST) {
+     6d0:	0019      	movs	r1, r3
+     6d2:	780b      	ldrb	r3, [r1, #0]
+     6d4:	4213      	tst	r3, r2
+     6d6:	d1fc      	bne.n	6d2 <system_gclk_init+0x12>
+		/* Wait for reset to complete */
+	}
+}
+     6d8:	4770      	bx	lr
+     6da:	46c0      	nop			; (mov r8, r8)
+     6dc:	40000400 	.word	0x40000400
+     6e0:	40000c00 	.word	0x40000c00
+
+000006e4 <system_gclk_gen_set_config>:
+ * \param[in] config     Configuration settings for the generator
+ */
+void system_gclk_gen_set_config(
+		const uint8_t generator,
+		struct system_gclk_gen_config *const config)
+{
+     6e4:	b570      	push	{r4, r5, r6, lr}
+     6e6:	0006      	movs	r6, r0
+	/* Sanity check arguments */
+	Assert(config);
+
+	/* Cache new register configurations to minimize sync requirements. */
+	uint32_t new_genctrl_config = (generator << GCLK_GENCTRL_ID_Pos);
+     6e8:	0004      	movs	r4, r0
+	uint32_t new_gendiv_config  = (generator << GCLK_GENDIV_ID_Pos);
+
+	/* Select the requested source clock for the generator */
+	new_genctrl_config |= config->source_clock << GCLK_GENCTRL_SRC_Pos;
+     6ea:	780d      	ldrb	r5, [r1, #0]
+     6ec:	022d      	lsls	r5, r5, #8
+     6ee:	4305      	orrs	r5, r0
+
+	/* Configure the clock to be either high or low when disabled */
+	if (config->high_when_disabled) {
+     6f0:	784b      	ldrb	r3, [r1, #1]
+     6f2:	2b00      	cmp	r3, #0
+     6f4:	d002      	beq.n	6fc <system_gclk_gen_set_config+0x18>
+		new_genctrl_config |= GCLK_GENCTRL_OOV;
+     6f6:	2380      	movs	r3, #128	; 0x80
+     6f8:	02db      	lsls	r3, r3, #11
+     6fa:	431d      	orrs	r5, r3
+	}
+
+	/* Configure if the clock output to I/O pin should be enabled. */
+	if (config->output_enable) {
+     6fc:	7a4b      	ldrb	r3, [r1, #9]
+     6fe:	2b00      	cmp	r3, #0
+     700:	d002      	beq.n	708 <system_gclk_gen_set_config+0x24>
+		new_genctrl_config |= GCLK_GENCTRL_OE;
+     702:	2380      	movs	r3, #128	; 0x80
+     704:	031b      	lsls	r3, r3, #12
+     706:	431d      	orrs	r5, r3
+	}
+
+	/* Set division factor */
+	if (config->division_factor > 1) {
+     708:	6848      	ldr	r0, [r1, #4]
+     70a:	2801      	cmp	r0, #1
+     70c:	d910      	bls.n	730 <system_gclk_gen_set_config+0x4c>
+		/* Check if division is a power of two */
+		if (((config->division_factor & (config->division_factor - 1)) == 0)) {
+     70e:	1e43      	subs	r3, r0, #1
+     710:	4218      	tst	r0, r3
+     712:	d134      	bne.n	77e <system_gclk_gen_set_config+0x9a>
+			 * register */
+
+			uint32_t div2_count = 0;
+
+			uint32_t mask;
+			for (mask = (1UL << 1); mask < config->division_factor;
+     714:	2802      	cmp	r0, #2
+     716:	d930      	bls.n	77a <system_gclk_gen_set_config+0x96>
+     718:	2302      	movs	r3, #2
+     71a:	2200      	movs	r2, #0
+						mask <<= 1) {
+				div2_count++;
+     71c:	3201      	adds	r2, #1
+						mask <<= 1) {
+     71e:	005b      	lsls	r3, r3, #1
+			for (mask = (1UL << 1); mask < config->division_factor;
+     720:	4298      	cmp	r0, r3
+     722:	d8fb      	bhi.n	71c <system_gclk_gen_set_config+0x38>
+			}
+
+			/* Set binary divider power of 2 division factor */
+			new_gendiv_config  |= div2_count << GCLK_GENDIV_DIV_Pos;
+     724:	0212      	lsls	r2, r2, #8
+     726:	4332      	orrs	r2, r6
+     728:	0014      	movs	r4, r2
+			new_genctrl_config |= GCLK_GENCTRL_DIVSEL;
+     72a:	2380      	movs	r3, #128	; 0x80
+     72c:	035b      	lsls	r3, r3, #13
+     72e:	431d      	orrs	r5, r3
+		}
+
+	}
+
+	/* Enable or disable the clock in standby mode */
+	if (config->run_in_standby) {
+     730:	7a0b      	ldrb	r3, [r1, #8]
+     732:	2b00      	cmp	r3, #0
+     734:	d002      	beq.n	73c <system_gclk_gen_set_config+0x58>
+		new_genctrl_config |= GCLK_GENCTRL_RUNSTDBY;
+     736:	2380      	movs	r3, #128	; 0x80
+     738:	039b      	lsls	r3, r3, #14
+     73a:	431d      	orrs	r5, r3
+	if (GCLK->STATUS.reg & GCLK_STATUS_SYNCBUSY){
+     73c:	4a13      	ldr	r2, [pc, #76]	; (78c <system_gclk_gen_set_config+0xa8>)
+     73e:	7853      	ldrb	r3, [r2, #1]
+	}
+
+	while (system_gclk_is_syncing()) {
+     740:	b25b      	sxtb	r3, r3
+     742:	2b00      	cmp	r3, #0
+     744:	dbfb      	blt.n	73e <system_gclk_gen_set_config+0x5a>
+ * are only re-enabled upon leaving the outermost nested critical section.
+ *
+ */
+static inline void system_interrupt_enter_critical_section(void)
+{
+	cpu_irq_enter_critical();
+     746:	4b12      	ldr	r3, [pc, #72]	; (790 <system_gclk_gen_set_config+0xac>)
+     748:	4798      	blx	r3
+	};
+
+	system_interrupt_enter_critical_section();
+
+	/* Select the correct generator */
+	*((uint8_t*)&GCLK->GENDIV.reg) = generator;
+     74a:	4b12      	ldr	r3, [pc, #72]	; (794 <system_gclk_gen_set_config+0xb0>)
+     74c:	701e      	strb	r6, [r3, #0]
+	if (GCLK->STATUS.reg & GCLK_STATUS_SYNCBUSY){
+     74e:	4a0f      	ldr	r2, [pc, #60]	; (78c <system_gclk_gen_set_config+0xa8>)
+     750:	7853      	ldrb	r3, [r2, #1]
+
+	/* Write the new generator configuration */
+	while (system_gclk_is_syncing()) {
+     752:	b25b      	sxtb	r3, r3
+     754:	2b00      	cmp	r3, #0
+     756:	dbfb      	blt.n	750 <system_gclk_gen_set_config+0x6c>
+		/* Wait for synchronization */
+	};
+	GCLK->GENDIV.reg  = new_gendiv_config;
+     758:	4b0c      	ldr	r3, [pc, #48]	; (78c <system_gclk_gen_set_config+0xa8>)
+     75a:	609c      	str	r4, [r3, #8]
+	if (GCLK->STATUS.reg & GCLK_STATUS_SYNCBUSY){
+     75c:	001a      	movs	r2, r3
+     75e:	7853      	ldrb	r3, [r2, #1]
+
+	while (system_gclk_is_syncing()) {
+     760:	b25b      	sxtb	r3, r3
+     762:	2b00      	cmp	r3, #0
+     764:	dbfb      	blt.n	75e <system_gclk_gen_set_config+0x7a>
+		/* Wait for synchronization */
+	};
+	GCLK->GENCTRL.reg = new_genctrl_config | (GCLK->GENCTRL.reg & GCLK_GENCTRL_GENEN);
+     766:	4a09      	ldr	r2, [pc, #36]	; (78c <system_gclk_gen_set_config+0xa8>)
+     768:	6853      	ldr	r3, [r2, #4]
+     76a:	2180      	movs	r1, #128	; 0x80
+     76c:	0249      	lsls	r1, r1, #9
+     76e:	400b      	ands	r3, r1
+     770:	431d      	orrs	r5, r3
+     772:	6055      	str	r5, [r2, #4]
+ * are only re-enabled upon leaving the outermost nested critical section.
+ *
+ */
+static inline void system_interrupt_leave_critical_section(void)
+{
+	cpu_irq_leave_critical();
+     774:	4b08      	ldr	r3, [pc, #32]	; (798 <system_gclk_gen_set_config+0xb4>)
+     776:	4798      	blx	r3
+
+	system_interrupt_leave_critical_section();
+}
+     778:	bd70      	pop	{r4, r5, r6, pc}
+			for (mask = (1UL << 1); mask < config->division_factor;
+     77a:	2200      	movs	r2, #0
+     77c:	e7d2      	b.n	724 <system_gclk_gen_set_config+0x40>
+					(config->division_factor) << GCLK_GENDIV_DIV_Pos;
+     77e:	0204      	lsls	r4, r0, #8
+			new_gendiv_config  |=
+     780:	4334      	orrs	r4, r6
+			new_genctrl_config |= GCLK_GENCTRL_IDC;
+     782:	2380      	movs	r3, #128	; 0x80
+     784:	029b      	lsls	r3, r3, #10
+     786:	431d      	orrs	r5, r3
+     788:	e7d2      	b.n	730 <system_gclk_gen_set_config+0x4c>
+     78a:	46c0      	nop			; (mov r8, r8)
+     78c:	40000c00 	.word	0x40000c00
+     790:	00000115 	.word	0x00000115
+     794:	40000c08 	.word	0x40000c08
+     798:	00000155 	.word	0x00000155
+
+0000079c <system_gclk_gen_enable>:
+ *
+ * \param[in] generator  Generic Clock Generator index to enable
+ */
+void system_gclk_gen_enable(
+		const uint8_t generator)
+{
+     79c:	b510      	push	{r4, lr}
+     79e:	0004      	movs	r4, r0
+	if (GCLK->STATUS.reg & GCLK_STATUS_SYNCBUSY){
+     7a0:	4a0b      	ldr	r2, [pc, #44]	; (7d0 <system_gclk_gen_enable+0x34>)
+     7a2:	7853      	ldrb	r3, [r2, #1]
+	while (system_gclk_is_syncing()) {
+     7a4:	b25b      	sxtb	r3, r3
+     7a6:	2b00      	cmp	r3, #0
+     7a8:	dbfb      	blt.n	7a2 <system_gclk_gen_enable+0x6>
+	cpu_irq_enter_critical();
+     7aa:	4b0a      	ldr	r3, [pc, #40]	; (7d4 <system_gclk_gen_enable+0x38>)
+     7ac:	4798      	blx	r3
+	};
+
+	system_interrupt_enter_critical_section();
+
+	/* Select the requested generator */
+	*((uint8_t*)&GCLK->GENCTRL.reg) = generator;
+     7ae:	4b0a      	ldr	r3, [pc, #40]	; (7d8 <system_gclk_gen_enable+0x3c>)
+     7b0:	701c      	strb	r4, [r3, #0]
+	if (GCLK->STATUS.reg & GCLK_STATUS_SYNCBUSY){
+     7b2:	4a07      	ldr	r2, [pc, #28]	; (7d0 <system_gclk_gen_enable+0x34>)
+     7b4:	7853      	ldrb	r3, [r2, #1]
+	while (system_gclk_is_syncing()) {
+     7b6:	b25b      	sxtb	r3, r3
+     7b8:	2b00      	cmp	r3, #0
+     7ba:	dbfb      	blt.n	7b4 <system_gclk_gen_enable+0x18>
+		/* Wait for synchronization */
+	};
+
+	/* Enable generator */
+	GCLK->GENCTRL.reg |= GCLK_GENCTRL_GENEN;
+     7bc:	4a04      	ldr	r2, [pc, #16]	; (7d0 <system_gclk_gen_enable+0x34>)
+     7be:	6851      	ldr	r1, [r2, #4]
+     7c0:	2380      	movs	r3, #128	; 0x80
+     7c2:	025b      	lsls	r3, r3, #9
+     7c4:	430b      	orrs	r3, r1
+     7c6:	6053      	str	r3, [r2, #4]
+	cpu_irq_leave_critical();
+     7c8:	4b04      	ldr	r3, [pc, #16]	; (7dc <system_gclk_gen_enable+0x40>)
+     7ca:	4798      	blx	r3
+
+	system_interrupt_leave_critical_section();
+}
+     7cc:	bd10      	pop	{r4, pc}
+     7ce:	46c0      	nop			; (mov r8, r8)
+     7d0:	40000c00 	.word	0x40000c00
+     7d4:	00000115 	.word	0x00000115
+     7d8:	40000c04 	.word	0x40000c04
+     7dc:	00000155 	.word	0x00000155
+
+000007e0 <system_gclk_chan_disable>:
+ *
+ * \param[in] channel  Generic Clock channel to disable
+ */
+void system_gclk_chan_disable(
+		const uint8_t channel)
+{
+     7e0:	b510      	push	{r4, lr}
+     7e2:	0004      	movs	r4, r0
+	cpu_irq_enter_critical();
+     7e4:	4b0f      	ldr	r3, [pc, #60]	; (824 <system_gclk_chan_disable+0x44>)
+     7e6:	4798      	blx	r3
+	system_interrupt_enter_critical_section();
+
+	/* Select the requested generator channel */
+	*((uint8_t*)&GCLK->CLKCTRL.reg) = channel;
+     7e8:	4b0f      	ldr	r3, [pc, #60]	; (828 <system_gclk_chan_disable+0x48>)
+     7ea:	701c      	strb	r4, [r3, #0]
+
+	/* Sanity check WRTLOCK */
+	Assert(!GCLK->CLKCTRL.bit.WRTLOCK);
+
+	/* Switch to known-working source so that the channel can be disabled */
+	uint32_t prev_gen_id = GCLK->CLKCTRL.bit.GEN;
+     7ec:	4a0f      	ldr	r2, [pc, #60]	; (82c <system_gclk_chan_disable+0x4c>)
+     7ee:	8853      	ldrh	r3, [r2, #2]
+     7f0:	051b      	lsls	r3, r3, #20
+     7f2:	0f18      	lsrs	r0, r3, #28
+	GCLK->CLKCTRL.bit.GEN = 0;
+     7f4:	8853      	ldrh	r3, [r2, #2]
+     7f6:	490e      	ldr	r1, [pc, #56]	; (830 <system_gclk_chan_disable+0x50>)
+     7f8:	400b      	ands	r3, r1
+     7fa:	8053      	strh	r3, [r2, #2]
+
+	/* Disable the generic clock */
+	GCLK->CLKCTRL.reg &= ~GCLK_CLKCTRL_CLKEN;
+     7fc:	8853      	ldrh	r3, [r2, #2]
+     7fe:	490d      	ldr	r1, [pc, #52]	; (834 <system_gclk_chan_disable+0x54>)
+     800:	400b      	ands	r3, r1
+     802:	8053      	strh	r3, [r2, #2]
+	while (GCLK->CLKCTRL.reg & GCLK_CLKCTRL_CLKEN) {
+     804:	0011      	movs	r1, r2
+     806:	2280      	movs	r2, #128	; 0x80
+     808:	01d2      	lsls	r2, r2, #7
+     80a:	884b      	ldrh	r3, [r1, #2]
+     80c:	4213      	tst	r3, r2
+     80e:	d1fc      	bne.n	80a <system_gclk_chan_disable+0x2a>
+		/* Wait for clock to become disabled */
+	}
+
+	/* Restore previous configured clock generator */
+	GCLK->CLKCTRL.bit.GEN = prev_gen_id;
+     810:	4906      	ldr	r1, [pc, #24]	; (82c <system_gclk_chan_disable+0x4c>)
+     812:	884a      	ldrh	r2, [r1, #2]
+     814:	0203      	lsls	r3, r0, #8
+     816:	4806      	ldr	r0, [pc, #24]	; (830 <system_gclk_chan_disable+0x50>)
+     818:	4002      	ands	r2, r0
+     81a:	4313      	orrs	r3, r2
+     81c:	804b      	strh	r3, [r1, #2]
+	cpu_irq_leave_critical();
+     81e:	4b06      	ldr	r3, [pc, #24]	; (838 <system_gclk_chan_disable+0x58>)
+     820:	4798      	blx	r3
+
+	system_interrupt_leave_critical_section();
+}
+     822:	bd10      	pop	{r4, pc}
+     824:	00000115 	.word	0x00000115
+     828:	40000c02 	.word	0x40000c02
+     82c:	40000c00 	.word	0x40000c00
+     830:	fffff0ff 	.word	0xfffff0ff
+     834:	ffffbfff 	.word	0xffffbfff
+     838:	00000155 	.word	0x00000155
+
+0000083c <system_gclk_chan_set_config>:
+{
+     83c:	b510      	push	{r4, lr}
+	new_clkctrl_config |= config->source_generator << GCLK_CLKCTRL_GEN_Pos;
+     83e:	780c      	ldrb	r4, [r1, #0]
+     840:	0224      	lsls	r4, r4, #8
+     842:	4304      	orrs	r4, r0
+	system_gclk_chan_disable(channel);
+     844:	4b02      	ldr	r3, [pc, #8]	; (850 <system_gclk_chan_set_config+0x14>)
+     846:	4798      	blx	r3
+	GCLK->CLKCTRL.reg = new_clkctrl_config;
+     848:	b2a4      	uxth	r4, r4
+     84a:	4b02      	ldr	r3, [pc, #8]	; (854 <system_gclk_chan_set_config+0x18>)
+     84c:	805c      	strh	r4, [r3, #2]
+}
+     84e:	bd10      	pop	{r4, pc}
+     850:	000007e1 	.word	0x000007e1
+     854:	40000c00 	.word	0x40000c00
+
+00000858 <_system_pinmux_config>:
+ */
+static void _system_pinmux_config(
+		PortGroup *const port,
+		const uint32_t pin_mask,
+		const struct system_pinmux_config *const config)
+{
+     858:	b530      	push	{r4, r5, lr}
+
+	/* Track the configuration bits into a temporary variable before writing */
+	uint32_t pin_cfg = 0;
+
+	/* Enabled powersave mode, don't create configuration */
+	if (!config->powersave) {
+     85a:	78d3      	ldrb	r3, [r2, #3]
+     85c:	2b00      	cmp	r3, #0
+     85e:	d135      	bne.n	8cc <_system_pinmux_config+0x74>
+		/* Enable the pin peripheral MUX flag if non-GPIO selected (pinmux will
+		 * be written later) and store the new MUX mask */
+		if (config->mux_position != SYSTEM_PINMUX_GPIO) {
+     860:	7813      	ldrb	r3, [r2, #0]
+     862:	2b80      	cmp	r3, #128	; 0x80
+     864:	d029      	beq.n	8ba <_system_pinmux_config+0x62>
+			pin_cfg |= PORT_WRCONFIG_PMUXEN;
+			pin_cfg |= (config->mux_position << PORT_WRCONFIG_PMUX_Pos);
+     866:	061b      	lsls	r3, r3, #24
+     868:	2480      	movs	r4, #128	; 0x80
+     86a:	0264      	lsls	r4, r4, #9
+     86c:	4323      	orrs	r3, r4
+		}
+
+		/* Check if the user has requested that the input buffer be enabled */
+		if ((config->direction == SYSTEM_PINMUX_PIN_DIR_INPUT) ||
+     86e:	7854      	ldrb	r4, [r2, #1]
+     870:	2502      	movs	r5, #2
+     872:	43ac      	bics	r4, r5
+     874:	d106      	bne.n	884 <_system_pinmux_config+0x2c>
+				(config->direction == SYSTEM_PINMUX_PIN_DIR_OUTPUT_WITH_READBACK)) {
+			/* Enable input buffer flag */
+			pin_cfg |= PORT_WRCONFIG_INEN;
+
+			/* Enable pull-up/pull-down control flag if requested */
+			if (config->input_pull != SYSTEM_PINMUX_PIN_PULL_NONE) {
+     876:	7894      	ldrb	r4, [r2, #2]
+     878:	2c00      	cmp	r4, #0
+     87a:	d120      	bne.n	8be <_system_pinmux_config+0x66>
+			pin_cfg |= PORT_WRCONFIG_INEN;
+     87c:	2480      	movs	r4, #128	; 0x80
+     87e:	02a4      	lsls	r4, r4, #10
+     880:	4323      	orrs	r3, r4
+				pin_cfg |= PORT_WRCONFIG_PULLEN;
+			}
+
+			/* Clear the port DIR bits to disable the output buffer */
+			port->DIRCLR.reg = pin_mask;
+     882:	6041      	str	r1, [r0, #4]
+		}
+
+		/* Check if the user has requested that the output buffer be enabled */
+		if ((config->direction == SYSTEM_PINMUX_PIN_DIR_OUTPUT) ||
+     884:	7854      	ldrb	r4, [r2, #1]
+     886:	3c01      	subs	r4, #1
+     888:	2c01      	cmp	r4, #1
+     88a:	d91c      	bls.n	8c6 <_system_pinmux_config+0x6e>
+		port->DIRCLR.reg = pin_mask;
+	}
+
+	/* The Write Configuration register (WRCONFIG) requires the
+	 * pins to to grouped into two 16-bit half-words - split them out here */
+	uint32_t lower_pin_mask = (pin_mask & 0xFFFF);
+     88c:	040d      	lsls	r5, r1, #16
+     88e:	0c2d      	lsrs	r5, r5, #16
+
+	/* Configure the lower 16-bits of the port to the desired configuration,
+	 * including the pin peripheral multiplexer just in case it is enabled */
+	port->WRCONFIG.reg
+		= (lower_pin_mask << PORT_WRCONFIG_PINMASK_Pos) |
+			pin_cfg | PORT_WRCONFIG_WRPMUX | PORT_WRCONFIG_WRPINCFG;
+     890:	24a0      	movs	r4, #160	; 0xa0
+     892:	05e4      	lsls	r4, r4, #23
+     894:	432c      	orrs	r4, r5
+     896:	431c      	orrs	r4, r3
+		= (lower_pin_mask << PORT_WRCONFIG_PINMASK_Pos) |
+     898:	6284      	str	r4, [r0, #40]	; 0x28
+	uint32_t upper_pin_mask = (pin_mask >> 16);
+     89a:	0c0d      	lsrs	r5, r1, #16
+
+	/* Configure the upper 16-bits of the port to the desired configuration,
+	 * including the pin peripheral multiplexer just in case it is enabled */
+	port->WRCONFIG.reg
+		= (upper_pin_mask << PORT_WRCONFIG_PINMASK_Pos) |
+			pin_cfg | PORT_WRCONFIG_WRPMUX | PORT_WRCONFIG_WRPINCFG |
+     89c:	24d0      	movs	r4, #208	; 0xd0
+     89e:	0624      	lsls	r4, r4, #24
+     8a0:	432c      	orrs	r4, r5
+     8a2:	431c      	orrs	r4, r3
+		= (upper_pin_mask << PORT_WRCONFIG_PINMASK_Pos) |
+     8a4:	6284      	str	r4, [r0, #40]	; 0x28
+			PORT_WRCONFIG_HWSEL;
+
+	if(!config->powersave) {
+     8a6:	78d4      	ldrb	r4, [r2, #3]
+     8a8:	2c00      	cmp	r4, #0
+     8aa:	d122      	bne.n	8f2 <_system_pinmux_config+0x9a>
+		/* Set the pull-up state once the port pins are configured if one was
+		 * requested and it does not violate the valid set of port
+		 * configurations */
+		if (pin_cfg & PORT_WRCONFIG_PULLEN) {
+     8ac:	035b      	lsls	r3, r3, #13
+     8ae:	d51c      	bpl.n	8ea <_system_pinmux_config+0x92>
+			/* Set the OUT register bits to enable the pull-up if requested,
+			 * clear to enable pull-down */
+			if (config->input_pull == SYSTEM_PINMUX_PIN_PULL_UP) {
+     8b0:	7893      	ldrb	r3, [r2, #2]
+     8b2:	2b01      	cmp	r3, #1
+     8b4:	d01e      	beq.n	8f4 <_system_pinmux_config+0x9c>
+				port->OUTSET.reg = pin_mask;
+			} else {
+				port->OUTCLR.reg = pin_mask;
+     8b6:	6141      	str	r1, [r0, #20]
+     8b8:	e017      	b.n	8ea <_system_pinmux_config+0x92>
+	uint32_t pin_cfg = 0;
+     8ba:	2300      	movs	r3, #0
+     8bc:	e7d7      	b.n	86e <_system_pinmux_config+0x16>
+				pin_cfg |= PORT_WRCONFIG_PULLEN;
+     8be:	24c0      	movs	r4, #192	; 0xc0
+     8c0:	02e4      	lsls	r4, r4, #11
+     8c2:	4323      	orrs	r3, r4
+     8c4:	e7dd      	b.n	882 <_system_pinmux_config+0x2a>
+			pin_cfg &= ~PORT_WRCONFIG_PULLEN;
+     8c6:	4c0d      	ldr	r4, [pc, #52]	; (8fc <_system_pinmux_config+0xa4>)
+     8c8:	4023      	ands	r3, r4
+     8ca:	e7df      	b.n	88c <_system_pinmux_config+0x34>
+		port->DIRCLR.reg = pin_mask;
+     8cc:	6041      	str	r1, [r0, #4]
+	uint32_t lower_pin_mask = (pin_mask & 0xFFFF);
+     8ce:	040c      	lsls	r4, r1, #16
+     8d0:	0c24      	lsrs	r4, r4, #16
+			pin_cfg | PORT_WRCONFIG_WRPMUX | PORT_WRCONFIG_WRPINCFG;
+     8d2:	23a0      	movs	r3, #160	; 0xa0
+     8d4:	05db      	lsls	r3, r3, #23
+     8d6:	4323      	orrs	r3, r4
+		= (lower_pin_mask << PORT_WRCONFIG_PINMASK_Pos) |
+     8d8:	6283      	str	r3, [r0, #40]	; 0x28
+	uint32_t upper_pin_mask = (pin_mask >> 16);
+     8da:	0c0c      	lsrs	r4, r1, #16
+			pin_cfg | PORT_WRCONFIG_WRPMUX | PORT_WRCONFIG_WRPINCFG |
+     8dc:	23d0      	movs	r3, #208	; 0xd0
+     8de:	061b      	lsls	r3, r3, #24
+     8e0:	4323      	orrs	r3, r4
+		= (upper_pin_mask << PORT_WRCONFIG_PINMASK_Pos) |
+     8e2:	6283      	str	r3, [r0, #40]	; 0x28
+	if(!config->powersave) {
+     8e4:	78d3      	ldrb	r3, [r2, #3]
+     8e6:	2b00      	cmp	r3, #0
+     8e8:	d103      	bne.n	8f2 <_system_pinmux_config+0x9a>
+			}
+		}
+
+		/* Check if the user has requested that the output buffer be enabled */
+		if ((config->direction == SYSTEM_PINMUX_PIN_DIR_OUTPUT) ||
+     8ea:	7853      	ldrb	r3, [r2, #1]
+     8ec:	3b01      	subs	r3, #1
+     8ee:	2b01      	cmp	r3, #1
+     8f0:	d902      	bls.n	8f8 <_system_pinmux_config+0xa0>
+				(config->direction == SYSTEM_PINMUX_PIN_DIR_OUTPUT_WITH_READBACK)) {
+			/* Set the port DIR bits to enable the output buffer */
+			port->DIRSET.reg = pin_mask;
+		}
+	}
+}
+     8f2:	bd30      	pop	{r4, r5, pc}
+				port->OUTSET.reg = pin_mask;
+     8f4:	6181      	str	r1, [r0, #24]
+     8f6:	e7f8      	b.n	8ea <_system_pinmux_config+0x92>
+			port->DIRSET.reg = pin_mask;
+     8f8:	6081      	str	r1, [r0, #8]
+}
+     8fa:	e7fa      	b.n	8f2 <_system_pinmux_config+0x9a>
+     8fc:	fffbffff 	.word	0xfffbffff
+
+00000900 <system_pinmux_pin_set_config>:
+ * \param[in] config    Configuration settings for the pin
+ */
+void system_pinmux_pin_set_config(
+		const uint8_t gpio_pin,
+		const struct system_pinmux_config *const config)
+{
+     900:	b510      	push	{r4, lr}
+     902:	000a      	movs	r2, r1
+	uint8_t group_index = (gpio_pin / 32);
+
+	/* Array of available ports */
+	Port *const ports[PORT_INST_NUM] = PORT_INSTS;
+
+	if (port_index < PORT_INST_NUM) {
+     904:	09c1      	lsrs	r1, r0, #7
+		return &(ports[port_index]->Group[group_index]);
+	} else {
+		Assert(false);
+		return NULL;
+     906:	2300      	movs	r3, #0
+	if (port_index < PORT_INST_NUM) {
+     908:	2900      	cmp	r1, #0
+     90a:	d104      	bne.n	916 <system_pinmux_pin_set_config+0x16>
+		return &(ports[port_index]->Group[group_index]);
+     90c:	0943      	lsrs	r3, r0, #5
+     90e:	01db      	lsls	r3, r3, #7
+     910:	4905      	ldr	r1, [pc, #20]	; (928 <system_pinmux_pin_set_config+0x28>)
+     912:	468c      	mov	ip, r1
+     914:	4463      	add	r3, ip
+	PortGroup *const port = system_pinmux_get_group_from_gpio_pin(gpio_pin);
+	uint32_t pin_mask = (1UL << (gpio_pin % 32));
+     916:	241f      	movs	r4, #31
+     918:	4020      	ands	r0, r4
+     91a:	2101      	movs	r1, #1
+     91c:	4081      	lsls	r1, r0
+
+	_system_pinmux_config(port, pin_mask, config);
+     91e:	0018      	movs	r0, r3
+     920:	4b02      	ldr	r3, [pc, #8]	; (92c <system_pinmux_pin_set_config+0x2c>)
+     922:	4798      	blx	r3
+}
+     924:	bd10      	pop	{r4, pc}
+     926:	46c0      	nop			; (mov r8, r8)
+     928:	41004400 	.word	0x41004400
+     92c:	00000859 	.word	0x00000859
+
+00000930 <_system_dummy_init>:
+ */
+void _system_dummy_init(void);
+void _system_dummy_init(void)
+{
+	return;
+}
+     930:	4770      	bx	lr
+	...
+
+00000934 <system_init>:
+ *  - Board hardware initialization (via the Board module)
+ *  - Event system driver initialization (via the EVSYS module)
+ *  - External Interrupt driver initialization (via the EXTINT module)
+ */
+void system_init(void)
+{
+     934:	b510      	push	{r4, lr}
+	/* Configure GCLK and clock sources according to conf_clocks.h */
+	system_clock_init();
+     936:	4b05      	ldr	r3, [pc, #20]	; (94c <system_init+0x18>)
+     938:	4798      	blx	r3
+
+	/* Initialize board hardware */
+	system_board_init();
+     93a:	4b05      	ldr	r3, [pc, #20]	; (950 <system_init+0x1c>)
+     93c:	4798      	blx	r3
+
+	/* Initialize EVSYS hardware */
+	_system_events_init();
+     93e:	4b05      	ldr	r3, [pc, #20]	; (954 <system_init+0x20>)
+     940:	4798      	blx	r3
+
+	/* Initialize External hardware */
+	_system_extint_init();
+     942:	4b05      	ldr	r3, [pc, #20]	; (958 <system_init+0x24>)
+     944:	4798      	blx	r3
+	
+	/* Initialize DIVAS hardware */
+	_system_divas_init();
+     946:	4b05      	ldr	r3, [pc, #20]	; (95c <system_init+0x28>)
+     948:	4798      	blx	r3
+}
+     94a:	bd10      	pop	{r4, pc}
+     94c:	00000629 	.word	0x00000629
+     950:	00000185 	.word	0x00000185
+     954:	00000931 	.word	0x00000931
+     958:	00000931 	.word	0x00000931
+     95c:	00000931 	.word	0x00000931
+
+00000960 <_eeprom_emulator_nvm_erase_row>:
+ *
+ *  \param[in] row  Physical row in EEPROM space to erase
+ */
+static void _eeprom_emulator_nvm_erase_row(
+		const uint8_t row)
+{
+     960:	b570      	push	{r4, r5, r6, lr}
+	enum status_code error_code = STATUS_OK;
+
+	do {
+		error_code = nvm_erase_row(
+				(uint32_t)&_eeprom_instance.flash[row * NVMCTRL_ROW_PAGES]);
+     962:	0204      	lsls	r4, r0, #8
+     964:	4e03      	ldr	r6, [pc, #12]	; (974 <_eeprom_emulator_nvm_erase_row+0x14>)
+		error_code = nvm_erase_row(
+     966:	4d04      	ldr	r5, [pc, #16]	; (978 <_eeprom_emulator_nvm_erase_row+0x18>)
+				(uint32_t)&_eeprom_instance.flash[row * NVMCTRL_ROW_PAGES]);
+     968:	6873      	ldr	r3, [r6, #4]
+     96a:	1918      	adds	r0, r3, r4
+		error_code = nvm_erase_row(
+     96c:	47a8      	blx	r5
+	} while (error_code == STATUS_BUSY);
+     96e:	2805      	cmp	r0, #5
+     970:	d0fa      	beq.n	968 <_eeprom_emulator_nvm_erase_row+0x8>
+}
+     972:	bd70      	pop	{r4, r5, r6, pc}
+     974:	20000048 	.word	0x20000048
+     978:	0000046d 	.word	0x0000046d
+
+0000097c <_eeprom_emulator_update_page_mapping>:
+
+/**
+ * \brief Creates a map in SRAM to translate logical EEPROM pages to physical FLASH pages.
+ */
+static void _eeprom_emulator_update_page_mapping(void)
+{
+     97c:	b5f0      	push	{r4, r5, r6, r7, lr}
+     97e:	46de      	mov	lr, fp
+     980:	4657      	mov	r7, sl
+     982:	464e      	mov	r6, r9
+     984:	4645      	mov	r5, r8
+     986:	b5e0      	push	{r5, r6, r7, lr}
+     988:	b083      	sub	sp, #12
+	for (i = 0; i < _eeprom_instance.physical_pages; i=i+4) {
+     98a:	4b4d      	ldr	r3, [pc, #308]	; (ac0 <_eeprom_emulator_update_page_mapping+0x144>)
+     98c:	891b      	ldrh	r3, [r3, #8]
+     98e:	2b00      	cmp	r3, #0
+     990:	d100      	bne.n	994 <_eeprom_emulator_update_page_mapping+0x18>
+     992:	e08f      	b.n	ab4 <_eeprom_emulator_update_page_mapping+0x138>
+     994:	2500      	movs	r5, #0
+		uint16_t pre_logical_page = _eeprom_instance.flash[i].header.logical_page;
+     996:	4b4a      	ldr	r3, [pc, #296]	; (ac0 <_eeprom_emulator_update_page_mapping+0x144>)
+     998:	469a      	mov	sl, r3
+			uint16_t next_logical_page = _eeprom_instance.flash[j].header.logical_page;
+     99a:	001f      	movs	r7, r3
+     99c:	e027      	b.n	9ee <_eeprom_emulator_update_page_mapping+0x72>
+		 _eeprom_emulator_nvm_erase_row(pre_phy_page/4);
+     99e:	9801      	ldr	r0, [sp, #4]
+     9a0:	4b48      	ldr	r3, [pc, #288]	; (ac4 <_eeprom_emulator_update_page_mapping+0x148>)
+     9a2:	4798      	blx	r3
+		for (j = NVMCTRL_ROW_PAGES+i; j < _eeprom_instance.physical_pages; j=j+4) {
+     9a4:	3404      	adds	r4, #4
+     9a6:	b2a4      	uxth	r4, r4
+     9a8:	4b45      	ldr	r3, [pc, #276]	; (ac0 <_eeprom_emulator_update_page_mapping+0x144>)
+     9aa:	891b      	ldrh	r3, [r3, #8]
+     9ac:	42a3      	cmp	r3, r4
+     9ae:	d918      	bls.n	9e2 <_eeprom_emulator_update_page_mapping+0x66>
+			if (j == EEPROM_MASTER_PAGE_NUMBER) {
+     9b0:	3b01      	subs	r3, #1
+     9b2:	429c      	cmp	r4, r3
+     9b4:	d0f6      	beq.n	9a4 <_eeprom_emulator_update_page_mapping+0x28>
+			uint16_t next_logical_page = _eeprom_instance.flash[j].header.logical_page;
+     9b6:	687a      	ldr	r2, [r7, #4]
+     9b8:	01a3      	lsls	r3, r4, #6
+     9ba:	5cd3      	ldrb	r3, [r2, r3]
+			if( next_logical_page == EEPROM_INVALID_PAGE_NUMBER) {
+     9bc:	2bff      	cmp	r3, #255	; 0xff
+     9be:	d0f1      	beq.n	9a4 <_eeprom_emulator_update_page_mapping+0x28>
+			if(pre_logical_page == next_logical_page) {
+     9c0:	429e      	cmp	r6, r3
+     9c2:	d1ef      	bne.n	9a4 <_eeprom_emulator_update_page_mapping+0x28>
+		== _eeprom_instance.flash[phy_page+2].header.logical_page)
+     9c4:	464b      	mov	r3, r9
+     9c6:	5cd3      	ldrb	r3, [r2, r3]
+	if((_eeprom_instance.flash[phy_page].header.logical_page
+     9c8:	4641      	mov	r1, r8
+     9ca:	5c51      	ldrb	r1, [r2, r1]
+     9cc:	4299      	cmp	r1, r3
+     9ce:	d0e6      	beq.n	99e <_eeprom_emulator_update_page_mapping+0x22>
+	if(_eeprom_emulator_is_full_row(pre_phy_page)) {
+     9d0:	4659      	mov	r1, fp
+     9d2:	5c52      	ldrb	r2, [r2, r1]
+     9d4:	429a      	cmp	r2, r3
+     9d6:	d0e2      	beq.n	99e <_eeprom_emulator_update_page_mapping+0x22>
+		_eeprom_emulator_nvm_erase_row(next_phy_page/4);
+     9d8:	08a0      	lsrs	r0, r4, #2
+     9da:	b2c0      	uxtb	r0, r0
+     9dc:	4b39      	ldr	r3, [pc, #228]	; (ac4 <_eeprom_emulator_update_page_mapping+0x148>)
+     9de:	4798      	blx	r3
+     9e0:	e7e0      	b.n	9a4 <_eeprom_emulator_update_page_mapping+0x28>
+	for (i = 0; i < _eeprom_instance.physical_pages; i=i+4) {
+     9e2:	3504      	adds	r5, #4
+     9e4:	b2ad      	uxth	r5, r5
+     9e6:	4b36      	ldr	r3, [pc, #216]	; (ac0 <_eeprom_emulator_update_page_mapping+0x144>)
+     9e8:	891b      	ldrh	r3, [r3, #8]
+     9ea:	429d      	cmp	r5, r3
+     9ec:	d217      	bcs.n	a1e <_eeprom_emulator_update_page_mapping+0xa2>
+		uint16_t pre_logical_page = _eeprom_instance.flash[i].header.logical_page;
+     9ee:	01ab      	lsls	r3, r5, #6
+     9f0:	4698      	mov	r8, r3
+     9f2:	4653      	mov	r3, sl
+     9f4:	685b      	ldr	r3, [r3, #4]
+     9f6:	4642      	mov	r2, r8
+     9f8:	5c9e      	ldrb	r6, [r3, r2]
+		if( pre_logical_page == EEPROM_INVALID_PAGE_NUMBER) {
+     9fa:	2eff      	cmp	r6, #255	; 0xff
+     9fc:	d0f1      	beq.n	9e2 <_eeprom_emulator_update_page_mapping+0x66>
+		for (j = NVMCTRL_ROW_PAGES+i; j < _eeprom_instance.physical_pages; j=j+4) {
+     9fe:	1d2c      	adds	r4, r5, #4
+     a00:	b2a4      	uxth	r4, r4
+     a02:	4b2f      	ldr	r3, [pc, #188]	; (ac0 <_eeprom_emulator_update_page_mapping+0x144>)
+     a04:	891b      	ldrh	r3, [r3, #8]
+     a06:	429c      	cmp	r4, r3
+     a08:	d209      	bcs.n	a1e <_eeprom_emulator_update_page_mapping+0xa2>
+		== _eeprom_instance.flash[phy_page+2].header.logical_page)
+     a0a:	2280      	movs	r2, #128	; 0x80
+     a0c:	4442      	add	r2, r8
+     a0e:	4691      	mov	r9, r2
+		|| (_eeprom_instance.flash[phy_page+1].header.logical_page
+     a10:	2240      	movs	r2, #64	; 0x40
+     a12:	4442      	add	r2, r8
+     a14:	4693      	mov	fp, r2
+		 _eeprom_emulator_nvm_erase_row(pre_phy_page/4);
+     a16:	08aa      	lsrs	r2, r5, #2
+     a18:	b2d2      	uxtb	r2, r2
+     a1a:	9201      	str	r2, [sp, #4]
+     a1c:	e7c8      	b.n	9b0 <_eeprom_emulator_update_page_mapping+0x34>
+	/* Check if exists invalid logical page */
+	_eeprom_emulator_check_logical_page();
+
+	/* Scan through all physical pages, to map physical and logical pages */
+	for (uint16_t c = 0; c < _eeprom_instance.physical_pages; c++) {
+     a1e:	2b00      	cmp	r3, #0
+     a20:	d043      	beq.n	aaa <_eeprom_emulator_update_page_mapping+0x12e>
+		/* Read in the logical page stored in the current physical page */
+		uint16_t logical_page = _eeprom_instance.flash[c].header.logical_page;
+
+		/* If the logical page number is valid, add it to the mapping */
+		if ((logical_page != EEPROM_INVALID_PAGE_NUMBER) &&
+				(logical_page < _eeprom_instance.logical_pages)) {
+     a22:	4a27      	ldr	r2, [pc, #156]	; (ac0 <_eeprom_emulator_update_page_mapping+0x144>)
+     a24:	7a97      	ldrb	r7, [r2, #10]
+     a26:	6851      	ldr	r1, [r2, #4]
+     a28:	2200      	movs	r2, #0
+		if (c == EEPROM_MASTER_PAGE_NUMBER) {
+     a2a:	1e5e      	subs	r6, r3, #1
+			_eeprom_instance.page_map[logical_page] = c;
+     a2c:	4d24      	ldr	r5, [pc, #144]	; (ac0 <_eeprom_emulator_update_page_mapping+0x144>)
+     a2e:	e004      	b.n	a3a <_eeprom_emulator_update_page_mapping+0xbe>
+     a30:	3201      	adds	r2, #1
+     a32:	3140      	adds	r1, #64	; 0x40
+	for (uint16_t c = 0; c < _eeprom_instance.physical_pages; c++) {
+     a34:	b290      	uxth	r0, r2
+     a36:	4298      	cmp	r0, r3
+     a38:	d20a      	bcs.n	a50 <_eeprom_emulator_update_page_mapping+0xd4>
+		if (c == EEPROM_MASTER_PAGE_NUMBER) {
+     a3a:	4296      	cmp	r6, r2
+     a3c:	d0f8      	beq.n	a30 <_eeprom_emulator_update_page_mapping+0xb4>
+		uint16_t logical_page = _eeprom_instance.flash[c].header.logical_page;
+     a3e:	7808      	ldrb	r0, [r1, #0]
+     a40:	b284      	uxth	r4, r0
+		if ((logical_page != EEPROM_INVALID_PAGE_NUMBER) &&
+     a42:	2cff      	cmp	r4, #255	; 0xff
+     a44:	d0f4      	beq.n	a30 <_eeprom_emulator_update_page_mapping+0xb4>
+     a46:	42bc      	cmp	r4, r7
+     a48:	d2f2      	bcs.n	a30 <_eeprom_emulator_update_page_mapping+0xb4>
+			_eeprom_instance.page_map[logical_page] = c;
+     a4a:	1828      	adds	r0, r5, r0
+     a4c:	72c2      	strb	r2, [r0, #11]
+     a4e:	e7ef      	b.n	a30 <_eeprom_emulator_update_page_mapping+0xb4>
+		}
+	}
+
+	/* Use an invalid page number as the spare row until a valid one has been
+	 * found */
+	_eeprom_instance.spare_row = EEPROM_INVALID_ROW_NUMBER;
+     a50:	203f      	movs	r0, #63	; 0x3f
+     a52:	2287      	movs	r2, #135	; 0x87
+     a54:	491a      	ldr	r1, [pc, #104]	; (ac0 <_eeprom_emulator_update_page_mapping+0x144>)
+     a56:	5488      	strb	r0, [r1, r2]
+
+	/* Scan through all physical rows, to find an erased row to use as the
+	 * spare */
+	for (uint16_t c = 0; c < (_eeprom_instance.physical_pages / NVMCTRL_ROW_PAGES); c++) {
+     a58:	089d      	lsrs	r5, r3, #2
+     a5a:	d01f      	beq.n	a9c <_eeprom_emulator_update_page_mapping+0x120>
+
+			if (physical_page == EEPROM_MASTER_PAGE_NUMBER) {
+				continue;
+			}
+
+			if (_eeprom_instance.flash[physical_page].header.logical_page !=
+     a5c:	684c      	ldr	r4, [r1, #4]
+     a5e:	2104      	movs	r1, #4
+     a60:	2700      	movs	r7, #0
+			if (physical_page == EEPROM_MASTER_PAGE_NUMBER) {
+     a62:	3b01      	subs	r3, #1
+     a64:	e013      	b.n	a8e <_eeprom_emulator_update_page_mapping+0x112>
+     a66:	3201      	adds	r2, #1
+     a68:	b292      	uxth	r2, r2
+		for (uint8_t c2 = 0; c2 < NVMCTRL_ROW_PAGES; c2++) {
+     a6a:	4291      	cmp	r1, r2
+     a6c:	d007      	beq.n	a7e <_eeprom_emulator_update_page_mapping+0x102>
+			if (physical_page == EEPROM_MASTER_PAGE_NUMBER) {
+     a6e:	429a      	cmp	r2, r3
+     a70:	d0f9      	beq.n	a66 <_eeprom_emulator_update_page_mapping+0xea>
+			if (_eeprom_instance.flash[physical_page].header.logical_page !=
+     a72:	0190      	lsls	r0, r2, #6
+     a74:	5d00      	ldrb	r0, [r0, r4]
+     a76:	28ff      	cmp	r0, #255	; 0xff
+     a78:	d0f5      	beq.n	a66 <_eeprom_emulator_update_page_mapping+0xea>
+					EEPROM_INVALID_PAGE_NUMBER) {
+				spare_row_found = false;
+     a7a:	2600      	movs	r6, #0
+     a7c:	e7f3      	b.n	a66 <_eeprom_emulator_update_page_mapping+0xea>
+			}
+		}
+
+		/* If we've now found the spare row, store it and abort the search */
+		if (spare_row_found == true) {
+     a7e:	2e00      	cmp	r6, #0
+     a80:	d109      	bne.n	a96 <_eeprom_emulator_update_page_mapping+0x11a>
+	for (uint16_t c = 0; c < (_eeprom_instance.physical_pages / NVMCTRL_ROW_PAGES); c++) {
+     a82:	3701      	adds	r7, #1
+     a84:	b2bf      	uxth	r7, r7
+     a86:	3104      	adds	r1, #4
+     a88:	b289      	uxth	r1, r1
+     a8a:	42bd      	cmp	r5, r7
+     a8c:	d006      	beq.n	a9c <_eeprom_emulator_update_page_mapping+0x120>
+			uint16_t physical_page = (c * NVMCTRL_ROW_PAGES) + c2;
+     a8e:	1f0a      	subs	r2, r1, #4
+     a90:	b292      	uxth	r2, r2
+     a92:	2601      	movs	r6, #1
+     a94:	e7eb      	b.n	a6e <_eeprom_emulator_update_page_mapping+0xf2>
+			_eeprom_instance.spare_row = c;
+     a96:	2387      	movs	r3, #135	; 0x87
+     a98:	4a09      	ldr	r2, [pc, #36]	; (ac0 <_eeprom_emulator_update_page_mapping+0x144>)
+     a9a:	54d7      	strb	r7, [r2, r3]
+			break;
+		}
+	}
+}
+     a9c:	b003      	add	sp, #12
+     a9e:	bc3c      	pop	{r2, r3, r4, r5}
+     aa0:	4690      	mov	r8, r2
+     aa2:	4699      	mov	r9, r3
+     aa4:	46a2      	mov	sl, r4
+     aa6:	46ab      	mov	fp, r5
+     aa8:	bdf0      	pop	{r4, r5, r6, r7, pc}
+	_eeprom_instance.spare_row = EEPROM_INVALID_ROW_NUMBER;
+     aaa:	213f      	movs	r1, #63	; 0x3f
+     aac:	2387      	movs	r3, #135	; 0x87
+     aae:	4a04      	ldr	r2, [pc, #16]	; (ac0 <_eeprom_emulator_update_page_mapping+0x144>)
+     ab0:	54d1      	strb	r1, [r2, r3]
+     ab2:	e7f3      	b.n	a9c <_eeprom_emulator_update_page_mapping+0x120>
+     ab4:	213f      	movs	r1, #63	; 0x3f
+     ab6:	2387      	movs	r3, #135	; 0x87
+     ab8:	4a01      	ldr	r2, [pc, #4]	; (ac0 <_eeprom_emulator_update_page_mapping+0x144>)
+     aba:	54d1      	strb	r1, [r2, r3]
+     abc:	e7ee      	b.n	a9c <_eeprom_emulator_update_page_mapping+0x120>
+     abe:	46c0      	nop			; (mov r8, r8)
+     ac0:	20000048 	.word	0x20000048
+     ac4:	00000961 	.word	0x00000961
+
+00000ac8 <_eeprom_emulator_nvm_read_page>:
+{
+     ac8:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+     aca:	000d      	movs	r5, r1
+				(uint32_t)&_eeprom_instance.flash[physical_page],
+     acc:	0184      	lsls	r4, r0, #6
+     ace:	4f05      	ldr	r7, [pc, #20]	; (ae4 <_eeprom_emulator_nvm_read_page+0x1c>)
+		error_code = nvm_read_buffer(
+     ad0:	4e05      	ldr	r6, [pc, #20]	; (ae8 <_eeprom_emulator_nvm_read_page+0x20>)
+				(uint32_t)&_eeprom_instance.flash[physical_page],
+     ad2:	687b      	ldr	r3, [r7, #4]
+     ad4:	1918      	adds	r0, r3, r4
+		error_code = nvm_read_buffer(
+     ad6:	2240      	movs	r2, #64	; 0x40
+     ad8:	0029      	movs	r1, r5
+     ada:	47b0      	blx	r6
+	} while (error_code == STATUS_BUSY);
+     adc:	2805      	cmp	r0, #5
+     ade:	d0f8      	beq.n	ad2 <_eeprom_emulator_nvm_read_page+0xa>
+}
+     ae0:	bdf8      	pop	{r3, r4, r5, r6, r7, pc}
+     ae2:	46c0      	nop			; (mov r8, r8)
+     ae4:	20000048 	.word	0x20000048
+     ae8:	00000401 	.word	0x00000401
+
+00000aec <_eeprom_emulator_nvm_fill_cache>:
+{
+     aec:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+     aee:	000d      	movs	r5, r1
+				(uint32_t)&_eeprom_instance.flash[physical_page],
+     af0:	0184      	lsls	r4, r0, #6
+     af2:	4f05      	ldr	r7, [pc, #20]	; (b08 <_eeprom_emulator_nvm_fill_cache+0x1c>)
+		error_code = nvm_write_buffer(
+     af4:	4e05      	ldr	r6, [pc, #20]	; (b0c <_eeprom_emulator_nvm_fill_cache+0x20>)
+				(uint32_t)&_eeprom_instance.flash[physical_page],
+     af6:	687b      	ldr	r3, [r7, #4]
+     af8:	1918      	adds	r0, r3, r4
+		error_code = nvm_write_buffer(
+     afa:	2240      	movs	r2, #64	; 0x40
+     afc:	0029      	movs	r1, r5
+     afe:	47b0      	blx	r6
+	} while (error_code == STATUS_BUSY);
+     b00:	2805      	cmp	r0, #5
+     b02:	d0f8      	beq.n	af6 <_eeprom_emulator_nvm_fill_cache+0xa>
+}
+     b04:	bdf8      	pop	{r3, r4, r5, r6, r7, pc}
+     b06:	46c0      	nop			; (mov r8, r8)
+     b08:	20000048 	.word	0x20000048
+     b0c:	00000359 	.word	0x00000359
+
+00000b10 <_eeprom_emulator_nvm_commit_cache>:
+{
+     b10:	b570      	push	{r4, r5, r6, lr}
+				(uint32_t)&_eeprom_instance.flash[physical_page], 0);
+     b12:	0184      	lsls	r4, r0, #6
+     b14:	4e04      	ldr	r6, [pc, #16]	; (b28 <_eeprom_emulator_nvm_commit_cache+0x18>)
+		error_code = nvm_execute_command(
+     b16:	4d05      	ldr	r5, [pc, #20]	; (b2c <_eeprom_emulator_nvm_commit_cache+0x1c>)
+				(uint32_t)&_eeprom_instance.flash[physical_page], 0);
+     b18:	6873      	ldr	r3, [r6, #4]
+     b1a:	1919      	adds	r1, r3, r4
+		error_code = nvm_execute_command(
+     b1c:	2200      	movs	r2, #0
+     b1e:	2004      	movs	r0, #4
+     b20:	47a8      	blx	r5
+	} while (error_code == STATUS_BUSY);
+     b22:	2805      	cmp	r0, #5
+     b24:	d0f8      	beq.n	b18 <_eeprom_emulator_nvm_commit_cache+0x8>
+}
+     b26:	bd70      	pop	{r4, r5, r6, pc}
+     b28:	20000048 	.word	0x20000048
+     b2c:	000002b9 	.word	0x000002b9
+
+00000b30 <eeprom_emulator_init>:
+ *                                formatted
+ * \retval STATUS_ERR_IO          EEPROM data is incompatible with this version
+ *                                or scheme of the EEPROM emulator
+ */
+enum status_code eeprom_emulator_init(void)
+{
+     b30:	b510      	push	{r4, lr}
+     b32:	b098      	sub	sp, #96	; 0x60
+	config->sleep_power_mode  = NVM_SLEEP_POWER_MODE_WAKEONACCESS;
+     b34:	ab16      	add	r3, sp, #88	; 0x58
+     b36:	2100      	movs	r1, #0
+     b38:	7019      	strb	r1, [r3, #0]
+	config->manual_page_write = true;
+     b3a:	2201      	movs	r2, #1
+     b3c:	705a      	strb	r2, [r3, #1]
+	config->wait_states       = NVMCTRL->CTRLB.bit.RWS;
+     b3e:	4a2e      	ldr	r2, [pc, #184]	; (bf8 <eeprom_emulator_init+0xc8>)
+     b40:	6852      	ldr	r2, [r2, #4]
+     b42:	06d2      	lsls	r2, r2, #27
+     b44:	0f12      	lsrs	r2, r2, #28
+     b46:	709a      	strb	r2, [r3, #2]
+	config->disable_cache     = false;
+     b48:	70d9      	strb	r1, [r3, #3]
+	config->cache_readmode    = NVM_CACHE_READMODE_NO_MISS_PENALTY;
+     b4a:	7119      	strb	r1, [r3, #4]
+	nvm_get_config_defaults(&config);
+	config.manual_page_write = true;
+
+	/* Apply new NVM configuration */
+	do {
+		error_code = nvm_set_config(&config);
+     b4c:	4c2b      	ldr	r4, [pc, #172]	; (bfc <eeprom_emulator_init+0xcc>)
+     b4e:	a816      	add	r0, sp, #88	; 0x58
+     b50:	47a0      	blx	r4
+	} while (error_code == STATUS_BUSY);
+     b52:	2805      	cmp	r0, #5
+     b54:	d0fb      	beq.n	b4e <eeprom_emulator_init+0x1e>
+
+	/* Get the NVM controller configuration parameters */
+	nvm_get_parameters(&parameters);
+     b56:	a813      	add	r0, sp, #76	; 0x4c
+     b58:	4b29      	ldr	r3, [pc, #164]	; (c00 <eeprom_emulator_init+0xd0>)
+     b5a:	4798      	blx	r3
+
+	/* Ensure the device fuses are configured for at least one master page row,
+	 * one user EEPROM data row and one spare row */
+	if (parameters.eeprom_number_of_pages < (3 * NVMCTRL_ROW_PAGES)) {
+     b5c:	9b14      	ldr	r3, [sp, #80]	; 0x50
+		return STATUS_ERR_NO_MEMORY;
+     b5e:	2016      	movs	r0, #22
+	if (parameters.eeprom_number_of_pages < (3 * NVMCTRL_ROW_PAGES)) {
+     b60:	2b0b      	cmp	r3, #11
+     b62:	d801      	bhi.n	b68 <eeprom_emulator_init+0x38>
+
+	/* Mark initialization as complete */
+	_eeprom_instance.initialized = true;
+
+	return error_code;
+}
+     b64:	b018      	add	sp, #96	; 0x60
+     b66:	bd10      	pop	{r4, pc}
+	_eeprom_instance.physical_pages =
+     b68:	4c26      	ldr	r4, [pc, #152]	; (c04 <eeprom_emulator_init+0xd4>)
+     b6a:	8123      	strh	r3, [r4, #8]
+			(parameters.eeprom_number_of_pages - (2 * NVMCTRL_ROW_PAGES)) / 2;
+     b6c:	001a      	movs	r2, r3
+     b6e:	3a08      	subs	r2, #8
+     b70:	0852      	lsrs	r2, r2, #1
+	_eeprom_instance.logical_pages  =
+     b72:	72a2      	strb	r2, [r4, #10]
+			(void*)(FLASH_SIZE -
+     b74:	041b      	lsls	r3, r3, #16
+     b76:	0a9b      	lsrs	r3, r3, #10
+     b78:	425b      	negs	r3, r3
+     b7a:	2280      	movs	r2, #128	; 0x80
+     b7c:	02d2      	lsls	r2, r2, #11
+     b7e:	4694      	mov	ip, r2
+     b80:	4463      	add	r3, ip
+	_eeprom_instance.flash =
+     b82:	6063      	str	r3, [r4, #4]
+	_eeprom_instance.cache_active = false;
+     b84:	2200      	movs	r2, #0
+     b86:	23c8      	movs	r3, #200	; 0xc8
+     b88:	54e2      	strb	r2, [r4, r3]
+	_eeprom_emulator_update_page_mapping();
+     b8a:	4b1f      	ldr	r3, [pc, #124]	; (c08 <eeprom_emulator_init+0xd8>)
+     b8c:	4798      	blx	r3
+	if (_eeprom_instance.spare_row == EEPROM_INVALID_ROW_NUMBER) {
+     b8e:	2387      	movs	r3, #135	; 0x87
+     b90:	5ce3      	ldrb	r3, [r4, r3]
+		return STATUS_ERR_BAD_FORMAT;
+     b92:	201a      	movs	r0, #26
+	if (_eeprom_instance.spare_row == EEPROM_INVALID_ROW_NUMBER) {
+     b94:	2b3f      	cmp	r3, #63	; 0x3f
+     b96:	d0e5      	beq.n	b64 <eeprom_emulator_init+0x34>
+	const uint32_t magic_key[] = EEPROM_MAGIC_KEY;
+     b98:	466a      	mov	r2, sp
+     b9a:	4b1c      	ldr	r3, [pc, #112]	; (c0c <eeprom_emulator_init+0xdc>)
+     b9c:	cb13      	ldmia	r3!, {r0, r1, r4}
+     b9e:	c213      	stmia	r2!, {r0, r1, r4}
+	_eeprom_emulator_nvm_read_page(EEPROM_MASTER_PAGE_NUMBER, &master_page);
+     ba0:	4b18      	ldr	r3, [pc, #96]	; (c04 <eeprom_emulator_init+0xd4>)
+     ba2:	8918      	ldrh	r0, [r3, #8]
+     ba4:	3801      	subs	r0, #1
+     ba6:	b280      	uxth	r0, r0
+     ba8:	0011      	movs	r1, r2
+     baa:	4b19      	ldr	r3, [pc, #100]	; (c10 <eeprom_emulator_init+0xe0>)
+     bac:	4798      	blx	r3
+		if (master_page.magic_key[c] != magic_key[c]) {
+     bae:	9b03      	ldr	r3, [sp, #12]
+     bb0:	9a00      	ldr	r2, [sp, #0]
+     bb2:	4293      	cmp	r3, r2
+     bb4:	d119      	bne.n	bea <eeprom_emulator_init+0xba>
+     bb6:	9b04      	ldr	r3, [sp, #16]
+     bb8:	9a01      	ldr	r2, [sp, #4]
+     bba:	4293      	cmp	r3, r2
+     bbc:	d117      	bne.n	bee <eeprom_emulator_init+0xbe>
+     bbe:	9b05      	ldr	r3, [sp, #20]
+     bc0:	9a02      	ldr	r2, [sp, #8]
+     bc2:	4293      	cmp	r3, r2
+     bc4:	d115      	bne.n	bf2 <eeprom_emulator_init+0xc2>
+	if (master_page.emulator_id   != EEPROM_EMULATOR_ID) {
+     bc6:	ab03      	add	r3, sp, #12
+     bc8:	7bdb      	ldrb	r3, [r3, #15]
+		return STATUS_ERR_IO;
+     bca:	2010      	movs	r0, #16
+	if (master_page.emulator_id   != EEPROM_EMULATOR_ID) {
+     bcc:	2b01      	cmp	r3, #1
+     bce:	d1c9      	bne.n	b64 <eeprom_emulator_init+0x34>
+	if (master_page.major_version != EEPROM_MAJOR_VERSION) {
+     bd0:	ab03      	add	r3, sp, #12
+     bd2:	7b1b      	ldrb	r3, [r3, #12]
+     bd4:	2b01      	cmp	r3, #1
+     bd6:	d1c5      	bne.n	b64 <eeprom_emulator_init+0x34>
+	if (master_page.minor_version != EEPROM_MINOR_VERSION) {
+     bd8:	ab03      	add	r3, sp, #12
+     bda:	7b5b      	ldrb	r3, [r3, #13]
+     bdc:	2b00      	cmp	r3, #0
+     bde:	d1c1      	bne.n	b64 <eeprom_emulator_init+0x34>
+	_eeprom_instance.initialized = true;
+     be0:	2201      	movs	r2, #1
+     be2:	4b08      	ldr	r3, [pc, #32]	; (c04 <eeprom_emulator_init+0xd4>)
+     be4:	701a      	strb	r2, [r3, #0]
+	return error_code;
+     be6:	2000      	movs	r0, #0
+     be8:	e7bc      	b.n	b64 <eeprom_emulator_init+0x34>
+			return STATUS_ERR_BAD_FORMAT;
+     bea:	201a      	movs	r0, #26
+     bec:	e7ba      	b.n	b64 <eeprom_emulator_init+0x34>
+     bee:	201a      	movs	r0, #26
+     bf0:	e7b8      	b.n	b64 <eeprom_emulator_init+0x34>
+     bf2:	201a      	movs	r0, #26
+     bf4:	e7b6      	b.n	b64 <eeprom_emulator_init+0x34>
+     bf6:	46c0      	nop			; (mov r8, r8)
+     bf8:	41004000 	.word	0x41004000
+     bfc:	00000231 	.word	0x00000231
+     c00:	000004c9 	.word	0x000004c9
+     c04:	20000048 	.word	0x20000048
+     c08:	0000097d 	.word	0x0000097d
+     c0c:	0000129c 	.word	0x0000129c
+     c10:	00000ac9 	.word	0x00000ac9
+
+00000c14 <eeprom_emulator_erase_memory>:
+ *
+ * Erases and re-initializes the emulated EEPROM memory space, destroying any
+ * existing data.
+ */
+void eeprom_emulator_erase_memory(void)
+{
+     c14:	b570      	push	{r4, r5, r6, lr}
+     c16:	b094      	sub	sp, #80	; 0x50
+	_eeprom_instance.spare_row = 0;
+     c18:	4c2f      	ldr	r4, [pc, #188]	; (cd8 <eeprom_emulator_erase_memory+0xc4>)
+     c1a:	2200      	movs	r2, #0
+     c1c:	2387      	movs	r3, #135	; 0x87
+     c1e:	54e2      	strb	r2, [r4, r3]
+	_eeprom_emulator_nvm_erase_row(_eeprom_instance.spare_row);
+     c20:	2000      	movs	r0, #0
+     c22:	4b2e      	ldr	r3, [pc, #184]	; (cdc <eeprom_emulator_erase_memory+0xc8>)
+     c24:	4798      	blx	r3
+			physical_page < _eeprom_instance.physical_pages; physical_page++) {
+     c26:	8925      	ldrh	r5, [r4, #8]
+	for (uint16_t physical_page = NVMCTRL_ROW_PAGES;
+     c28:	2d04      	cmp	r5, #4
+     c2a:	d925      	bls.n	c78 <eeprom_emulator_erase_memory+0x64>
+     c2c:	2600      	movs	r6, #0
+     c2e:	2404      	movs	r4, #4
+     c30:	e019      	b.n	c66 <eeprom_emulator_erase_memory+0x52>
+			_eeprom_emulator_nvm_erase_row(physical_page / NVMCTRL_ROW_PAGES);
+     c32:	08a0      	lsrs	r0, r4, #2
+     c34:	b2c0      	uxtb	r0, r0
+     c36:	4b29      	ldr	r3, [pc, #164]	; (cdc <eeprom_emulator_erase_memory+0xc8>)
+     c38:	4798      	blx	r3
+			memset(&data, 0xFF, sizeof(data));
+     c3a:	ad04      	add	r5, sp, #16
+     c3c:	2240      	movs	r2, #64	; 0x40
+     c3e:	21ff      	movs	r1, #255	; 0xff
+     c40:	0028      	movs	r0, r5
+     c42:	4b27      	ldr	r3, [pc, #156]	; (ce0 <eeprom_emulator_erase_memory+0xcc>)
+     c44:	4798      	blx	r3
+			data.header.logical_page = logical_page;
+     c46:	702e      	strb	r6, [r5, #0]
+			_eeprom_emulator_nvm_fill_cache(physical_page, &data);
+     c48:	0029      	movs	r1, r5
+     c4a:	0020      	movs	r0, r4
+     c4c:	4b25      	ldr	r3, [pc, #148]	; (ce4 <eeprom_emulator_erase_memory+0xd0>)
+     c4e:	4798      	blx	r3
+			_eeprom_emulator_nvm_commit_cache(physical_page);
+     c50:	0020      	movs	r0, r4
+     c52:	4b25      	ldr	r3, [pc, #148]	; (ce8 <eeprom_emulator_erase_memory+0xd4>)
+     c54:	4798      	blx	r3
+			logical_page++;
+     c56:	3601      	adds	r6, #1
+     c58:	b2b6      	uxth	r6, r6
+			physical_page < _eeprom_instance.physical_pages; physical_page++) {
+     c5a:	3401      	adds	r4, #1
+     c5c:	b2a4      	uxth	r4, r4
+     c5e:	4b1e      	ldr	r3, [pc, #120]	; (cd8 <eeprom_emulator_erase_memory+0xc4>)
+     c60:	891d      	ldrh	r5, [r3, #8]
+	for (uint16_t physical_page = NVMCTRL_ROW_PAGES;
+     c62:	42a5      	cmp	r5, r4
+     c64:	d908      	bls.n	c78 <eeprom_emulator_erase_memory+0x64>
+		if (physical_page == EEPROM_MASTER_PAGE_NUMBER) {
+     c66:	3d01      	subs	r5, #1
+     c68:	42ac      	cmp	r4, r5
+     c6a:	d0f6      	beq.n	c5a <eeprom_emulator_erase_memory+0x46>
+		if ((physical_page % NVMCTRL_ROW_PAGES) == 0) {
+     c6c:	2303      	movs	r3, #3
+     c6e:	4023      	ands	r3, r4
+     c70:	d0df      	beq.n	c32 <eeprom_emulator_erase_memory+0x1e>
+		if ((physical_page % NVMCTRL_ROW_PAGES) < 2) {
+     c72:	2b01      	cmp	r3, #1
+     c74:	d8f1      	bhi.n	c5a <eeprom_emulator_erase_memory+0x46>
+     c76:	e7e0      	b.n	c3a <eeprom_emulator_erase_memory+0x26>
+	const uint32_t magic_key[] = EEPROM_MAGIC_KEY;
+     c78:	ae01      	add	r6, sp, #4
+     c7a:	4b1c      	ldr	r3, [pc, #112]	; (cec <eeprom_emulator_erase_memory+0xd8>)
+     c7c:	0032      	movs	r2, r6
+     c7e:	cb13      	ldmia	r3!, {r0, r1, r4}
+     c80:	c213      	stmia	r2!, {r0, r1, r4}
+	memset(&master_page, 0xFF, sizeof(master_page));
+     c82:	ac04      	add	r4, sp, #16
+     c84:	2240      	movs	r2, #64	; 0x40
+     c86:	21ff      	movs	r1, #255	; 0xff
+     c88:	0020      	movs	r0, r4
+     c8a:	4b15      	ldr	r3, [pc, #84]	; (ce0 <eeprom_emulator_erase_memory+0xcc>)
+     c8c:	4798      	blx	r3
+		master_page.magic_key[c] = magic_key[c];
+     c8e:	9b01      	ldr	r3, [sp, #4]
+     c90:	9304      	str	r3, [sp, #16]
+     c92:	6873      	ldr	r3, [r6, #4]
+     c94:	6063      	str	r3, [r4, #4]
+     c96:	68b3      	ldr	r3, [r6, #8]
+     c98:	60a3      	str	r3, [r4, #8]
+	master_page.emulator_id   = EEPROM_EMULATOR_ID;
+     c9a:	2301      	movs	r3, #1
+     c9c:	73e3      	strb	r3, [r4, #15]
+	master_page.major_version = EEPROM_MAJOR_VERSION;
+     c9e:	7323      	strb	r3, [r4, #12]
+	master_page.minor_version = EEPROM_MINOR_VERSION;
+     ca0:	2300      	movs	r3, #0
+     ca2:	7363      	strb	r3, [r4, #13]
+	master_page.revision      = EEPROM_REVISION;
+     ca4:	73a3      	strb	r3, [r4, #14]
+			EEPROM_MASTER_PAGE_NUMBER / NVMCTRL_ROW_PAGES);
+     ca6:	3d01      	subs	r5, #1
+     ca8:	17eb      	asrs	r3, r5, #31
+     caa:	2003      	movs	r0, #3
+     cac:	4018      	ands	r0, r3
+     cae:	1945      	adds	r5, r0, r5
+     cb0:	10ad      	asrs	r5, r5, #2
+	_eeprom_emulator_nvm_erase_row(
+     cb2:	b2e8      	uxtb	r0, r5
+     cb4:	4b09      	ldr	r3, [pc, #36]	; (cdc <eeprom_emulator_erase_memory+0xc8>)
+     cb6:	4798      	blx	r3
+	_eeprom_emulator_nvm_fill_cache(EEPROM_MASTER_PAGE_NUMBER, &master_page);
+     cb8:	4d07      	ldr	r5, [pc, #28]	; (cd8 <eeprom_emulator_erase_memory+0xc4>)
+     cba:	8928      	ldrh	r0, [r5, #8]
+     cbc:	3801      	subs	r0, #1
+     cbe:	b280      	uxth	r0, r0
+     cc0:	0021      	movs	r1, r4
+     cc2:	4b08      	ldr	r3, [pc, #32]	; (ce4 <eeprom_emulator_erase_memory+0xd0>)
+     cc4:	4798      	blx	r3
+	_eeprom_emulator_nvm_commit_cache(EEPROM_MASTER_PAGE_NUMBER);
+     cc6:	8928      	ldrh	r0, [r5, #8]
+     cc8:	3801      	subs	r0, #1
+     cca:	b280      	uxth	r0, r0
+     ccc:	4b06      	ldr	r3, [pc, #24]	; (ce8 <eeprom_emulator_erase_memory+0xd4>)
+     cce:	4798      	blx	r3
+
+	/* Write EEPROM emulation master block */
+	_eeprom_emulator_create_master_page();
+
+	/* Map the newly created EEPROM memory block */
+	_eeprom_emulator_update_page_mapping();
+     cd0:	4b07      	ldr	r3, [pc, #28]	; (cf0 <eeprom_emulator_erase_memory+0xdc>)
+     cd2:	4798      	blx	r3
+}
+     cd4:	b014      	add	sp, #80	; 0x50
+     cd6:	bd70      	pop	{r4, r5, r6, pc}
+     cd8:	20000048 	.word	0x20000048
+     cdc:	00000961 	.word	0x00000961
+     ce0:	0000114f 	.word	0x0000114f
+     ce4:	00000aed 	.word	0x00000aed
+     ce8:	00000b11 	.word	0x00000b11
+     cec:	0000129c 	.word	0x0000129c
+     cf0:	0000097d 	.word	0x0000097d
+
+00000cf4 <eeprom_emulator_read_page>:
+ *                                      EEPROM memory space was supplied
+ */
+enum status_code eeprom_emulator_read_page(
+		const uint8_t logical_page,
+		uint8_t *const data)
+{
+     cf4:	b510      	push	{r4, lr}
+     cf6:	b090      	sub	sp, #64	; 0x40
+     cf8:	000c      	movs	r4, r1
+	/* Ensure the emulated EEPROM has been initialized first */
+	if (_eeprom_instance.initialized == false) {
+     cfa:	4b15      	ldr	r3, [pc, #84]	; (d50 <eeprom_emulator_read_page+0x5c>)
+     cfc:	781a      	ldrb	r2, [r3, #0]
+		return STATUS_ERR_NOT_INITIALIZED;
+     cfe:	231f      	movs	r3, #31
+	if (_eeprom_instance.initialized == false) {
+     d00:	2a00      	cmp	r2, #0
+     d02:	d102      	bne.n	d0a <eeprom_emulator_read_page+0x16>
+		/* Copy the data portion of the read page to the user's buffer */
+		memcpy(data, temp.data, EEPROM_PAGE_SIZE);
+	}
+
+	return STATUS_OK;
+}
+     d04:	0018      	movs	r0, r3
+     d06:	b010      	add	sp, #64	; 0x40
+     d08:	bd10      	pop	{r4, pc}
+	if (logical_page >= _eeprom_instance.logical_pages) {
+     d0a:	4b11      	ldr	r3, [pc, #68]	; (d50 <eeprom_emulator_read_page+0x5c>)
+     d0c:	7a9a      	ldrb	r2, [r3, #10]
+		return STATUS_ERR_BAD_ADDRESS;
+     d0e:	2318      	movs	r3, #24
+	if (logical_page >= _eeprom_instance.logical_pages) {
+     d10:	4282      	cmp	r2, r0
+     d12:	d9f7      	bls.n	d04 <eeprom_emulator_read_page+0x10>
+	if ((_eeprom_instance.cache_active == true) &&
+     d14:	33b0      	adds	r3, #176	; 0xb0
+     d16:	4a0e      	ldr	r2, [pc, #56]	; (d50 <eeprom_emulator_read_page+0x5c>)
+     d18:	5cd3      	ldrb	r3, [r2, r3]
+     d1a:	2b00      	cmp	r3, #0
+     d1c:	d003      	beq.n	d26 <eeprom_emulator_read_page+0x32>
+		 (_eeprom_instance.cache.header.logical_page == logical_page)) {
+     d1e:	2388      	movs	r3, #136	; 0x88
+	if ((_eeprom_instance.cache_active == true) &&
+     d20:	5cd3      	ldrb	r3, [r2, r3]
+     d22:	4283      	cmp	r3, r0
+     d24:	d00c      	beq.n	d40 <eeprom_emulator_read_page+0x4c>
+				_eeprom_instance.page_map[logical_page], &temp);
+     d26:	4b0a      	ldr	r3, [pc, #40]	; (d50 <eeprom_emulator_read_page+0x5c>)
+     d28:	1818      	adds	r0, r3, r0
+		_eeprom_emulator_nvm_read_page(
+     d2a:	7ac0      	ldrb	r0, [r0, #11]
+     d2c:	4669      	mov	r1, sp
+     d2e:	4b09      	ldr	r3, [pc, #36]	; (d54 <eeprom_emulator_read_page+0x60>)
+     d30:	4798      	blx	r3
+		memcpy(data, temp.data, EEPROM_PAGE_SIZE);
+     d32:	223c      	movs	r2, #60	; 0x3c
+     d34:	a901      	add	r1, sp, #4
+     d36:	0020      	movs	r0, r4
+     d38:	4b07      	ldr	r3, [pc, #28]	; (d58 <eeprom_emulator_read_page+0x64>)
+     d3a:	4798      	blx	r3
+	return STATUS_OK;
+     d3c:	2300      	movs	r3, #0
+     d3e:	e7e1      	b.n	d04 <eeprom_emulator_read_page+0x10>
+		memcpy(data, _eeprom_instance.cache.data, EEPROM_PAGE_SIZE);
+     d40:	223c      	movs	r2, #60	; 0x3c
+     d42:	4903      	ldr	r1, [pc, #12]	; (d50 <eeprom_emulator_read_page+0x5c>)
+     d44:	318c      	adds	r1, #140	; 0x8c
+     d46:	0020      	movs	r0, r4
+     d48:	4b03      	ldr	r3, [pc, #12]	; (d58 <eeprom_emulator_read_page+0x64>)
+     d4a:	4798      	blx	r3
+	return STATUS_OK;
+     d4c:	2300      	movs	r3, #0
+		memcpy(data, _eeprom_instance.cache.data, EEPROM_PAGE_SIZE);
+     d4e:	e7d9      	b.n	d04 <eeprom_emulator_read_page+0x10>
+     d50:	20000048 	.word	0x20000048
+     d54:	00000ac9 	.word	0x00000ac9
+     d58:	0000113d 	.word	0x0000113d
+
+00000d5c <eeprom_emulator_commit_page_buffer>:
+ *       data loss.
+ *
+ * \return Status code indicating the status of the operation.
+ */
+enum status_code eeprom_emulator_commit_page_buffer(void)
+{
+     d5c:	b510      	push	{r4, lr}
+	enum status_code error_code = STATUS_OK;
+
+	/* If cache is inactive, no need to commit anything to physical memory */
+	if (_eeprom_instance.cache_active == false) {
+     d5e:	23c8      	movs	r3, #200	; 0xc8
+     d60:	4a08      	ldr	r2, [pc, #32]	; (d84 <eeprom_emulator_commit_page_buffer+0x28>)
+     d62:	5cd3      	ldrb	r3, [r2, r3]
+     d64:	2b00      	cmp	r3, #0
+     d66:	d101      	bne.n	d6c <eeprom_emulator_commit_page_buffer+0x10>
+
+	barrier(); // Enforce ordering to prevent incorrect cache state
+	_eeprom_instance.cache_active = false;
+
+	return error_code;
+}
+     d68:	2000      	movs	r0, #0
+     d6a:	bd10      	pop	{r4, pc}
+			_eeprom_instance.page_map[cached_logical_page]);
+     d6c:	0014      	movs	r4, r2
+	uint8_t cached_logical_page = _eeprom_instance.cache.header.logical_page;
+     d6e:	2388      	movs	r3, #136	; 0x88
+			_eeprom_instance.page_map[cached_logical_page]);
+     d70:	5cd3      	ldrb	r3, [r2, r3]
+     d72:	18d3      	adds	r3, r2, r3
+	_eeprom_emulator_nvm_commit_cache(
+     d74:	7ad8      	ldrb	r0, [r3, #11]
+     d76:	4b04      	ldr	r3, [pc, #16]	; (d88 <eeprom_emulator_commit_page_buffer+0x2c>)
+     d78:	4798      	blx	r3
+	_eeprom_instance.cache_active = false;
+     d7a:	2200      	movs	r2, #0
+     d7c:	23c8      	movs	r3, #200	; 0xc8
+     d7e:	54e2      	strb	r2, [r4, r3]
+	return error_code;
+     d80:	e7f2      	b.n	d68 <eeprom_emulator_commit_page_buffer+0xc>
+     d82:	46c0      	nop			; (mov r8, r8)
+     d84:	20000048 	.word	0x20000048
+     d88:	00000b11 	.word	0x00000b11
+
+00000d8c <eeprom_emulator_write_page>:
+{
+     d8c:	b5f0      	push	{r4, r5, r6, r7, lr}
+     d8e:	46de      	mov	lr, fp
+     d90:	4657      	mov	r7, sl
+     d92:	464e      	mov	r6, r9
+     d94:	4645      	mov	r5, r8
+     d96:	b5e0      	push	{r5, r6, r7, lr}
+     d98:	b087      	sub	sp, #28
+     d9a:	0004      	movs	r4, r0
+     d9c:	9100      	str	r1, [sp, #0]
+	if (_eeprom_instance.initialized == false) {
+     d9e:	4b5a      	ldr	r3, [pc, #360]	; (f08 <eeprom_emulator_write_page+0x17c>)
+     da0:	781b      	ldrb	r3, [r3, #0]
+		return STATUS_ERR_NOT_INITIALIZED;
+     da2:	201f      	movs	r0, #31
+	if (_eeprom_instance.initialized == false) {
+     da4:	2b00      	cmp	r3, #0
+     da6:	d106      	bne.n	db6 <eeprom_emulator_write_page+0x2a>
+}
+     da8:	b007      	add	sp, #28
+     daa:	bc3c      	pop	{r2, r3, r4, r5}
+     dac:	4690      	mov	r8, r2
+     dae:	4699      	mov	r9, r3
+     db0:	46a2      	mov	sl, r4
+     db2:	46ab      	mov	fp, r5
+     db4:	bdf0      	pop	{r4, r5, r6, r7, pc}
+	if (logical_page >= _eeprom_instance.logical_pages) {
+     db6:	4b54      	ldr	r3, [pc, #336]	; (f08 <eeprom_emulator_write_page+0x17c>)
+     db8:	7a9b      	ldrb	r3, [r3, #10]
+		return STATUS_ERR_BAD_ADDRESS;
+     dba:	3807      	subs	r0, #7
+	if (logical_page >= _eeprom_instance.logical_pages) {
+     dbc:	42a3      	cmp	r3, r4
+     dbe:	d9f3      	bls.n	da8 <eeprom_emulator_write_page+0x1c>
+	if ((_eeprom_instance.cache_active == true) &&
+     dc0:	23c8      	movs	r3, #200	; 0xc8
+     dc2:	4a51      	ldr	r2, [pc, #324]	; (f08 <eeprom_emulator_write_page+0x17c>)
+     dc4:	5cd3      	ldrb	r3, [r2, r3]
+     dc6:	2b00      	cmp	r3, #0
+     dc8:	d005      	beq.n	dd6 <eeprom_emulator_write_page+0x4a>
+			(_eeprom_instance.cache.header.logical_page != logical_page)) {
+     dca:	2388      	movs	r3, #136	; 0x88
+	if ((_eeprom_instance.cache_active == true) &&
+     dcc:	5cd3      	ldrb	r3, [r2, r3]
+     dce:	42a3      	cmp	r3, r4
+     dd0:	d001      	beq.n	dd6 <eeprom_emulator_write_page+0x4a>
+		eeprom_emulator_commit_page_buffer();
+     dd2:	4b4e      	ldr	r3, [pc, #312]	; (f0c <eeprom_emulator_write_page+0x180>)
+     dd4:	4798      	blx	r3
+	bool page_spare  = _eeprom_emulator_is_page_free_on_row(
+     dd6:	4b4c      	ldr	r3, [pc, #304]	; (f08 <eeprom_emulator_write_page+0x17c>)
+     dd8:	191b      	adds	r3, r3, r4
+     dda:	7ade      	ldrb	r6, [r3, #11]
+		uint8_t page = (row * NVMCTRL_ROW_PAGES) + c;
+     ddc:	2303      	movs	r3, #3
+     dde:	0031      	movs	r1, r6
+     de0:	4399      	bics	r1, r3
+		if (_eeprom_instance.flash[page].header.logical_page ==
+     de2:	4b49      	ldr	r3, [pc, #292]	; (f08 <eeprom_emulator_write_page+0x17c>)
+     de4:	6858      	ldr	r0, [r3, #4]
+     de6:	01b3      	lsls	r3, r6, #6
+     de8:	5c1b      	ldrb	r3, [r3, r0]
+     dea:	2bff      	cmp	r3, #255	; 0xff
+     dec:	d047      	beq.n	e7e <eeprom_emulator_write_page+0xf2>
+     dee:	1c75      	adds	r5, r6, #1
+     df0:	b2ed      	uxtb	r5, r5
+     df2:	3104      	adds	r1, #4
+     df4:	b2c9      	uxtb	r1, r1
+	for (uint8_t c = page_in_row; c < NVMCTRL_ROW_PAGES; c++) {
+     df6:	42a9      	cmp	r1, r5
+     df8:	d057      	beq.n	eaa <eeprom_emulator_write_page+0x11e>
+     dfa:	1c6b      	adds	r3, r5, #1
+     dfc:	b2db      	uxtb	r3, r3
+		if (_eeprom_instance.flash[page].header.logical_page ==
+     dfe:	01aa      	lsls	r2, r5, #6
+     e00:	5c12      	ldrb	r2, [r2, r0]
+     e02:	2aff      	cmp	r2, #255	; 0xff
+     e04:	d03c      	beq.n	e80 <eeprom_emulator_write_page+0xf4>
+     e06:	001d      	movs	r5, r3
+     e08:	e7f5      	b.n	df6 <eeprom_emulator_write_page+0x6a>
+				page_trans[c].physical_page =
+     e0a:	aa05      	add	r2, sp, #20
+     e0c:	18d2      	adds	r2, r2, r3
+     e0e:	7056      	strb	r6, [r2, #1]
+     e10:	e069      	b.n	ee6 <eeprom_emulator_write_page+0x15a>
+     e12:	af05      	add	r7, sp, #20
+     e14:	18ff      	adds	r7, r7, r3
+     e16:	707d      	strb	r5, [r7, #1]
+     e18:	e063      	b.n	ee2 <eeprom_emulator_write_page+0x156>
+			_eeprom_emulator_nvm_read_page(
+     e1a:	7870      	ldrb	r0, [r6, #1]
+     e1c:	9902      	ldr	r1, [sp, #8]
+     e1e:	4b3c      	ldr	r3, [pc, #240]	; (f10 <eeprom_emulator_write_page+0x184>)
+     e20:	4798      	blx	r3
+		_eeprom_emulator_nvm_fill_cache(new_page, &_eeprom_instance.cache);
+     e22:	4c39      	ldr	r4, [pc, #228]	; (f08 <eeprom_emulator_write_page+0x17c>)
+     e24:	0021      	movs	r1, r4
+     e26:	3188      	adds	r1, #136	; 0x88
+     e28:	b2a8      	uxth	r0, r5
+     e2a:	4b3a      	ldr	r3, [pc, #232]	; (f14 <eeprom_emulator_write_page+0x188>)
+     e2c:	4798      	blx	r3
+		_eeprom_instance.page_map[page_trans[c].logical_page] = new_page;
+     e2e:	464b      	mov	r3, r9
+     e30:	781b      	ldrb	r3, [r3, #0]
+     e32:	18e3      	adds	r3, r4, r3
+     e34:	72dd      	strb	r5, [r3, #11]
+		_eeprom_instance.cache_active = true;
+     e36:	2201      	movs	r2, #1
+     e38:	23c8      	movs	r3, #200	; 0xc8
+     e3a:	54e2      	strb	r2, [r4, r3]
+     e3c:	3701      	adds	r7, #1
+     e3e:	3602      	adds	r6, #2
+	for (uint8_t c = 0; c < 2; c++) {
+     e40:	2f02      	cmp	r7, #2
+     e42:	d013      	beq.n	e6c <eeprom_emulator_write_page+0xe0>
+				((_eeprom_instance.spare_row * NVMCTRL_ROW_PAGES) + c);
+     e44:	2387      	movs	r3, #135	; 0x87
+     e46:	465a      	mov	r2, fp
+     e48:	5cd5      	ldrb	r5, [r2, r3]
+     e4a:	00ad      	lsls	r5, r5, #2
+     e4c:	19ed      	adds	r5, r5, r7
+		eeprom_emulator_commit_page_buffer();
+     e4e:	47d0      	blx	sl
+     e50:	46b1      	mov	r9, r6
+		if (logical_page == page_trans[c].logical_page) {
+     e52:	7833      	ldrb	r3, [r6, #0]
+     e54:	9901      	ldr	r1, [sp, #4]
+     e56:	428b      	cmp	r3, r1
+     e58:	d1df      	bne.n	e1a <eeprom_emulator_write_page+0x8e>
+			_eeprom_instance.cache.header.logical_page = logical_page;
+     e5a:	2388      	movs	r3, #136	; 0x88
+     e5c:	4a2a      	ldr	r2, [pc, #168]	; (f08 <eeprom_emulator_write_page+0x17c>)
+     e5e:	54d1      	strb	r1, [r2, r3]
+			memcpy(_eeprom_instance.cache.data, data, EEPROM_PAGE_SIZE);
+     e60:	223c      	movs	r2, #60	; 0x3c
+     e62:	9900      	ldr	r1, [sp, #0]
+     e64:	9803      	ldr	r0, [sp, #12]
+     e66:	4b2c      	ldr	r3, [pc, #176]	; (f18 <eeprom_emulator_write_page+0x18c>)
+     e68:	4798      	blx	r3
+     e6a:	e7da      	b.n	e22 <eeprom_emulator_write_page+0x96>
+	_eeprom_emulator_nvm_erase_row(row_number);
+     e6c:	4644      	mov	r4, r8
+     e6e:	4640      	mov	r0, r8
+     e70:	4b2a      	ldr	r3, [pc, #168]	; (f1c <eeprom_emulator_write_page+0x190>)
+     e72:	4798      	blx	r3
+	_eeprom_instance.spare_row = row_number;
+     e74:	2387      	movs	r3, #135	; 0x87
+     e76:	4a24      	ldr	r2, [pc, #144]	; (f08 <eeprom_emulator_write_page+0x17c>)
+     e78:	54d4      	strb	r4, [r2, r3]
+		return STATUS_OK;
+     e7a:	2000      	movs	r0, #0
+     e7c:	e794      	b.n	da8 <eeprom_emulator_write_page+0x1c>
+		uint8_t page = (row * NVMCTRL_ROW_PAGES) + c;
+     e7e:	0035      	movs	r5, r6
+	_eeprom_instance.cache.header.logical_page = logical_page;
+     e80:	4e21      	ldr	r6, [pc, #132]	; (f08 <eeprom_emulator_write_page+0x17c>)
+     e82:	2388      	movs	r3, #136	; 0x88
+     e84:	54f4      	strb	r4, [r6, r3]
+	memcpy(&_eeprom_instance.cache.data,
+     e86:	0030      	movs	r0, r6
+     e88:	308c      	adds	r0, #140	; 0x8c
+     e8a:	223c      	movs	r2, #60	; 0x3c
+     e8c:	9900      	ldr	r1, [sp, #0]
+     e8e:	4b22      	ldr	r3, [pc, #136]	; (f18 <eeprom_emulator_write_page+0x18c>)
+     e90:	4798      	blx	r3
+	_eeprom_emulator_nvm_fill_cache(new_page, &_eeprom_instance.cache);
+     e92:	0031      	movs	r1, r6
+     e94:	3188      	adds	r1, #136	; 0x88
+     e96:	b2a8      	uxth	r0, r5
+     e98:	4b1e      	ldr	r3, [pc, #120]	; (f14 <eeprom_emulator_write_page+0x188>)
+     e9a:	4798      	blx	r3
+	_eeprom_instance.page_map[logical_page] = new_page;
+     e9c:	1934      	adds	r4, r6, r4
+     e9e:	72e5      	strb	r5, [r4, #11]
+	_eeprom_instance.cache_active           = true;
+     ea0:	2201      	movs	r2, #1
+     ea2:	23c8      	movs	r3, #200	; 0xc8
+     ea4:	54f2      	strb	r2, [r6, r3]
+	return STATUS_OK;
+     ea6:	2000      	movs	r0, #0
+     ea8:	e77e      	b.n	da8 <eeprom_emulator_write_page+0x1c>
+		_eeprom_emulator_move_data_to_spare(
+     eaa:	08b3      	lsrs	r3, r6, #2
+     eac:	4698      	mov	r8, r3
+			(struct _eeprom_page *)&_eeprom_instance.flash[row_number * NVMCTRL_ROW_PAGES];
+     eae:	021b      	lsls	r3, r3, #8
+	const struct _eeprom_page *row_data =
+     eb0:	4a15      	ldr	r2, [pc, #84]	; (f08 <eeprom_emulator_write_page+0x17c>)
+     eb2:	6852      	ldr	r2, [r2, #4]
+     eb4:	18d3      	adds	r3, r2, r3
+	page_trans[0].logical_page  = row_data[0].header.logical_page;
+     eb6:	aa05      	add	r2, sp, #20
+     eb8:	7819      	ldrb	r1, [r3, #0]
+     eba:	7011      	strb	r1, [r2, #0]
+	page_trans[0].physical_page = (row_number * NVMCTRL_ROW_PAGES);
+     ebc:	2103      	movs	r1, #3
+     ebe:	438e      	bics	r6, r1
+     ec0:	7056      	strb	r6, [r2, #1]
+	page_trans[1].logical_page  = row_data[1].header.logical_page;
+     ec2:	313d      	adds	r1, #61	; 0x3d
+     ec4:	5c59      	ldrb	r1, [r3, r1]
+     ec6:	7091      	strb	r1, [r2, #2]
+	page_trans[1].physical_page = (row_number * NVMCTRL_ROW_PAGES) + 1;
+     ec8:	1c71      	adds	r1, r6, #1
+     eca:	70d1      	strb	r1, [r2, #3]
+			if (page_trans[c].logical_page == row_data[c2].header.logical_page) {
+     ecc:	2280      	movs	r2, #128	; 0x80
+     ece:	5c98      	ldrb	r0, [r3, r2]
+     ed0:	3240      	adds	r2, #64	; 0x40
+     ed2:	5c99      	ldrb	r1, [r3, r2]
+     ed4:	2300      	movs	r3, #0
+						(row_number * NVMCTRL_ROW_PAGES) + c2;
+     ed6:	1cb5      	adds	r5, r6, #2
+     ed8:	3603      	adds	r6, #3
+			if (page_trans[c].logical_page == row_data[c2].header.logical_page) {
+     eda:	aa05      	add	r2, sp, #20
+     edc:	5cd2      	ldrb	r2, [r2, r3]
+     ede:	4290      	cmp	r0, r2
+     ee0:	d097      	beq.n	e12 <eeprom_emulator_write_page+0x86>
+     ee2:	428a      	cmp	r2, r1
+     ee4:	d091      	beq.n	e0a <eeprom_emulator_write_page+0x7e>
+     ee6:	3302      	adds	r3, #2
+	for (uint8_t c = 0; c < 2; c++) {
+     ee8:	2b04      	cmp	r3, #4
+     eea:	d1f6      	bne.n	eda <eeprom_emulator_write_page+0x14e>
+     eec:	ae05      	add	r6, sp, #20
+     eee:	2700      	movs	r7, #0
+				((_eeprom_instance.spare_row * NVMCTRL_ROW_PAGES) + c);
+     ef0:	4b05      	ldr	r3, [pc, #20]	; (f08 <eeprom_emulator_write_page+0x17c>)
+     ef2:	469b      	mov	fp, r3
+		eeprom_emulator_commit_page_buffer();
+     ef4:	4b05      	ldr	r3, [pc, #20]	; (f0c <eeprom_emulator_write_page+0x180>)
+     ef6:	469a      	mov	sl, r3
+			_eeprom_emulator_nvm_read_page(
+     ef8:	465b      	mov	r3, fp
+     efa:	3388      	adds	r3, #136	; 0x88
+     efc:	9302      	str	r3, [sp, #8]
+			memcpy(_eeprom_instance.cache.data, data, EEPROM_PAGE_SIZE);
+     efe:	3304      	adds	r3, #4
+     f00:	9303      	str	r3, [sp, #12]
+     f02:	9401      	str	r4, [sp, #4]
+     f04:	e79e      	b.n	e44 <eeprom_emulator_write_page+0xb8>
+     f06:	46c0      	nop			; (mov r8, r8)
+     f08:	20000048 	.word	0x20000048
+     f0c:	00000d5d 	.word	0x00000d5d
+     f10:	00000ac9 	.word	0x00000ac9
+     f14:	00000aed 	.word	0x00000aed
+     f18:	0000113d 	.word	0x0000113d
+     f1c:	00000961 	.word	0x00000961
+
+00000f20 <Dummy_Handler>:
+
+/**
+ * \brief Default interrupt handler for unused IRQs.
+ */
+void Dummy_Handler(void)
+{
+     f20:	e7fe      	b.n	f20 <Dummy_Handler>
+	...
+
+00000f24 <Reset_Handler>:
+{
+     f24:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+        if (pSrc != pDest) {
+     f26:	4a2a      	ldr	r2, [pc, #168]	; (fd0 <Reset_Handler+0xac>)
+     f28:	4b2a      	ldr	r3, [pc, #168]	; (fd4 <Reset_Handler+0xb0>)
+     f2a:	429a      	cmp	r2, r3
+     f2c:	d011      	beq.n	f52 <Reset_Handler+0x2e>
+                for (; pDest < &_erelocate;) {
+     f2e:	001a      	movs	r2, r3
+     f30:	4b29      	ldr	r3, [pc, #164]	; (fd8 <Reset_Handler+0xb4>)
+     f32:	429a      	cmp	r2, r3
+     f34:	d20d      	bcs.n	f52 <Reset_Handler+0x2e>
+     f36:	4a29      	ldr	r2, [pc, #164]	; (fdc <Reset_Handler+0xb8>)
+     f38:	3303      	adds	r3, #3
+     f3a:	1a9b      	subs	r3, r3, r2
+     f3c:	089b      	lsrs	r3, r3, #2
+     f3e:	3301      	adds	r3, #1
+     f40:	009b      	lsls	r3, r3, #2
+     f42:	2200      	movs	r2, #0
+                        *pDest++ = *pSrc++;
+     f44:	4823      	ldr	r0, [pc, #140]	; (fd4 <Reset_Handler+0xb0>)
+     f46:	4922      	ldr	r1, [pc, #136]	; (fd0 <Reset_Handler+0xac>)
+     f48:	588c      	ldr	r4, [r1, r2]
+     f4a:	5084      	str	r4, [r0, r2]
+     f4c:	3204      	adds	r2, #4
+                for (; pDest < &_erelocate;) {
+     f4e:	429a      	cmp	r2, r3
+     f50:	d1fa      	bne.n	f48 <Reset_Handler+0x24>
+        for (pDest = &_szero; pDest < &_ezero;) {
+     f52:	4a23      	ldr	r2, [pc, #140]	; (fe0 <Reset_Handler+0xbc>)
+     f54:	4b23      	ldr	r3, [pc, #140]	; (fe4 <Reset_Handler+0xc0>)
+     f56:	429a      	cmp	r2, r3
+     f58:	d20a      	bcs.n	f70 <Reset_Handler+0x4c>
+     f5a:	43d3      	mvns	r3, r2
+     f5c:	4921      	ldr	r1, [pc, #132]	; (fe4 <Reset_Handler+0xc0>)
+     f5e:	185b      	adds	r3, r3, r1
+     f60:	2103      	movs	r1, #3
+     f62:	438b      	bics	r3, r1
+     f64:	3304      	adds	r3, #4
+     f66:	189b      	adds	r3, r3, r2
+                *pDest++ = 0;
+     f68:	2100      	movs	r1, #0
+     f6a:	c202      	stmia	r2!, {r1}
+        for (pDest = &_szero; pDest < &_ezero;) {
+     f6c:	4293      	cmp	r3, r2
+     f6e:	d1fc      	bne.n	f6a <Reset_Handler+0x46>
+        SCB->VTOR = ((uint32_t) pSrc & SCB_VTOR_TBLOFF_Msk);
+     f70:	4a1d      	ldr	r2, [pc, #116]	; (fe8 <Reset_Handler+0xc4>)
+     f72:	21ff      	movs	r1, #255	; 0xff
+     f74:	4b1d      	ldr	r3, [pc, #116]	; (fec <Reset_Handler+0xc8>)
+     f76:	438b      	bics	r3, r1
+     f78:	6093      	str	r3, [r2, #8]
+        SBMATRIX->SFR[SBMATRIX_SLAVE_HMCRAMC0].reg = 2;
+     f7a:	39fd      	subs	r1, #253	; 0xfd
+     f7c:	2390      	movs	r3, #144	; 0x90
+     f7e:	005b      	lsls	r3, r3, #1
+     f80:	4a1b      	ldr	r2, [pc, #108]	; (ff0 <Reset_Handler+0xcc>)
+     f82:	50d1      	str	r1, [r2, r3]
+        USB->DEVICE.QOSCTRL.bit.CQOS = 2;
+     f84:	4a1b      	ldr	r2, [pc, #108]	; (ff4 <Reset_Handler+0xd0>)
+     f86:	78d3      	ldrb	r3, [r2, #3]
+     f88:	2503      	movs	r5, #3
+     f8a:	43ab      	bics	r3, r5
+     f8c:	2402      	movs	r4, #2
+     f8e:	4323      	orrs	r3, r4
+     f90:	70d3      	strb	r3, [r2, #3]
+        USB->DEVICE.QOSCTRL.bit.DQOS = 2;
+     f92:	78d3      	ldrb	r3, [r2, #3]
+     f94:	270c      	movs	r7, #12
+     f96:	43bb      	bics	r3, r7
+     f98:	2608      	movs	r6, #8
+     f9a:	4333      	orrs	r3, r6
+     f9c:	70d3      	strb	r3, [r2, #3]
+        DMAC->QOSCTRL.bit.DQOS = 2;
+     f9e:	4b16      	ldr	r3, [pc, #88]	; (ff8 <Reset_Handler+0xd4>)
+     fa0:	7b98      	ldrb	r0, [r3, #14]
+     fa2:	2230      	movs	r2, #48	; 0x30
+     fa4:	4390      	bics	r0, r2
+     fa6:	2220      	movs	r2, #32
+     fa8:	4310      	orrs	r0, r2
+     faa:	7398      	strb	r0, [r3, #14]
+        DMAC->QOSCTRL.bit.FQOS = 2;
+     fac:	7b99      	ldrb	r1, [r3, #14]
+     fae:	43b9      	bics	r1, r7
+     fb0:	4331      	orrs	r1, r6
+     fb2:	7399      	strb	r1, [r3, #14]
+        DMAC->QOSCTRL.bit.WRBQOS = 2;
+     fb4:	7b9a      	ldrb	r2, [r3, #14]
+     fb6:	43aa      	bics	r2, r5
+     fb8:	4322      	orrs	r2, r4
+     fba:	739a      	strb	r2, [r3, #14]
+        NVMCTRL->CTRLB.bit.MANW = 1;
+     fbc:	4a0f      	ldr	r2, [pc, #60]	; (ffc <Reset_Handler+0xd8>)
+     fbe:	6853      	ldr	r3, [r2, #4]
+     fc0:	2180      	movs	r1, #128	; 0x80
+     fc2:	430b      	orrs	r3, r1
+     fc4:	6053      	str	r3, [r2, #4]
+        __libc_init_array();
+     fc6:	4b0e      	ldr	r3, [pc, #56]	; (1000 <Reset_Handler+0xdc>)
+     fc8:	4798      	blx	r3
+        main();
+     fca:	4b0e      	ldr	r3, [pc, #56]	; (1004 <Reset_Handler+0xe0>)
+     fcc:	4798      	blx	r3
+     fce:	e7fe      	b.n	fce <Reset_Handler+0xaa>
+     fd0:	000012c8 	.word	0x000012c8
+     fd4:	20000000 	.word	0x20000000
+     fd8:	20000004 	.word	0x20000004
+     fdc:	20000004 	.word	0x20000004
+     fe0:	20000004 	.word	0x20000004
+     fe4:	20000114 	.word	0x20000114
+     fe8:	e000ed00 	.word	0xe000ed00
+     fec:	00000000 	.word	0x00000000
+     ff0:	41007000 	.word	0x41007000
+     ff4:	41005000 	.word	0x41005000
+     ff8:	41004800 	.word	0x41004800
+     ffc:	41004000 	.word	0x41004000
+    1000:	000010f5 	.word	0x000010f5
+    1004:	00001051 	.word	0x00001051
+
+00001008 <configure_eeprom>:
+
+void configure_eeprom(void);
+
+//! [setup]
+void configure_eeprom(void)
+{
+    1008:	b510      	push	{r4, lr}
+	/* Setup EEPROM emulator service */
+//! [init_eeprom_service]
+	enum status_code error_code = eeprom_emulator_init();
+    100a:	4b06      	ldr	r3, [pc, #24]	; (1024 <configure_eeprom+0x1c>)
+    100c:	4798      	blx	r3
+//! [init_eeprom_service]
+
+//! [check_init_ok]
+	if (error_code == STATUS_ERR_NO_MEMORY) {
+    100e:	2816      	cmp	r0, #22
+    1010:	d002      	beq.n	1018 <configure_eeprom+0x10>
+			/* No EEPROM section has been set in the device's fuses */
+		}
+	}
+//! [check_init_ok]
+//! [check_re-init]
+	else if (error_code != STATUS_OK) {
+    1012:	2800      	cmp	r0, #0
+    1014:	d101      	bne.n	101a <configure_eeprom+0x12>
+		 * irrecoverably corrupt) */
+		eeprom_emulator_erase_memory();
+		eeprom_emulator_init();
+	}
+//! [check_re-init]
+}
+    1016:	bd10      	pop	{r4, pc}
+    1018:	e7fe      	b.n	1018 <configure_eeprom+0x10>
+		eeprom_emulator_erase_memory();
+    101a:	4b03      	ldr	r3, [pc, #12]	; (1028 <configure_eeprom+0x20>)
+    101c:	4798      	blx	r3
+		eeprom_emulator_init();
+    101e:	4b01      	ldr	r3, [pc, #4]	; (1024 <configure_eeprom+0x1c>)
+    1020:	4798      	blx	r3
+}
+    1022:	e7f8      	b.n	1016 <configure_eeprom+0xe>
+    1024:	00000b31 	.word	0x00000b31
+    1028:	00000c15 	.word	0x00000c15
+
+0000102c <SYSCTRL_Handler>:
+
+#if (SAMD || SAMR21)
+void SYSCTRL_Handler(void)
+{
+    102c:	b510      	push	{r4, lr}
+	if (SYSCTRL->INTFLAG.reg & SYSCTRL_INTFLAG_BOD33DET) {
+    102e:	4b06      	ldr	r3, [pc, #24]	; (1048 <SYSCTRL_Handler+0x1c>)
+    1030:	689b      	ldr	r3, [r3, #8]
+    1032:	055b      	lsls	r3, r3, #21
+    1034:	d400      	bmi.n	1038 <SYSCTRL_Handler+0xc>
+		SYSCTRL->INTFLAG.reg = SYSCTRL_INTFLAG_BOD33DET;
+		eeprom_emulator_commit_page_buffer();
+	}
+}
+    1036:	bd10      	pop	{r4, pc}
+		SYSCTRL->INTFLAG.reg = SYSCTRL_INTFLAG_BOD33DET;
+    1038:	2280      	movs	r2, #128	; 0x80
+    103a:	00d2      	lsls	r2, r2, #3
+    103c:	4b02      	ldr	r3, [pc, #8]	; (1048 <SYSCTRL_Handler+0x1c>)
+    103e:	609a      	str	r2, [r3, #8]
+		eeprom_emulator_commit_page_buffer();
+    1040:	4b02      	ldr	r3, [pc, #8]	; (104c <SYSCTRL_Handler+0x20>)
+    1042:	4798      	blx	r3
+}
+    1044:	e7f7      	b.n	1036 <SYSCTRL_Handler+0xa>
+    1046:	46c0      	nop			; (mov r8, r8)
+    1048:	40000800 	.word	0x40000800
+    104c:	00000d5d 	.word	0x00000d5d
+
+00001050 <main>:
+
+}
+//! [setup]
+
+int main(void)
+{
+    1050:	b510      	push	{r4, lr}
+    1052:	b092      	sub	sp, #72	; 0x48
+	system_init();
+    1054:	4b1e      	ldr	r3, [pc, #120]	; (10d0 <main+0x80>)
+    1056:	4798      	blx	r3
+	configure_eeprom();
+    1058:	4b1e      	ldr	r3, [pc, #120]	; (10d4 <main+0x84>)
+    105a:	4798      	blx	r3
+		struct bod_config *const conf)
+{
+	/* Sanity check arguments */
+	Assert(conf);
+
+	conf->prescaler      = BOD_PRESCALE_DIV_2;
+    105c:	a901      	add	r1, sp, #4
+    105e:	2300      	movs	r3, #0
+    1060:	800b      	strh	r3, [r1, #0]
+	conf->mode           = BOD_MODE_CONTINUOUS;
+    1062:	804b      	strh	r3, [r1, #2]
+	conf->action         = BOD_ACTION_RESET;
+	conf->level          = 0x27;
+	conf->hysteresis     = true;
+    1064:	3301      	adds	r3, #1
+    1066:	718b      	strb	r3, [r1, #6]
+	conf->run_in_standby = true;
+    1068:	71cb      	strb	r3, [r1, #7]
+	config_bod33.action = BOD_ACTION_INTERRUPT;
+    106a:	330f      	adds	r3, #15
+    106c:	710b      	strb	r3, [r1, #4]
+	config_bod33.level = 48;
+    106e:	3320      	adds	r3, #32
+    1070:	714b      	strb	r3, [r1, #5]
+	bod_set_config(BOD_BOD33, &config_bod33);
+    1072:	2000      	movs	r0, #0
+    1074:	4b18      	ldr	r3, [pc, #96]	; (10d8 <main+0x88>)
+    1076:	4798      	blx	r3
+static inline enum status_code bod_enable(
+		const enum bod bod_id)
+{
+	switch (bod_id) {
+		case BOD_BOD33:
+			SYSCTRL->BOD33.reg |= SYSCTRL_BOD33_ENABLE;
+    1078:	4b18      	ldr	r3, [pc, #96]	; (10dc <main+0x8c>)
+    107a:	6b5a      	ldr	r2, [r3, #52]	; 0x34
+    107c:	2102      	movs	r1, #2
+    107e:	430a      	orrs	r2, r1
+    1080:	635a      	str	r2, [r3, #52]	; 0x34
+	SYSCTRL->INTENSET.reg = SYSCTRL_INTENCLR_BOD33DET;
+    1082:	2280      	movs	r2, #128	; 0x80
+    1084:	00d2      	lsls	r2, r2, #3
+    1086:	605a      	str	r2, [r3, #4]
+ * \param[in] vector Interrupt vector to enable
+ */
+static inline void system_interrupt_enable(
+		const enum system_interrupt_vector vector)
+{
+	NVIC->ISER[0] = (uint32_t)(1 << ((uint32_t)vector & 0x0000001f));
+    1088:	4b15      	ldr	r3, [pc, #84]	; (10e0 <main+0x90>)
+    108a:	6019      	str	r1, [r3, #0]
+	configure_bod();
+	uint8_t page_data[EEPROM_PAGE_SIZE];
+	eeprom_emulator_read_page(0, page_data);
+    108c:	ac03      	add	r4, sp, #12
+    108e:	0021      	movs	r1, r4
+    1090:	2000      	movs	r0, #0
+    1092:	4b14      	ldr	r3, [pc, #80]	; (10e4 <main+0x94>)
+    1094:	4798      	blx	r3
+	page_data[0] = !page_data[0];
+    1096:	7823      	ldrb	r3, [r4, #0]
+    1098:	425a      	negs	r2, r3
+    109a:	415a      	adcs	r2, r3
+    109c:	7022      	strb	r2, [r4, #0]
+	if (level) {
+    109e:	2b00      	cmp	r3, #0
+    10a0:	d111      	bne.n	10c6 <main+0x76>
+		port_base->OUTSET.reg = pin_mask;
+    10a2:	2280      	movs	r2, #128	; 0x80
+    10a4:	05d2      	lsls	r2, r2, #23
+    10a6:	4b10      	ldr	r3, [pc, #64]	; (10e8 <main+0x98>)
+    10a8:	619a      	str	r2, [r3, #24]
+	port_pin_set_output_level(LED_0_PIN, page_data[0]);
+	eeprom_emulator_write_page(0, page_data);
+    10aa:	ac03      	add	r4, sp, #12
+    10ac:	0021      	movs	r1, r4
+    10ae:	2000      	movs	r0, #0
+    10b0:	4b0e      	ldr	r3, [pc, #56]	; (10ec <main+0x9c>)
+    10b2:	4798      	blx	r3
+	eeprom_emulator_commit_page_buffer();
+    10b4:	4b0e      	ldr	r3, [pc, #56]	; (10f0 <main+0xa0>)
+    10b6:	4798      	blx	r3
+	page_data[1]=0x1;
+    10b8:	2301      	movs	r3, #1
+    10ba:	7063      	strb	r3, [r4, #1]
+	eeprom_emulator_read_page(0, page_data);
+    10bc:	0021      	movs	r1, r4
+    10be:	2000      	movs	r0, #0
+    10c0:	4b08      	ldr	r3, [pc, #32]	; (10e4 <main+0x94>)
+    10c2:	4798      	blx	r3
+    10c4:	e7fe      	b.n	10c4 <main+0x74>
+	} else {
+		port_base->OUTCLR.reg = pin_mask;
+    10c6:	2280      	movs	r2, #128	; 0x80
+    10c8:	05d2      	lsls	r2, r2, #23
+    10ca:	4b07      	ldr	r3, [pc, #28]	; (10e8 <main+0x98>)
+    10cc:	615a      	str	r2, [r3, #20]
+    10ce:	e7ec      	b.n	10aa <main+0x5a>
+    10d0:	00000935 	.word	0x00000935
+    10d4:	00001009 	.word	0x00001009
+    10d8:	000001bd 	.word	0x000001bd
+    10dc:	40000800 	.word	0x40000800
+    10e0:	e000e100 	.word	0xe000e100
+    10e4:	00000cf5 	.word	0x00000cf5
+    10e8:	41004480 	.word	0x41004480
+    10ec:	00000d8d 	.word	0x00000d8d
+    10f0:	00000d5d 	.word	0x00000d5d
+
+000010f4 <__libc_init_array>:
+    10f4:	b570      	push	{r4, r5, r6, lr}
+    10f6:	2600      	movs	r6, #0
+    10f8:	4d0c      	ldr	r5, [pc, #48]	; (112c <__libc_init_array+0x38>)
+    10fa:	4c0d      	ldr	r4, [pc, #52]	; (1130 <__libc_init_array+0x3c>)
+    10fc:	1b64      	subs	r4, r4, r5
+    10fe:	10a4      	asrs	r4, r4, #2
+    1100:	42a6      	cmp	r6, r4
+    1102:	d109      	bne.n	1118 <__libc_init_array+0x24>
+    1104:	2600      	movs	r6, #0
+    1106:	f000 f8cf 	bl	12a8 <_init>
+    110a:	4d0a      	ldr	r5, [pc, #40]	; (1134 <__libc_init_array+0x40>)
+    110c:	4c0a      	ldr	r4, [pc, #40]	; (1138 <__libc_init_array+0x44>)
+    110e:	1b64      	subs	r4, r4, r5
+    1110:	10a4      	asrs	r4, r4, #2
+    1112:	42a6      	cmp	r6, r4
+    1114:	d105      	bne.n	1122 <__libc_init_array+0x2e>
+    1116:	bd70      	pop	{r4, r5, r6, pc}
+    1118:	00b3      	lsls	r3, r6, #2
+    111a:	58eb      	ldr	r3, [r5, r3]
+    111c:	4798      	blx	r3
+    111e:	3601      	adds	r6, #1
+    1120:	e7ee      	b.n	1100 <__libc_init_array+0xc>
+    1122:	00b3      	lsls	r3, r6, #2
+    1124:	58eb      	ldr	r3, [r5, r3]
+    1126:	4798      	blx	r3
+    1128:	3601      	adds	r6, #1
+    112a:	e7f2      	b.n	1112 <__libc_init_array+0x1e>
+    112c:	000012b4 	.word	0x000012b4
+    1130:	000012b4 	.word	0x000012b4
+    1134:	000012b4 	.word	0x000012b4
+    1138:	000012b8 	.word	0x000012b8
+
+0000113c <memcpy>:
+    113c:	2300      	movs	r3, #0
+    113e:	b510      	push	{r4, lr}
+    1140:	429a      	cmp	r2, r3
+    1142:	d100      	bne.n	1146 <memcpy+0xa>
+    1144:	bd10      	pop	{r4, pc}
+    1146:	5ccc      	ldrb	r4, [r1, r3]
+    1148:	54c4      	strb	r4, [r0, r3]
+    114a:	3301      	adds	r3, #1
+    114c:	e7f8      	b.n	1140 <memcpy+0x4>
+
+0000114e <memset>:
+    114e:	0003      	movs	r3, r0
+    1150:	1882      	adds	r2, r0, r2
+    1152:	4293      	cmp	r3, r2
+    1154:	d100      	bne.n	1158 <memset+0xa>
+    1156:	4770      	bx	lr
+    1158:	7019      	strb	r1, [r3, #0]
+    115a:	3301      	adds	r3, #1
+    115c:	e7f9      	b.n	1152 <memset+0x4>
+    115e:	0000      	movs	r0, r0
+    1160:	00000340 	.word	0x00000340
+    1164:	00000340 	.word	0x00000340
+    1168:	0000031c 	.word	0x0000031c
+    116c:	00000340 	.word	0x00000340
+    1170:	0000031c 	.word	0x0000031c
+    1174:	00000302 	.word	0x00000302
+    1178:	00000302 	.word	0x00000302
+    117c:	00000340 	.word	0x00000340
+    1180:	00000340 	.word	0x00000340
+    1184:	00000340 	.word	0x00000340
+    1188:	00000340 	.word	0x00000340
+    118c:	00000340 	.word	0x00000340
+    1190:	00000340 	.word	0x00000340
+    1194:	00000340 	.word	0x00000340
+    1198:	00000340 	.word	0x00000340
+    119c:	00000340 	.word	0x00000340
+    11a0:	00000340 	.word	0x00000340
+    11a4:	00000340 	.word	0x00000340
+    11a8:	00000340 	.word	0x00000340
+    11ac:	00000340 	.word	0x00000340
+    11b0:	00000340 	.word	0x00000340
+    11b4:	00000340 	.word	0x00000340
+    11b8:	00000340 	.word	0x00000340
+    11bc:	00000340 	.word	0x00000340
+    11c0:	00000340 	.word	0x00000340
+    11c4:	00000340 	.word	0x00000340
+    11c8:	00000340 	.word	0x00000340
+    11cc:	00000340 	.word	0x00000340
+    11d0:	00000340 	.word	0x00000340
+    11d4:	00000340 	.word	0x00000340
+    11d8:	00000340 	.word	0x00000340
+    11dc:	00000340 	.word	0x00000340
+    11e0:	00000340 	.word	0x00000340
+    11e4:	00000340 	.word	0x00000340
+    11e8:	00000340 	.word	0x00000340
+    11ec:	00000340 	.word	0x00000340
+    11f0:	00000340 	.word	0x00000340
+    11f4:	00000340 	.word	0x00000340
+    11f8:	00000340 	.word	0x00000340
+    11fc:	00000340 	.word	0x00000340
+    1200:	00000340 	.word	0x00000340
+    1204:	00000340 	.word	0x00000340
+    1208:	00000340 	.word	0x00000340
+    120c:	00000340 	.word	0x00000340
+    1210:	00000340 	.word	0x00000340
+    1214:	00000340 	.word	0x00000340
+    1218:	00000340 	.word	0x00000340
+    121c:	00000340 	.word	0x00000340
+    1220:	00000340 	.word	0x00000340
+    1224:	00000340 	.word	0x00000340
+    1228:	00000340 	.word	0x00000340
+    122c:	00000340 	.word	0x00000340
+    1230:	00000340 	.word	0x00000340
+    1234:	00000340 	.word	0x00000340
+    1238:	00000340 	.word	0x00000340
+    123c:	00000340 	.word	0x00000340
+    1240:	00000340 	.word	0x00000340
+    1244:	00000340 	.word	0x00000340
+    1248:	00000340 	.word	0x00000340
+    124c:	00000340 	.word	0x00000340
+    1250:	00000340 	.word	0x00000340
+    1254:	00000340 	.word	0x00000340
+    1258:	00000340 	.word	0x00000340
+    125c:	00000340 	.word	0x00000340
+    1260:	0000031c 	.word	0x0000031c
+    1264:	0000031c 	.word	0x0000031c
+    1268:	00000324 	.word	0x00000324
+    126c:	00000324 	.word	0x00000324
+    1270:	00000324 	.word	0x00000324
+    1274:	00000324 	.word	0x00000324
+    1278:	000005ac 	.word	0x000005ac
+    127c:	0000058c 	.word	0x0000058c
+    1280:	0000058c 	.word	0x0000058c
+    1284:	00000618 	.word	0x00000618
+    1288:	0000059e 	.word	0x0000059e
+    128c:	000005ba 	.word	0x000005ba
+    1290:	00000590 	.word	0x00000590
+    1294:	000005c8 	.word	0x000005c8
+    1298:	00000608 	.word	0x00000608
+    129c:	41744545 	.word	0x41744545
+    12a0:	50524f4d 	.word	0x50524f4d
+    12a4:	456d752e 	.word	0x456d752e
+
+000012a8 <_init>:
+    12a8:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+    12aa:	46c0      	nop			; (mov r8, r8)
+    12ac:	bcf8      	pop	{r3, r4, r5, r6, r7}
+    12ae:	bc08      	pop	{r3}
+    12b0:	469e      	mov	lr, r3
+    12b2:	4770      	bx	lr
+
+000012b4 <__init_array_start>:
+    12b4:	000000dd 	.word	0x000000dd
+
+000012b8 <_fini>:
+    12b8:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+    12ba:	46c0      	nop			; (mov r8, r8)
+    12bc:	bcf8      	pop	{r3, r4, r5, r6, r7}
+    12be:	bc08      	pop	{r3}
+    12c0:	469e      	mov	lr, r3
+    12c2:	4770      	bx	lr
+
+000012c4 <__fini_array_start>:
+    12c4:	000000b5 	.word	0x000000b5

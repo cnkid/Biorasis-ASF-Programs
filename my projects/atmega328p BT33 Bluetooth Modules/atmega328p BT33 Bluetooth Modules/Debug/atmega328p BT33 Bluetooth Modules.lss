@@ -1,0 +1,289 @@
+
+atmega328p BT33 Bluetooth Modules.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800100  00800100  00000222  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000001ae  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000006  00800100  00800100  00000222  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000222  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000254  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000090  00000000  00000000  00000294  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   000009a3  00000000  00000000  00000324  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000816  00000000  00000000  00000cc7  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000483  00000000  00000000  000014dd  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000164  00000000  00000000  00001960  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00000436  00000000  00000000  00001ac4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    000002b7  00000000  00000000  00001efa  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000060  00000000  00000000  000021b1  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 34 00 	jmp	0x68	; 0x68 <__ctors_end>
+   4:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+   8:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+   c:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  10:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  14:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  18:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  1c:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  20:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  24:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  28:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  2c:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  30:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  34:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  38:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  3c:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  40:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  44:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  48:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__vector_18>
+  4c:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  50:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  54:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  58:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  5c:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  60:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+  64:	0c 94 46 00 	jmp	0x8c	; 0x8c <__bad_interrupt>
+
+00000068 <__ctors_end>:
+  68:	11 24       	eor	r1, r1
+  6a:	1f be       	out	0x3f, r1	; 63
+  6c:	cf ef       	ldi	r28, 0xFF	; 255
+  6e:	d8 e0       	ldi	r29, 0x08	; 8
+  70:	de bf       	out	0x3e, r29	; 62
+  72:	cd bf       	out	0x3d, r28	; 61
+
+00000074 <__do_clear_bss>:
+  74:	21 e0       	ldi	r18, 0x01	; 1
+  76:	a0 e0       	ldi	r26, 0x00	; 0
+  78:	b1 e0       	ldi	r27, 0x01	; 1
+  7a:	01 c0       	rjmp	.+2      	; 0x7e <.do_clear_bss_start>
+
+0000007c <.do_clear_bss_loop>:
+  7c:	1d 92       	st	X+, r1
+
+0000007e <.do_clear_bss_start>:
+  7e:	a6 30       	cpi	r26, 0x06	; 6
+  80:	b2 07       	cpc	r27, r18
+  82:	e1 f7       	brne	.-8      	; 0x7c <.do_clear_bss_loop>
+  84:	0e 94 a0 00 	call	0x140	; 0x140 <main>
+  88:	0c 94 d5 00 	jmp	0x1aa	; 0x1aa <_exit>
+
+0000008c <__bad_interrupt>:
+  8c:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000090 <ADC_init>:
+#include <stdio.h>
+#include <avr/io.h>
+
+void ADC_init(void){
+	//select reference to be AVcc and select channel 0 (internal ~5v)
+	ADMUX = (1<<REFS0);
+  90:	80 e4       	ldi	r24, 0x40	; 64
+  92:	80 93 7c 00 	sts	0x007C, r24	; 0x80007c <__TEXT_REGION_LENGTH__+0x7e007c>
+	//Enable ADC, and prescale by 64
+	ADCSRA |= (1<<ADEN) | (1<<ADPS2) | (1<<ADPS1);
+  96:	ea e7       	ldi	r30, 0x7A	; 122
+  98:	f0 e0       	ldi	r31, 0x00	; 0
+  9a:	80 81       	ld	r24, Z
+  9c:	86 68       	ori	r24, 0x86	; 134
+  9e:	80 83       	st	Z, r24
+  a0:	08 95       	ret
+
+000000a2 <__vector_18>:
+#include <avr/interrupt.h>
+#include "UART.h"
+#include "ADC.h"
+volatile uint8_t rx[4]; // rx buffer;
+int i = 0;
+ISR(USART_RX_vect) {
+  a2:	1f 92       	push	r1
+  a4:	0f 92       	push	r0
+  a6:	0f b6       	in	r0, 0x3f	; 63
+  a8:	0f 92       	push	r0
+  aa:	11 24       	eor	r1, r1
+  ac:	2f 93       	push	r18
+  ae:	3f 93       	push	r19
+  b0:	4f 93       	push	r20
+  b2:	5f 93       	push	r21
+  b4:	6f 93       	push	r22
+  b6:	7f 93       	push	r23
+  b8:	8f 93       	push	r24
+  ba:	9f 93       	push	r25
+  bc:	af 93       	push	r26
+  be:	bf 93       	push	r27
+  c0:	cf 93       	push	r28
+  c2:	df 93       	push	r29
+  c4:	ef 93       	push	r30
+  c6:	ff 93       	push	r31
+	while(UCSR0A & (1<<RXC0)){
+  c8:	80 91 c0 00 	lds	r24, 0x00C0	; 0x8000c0 <__TEXT_REGION_LENGTH__+0x7e00c0>
+  cc:	88 23       	and	r24, r24
+  ce:	bc f4       	brge	.+46     	; 0xfe <__vector_18+0x5c>
+		rx[i++] = UDR0;
+  d0:	a6 ec       	ldi	r26, 0xC6	; 198
+  d2:	b0 e0       	ldi	r27, 0x00	; 0
+#include "UART.h"
+#include "ADC.h"
+volatile uint8_t rx[4]; // rx buffer;
+int i = 0;
+ISR(USART_RX_vect) {
+	while(UCSR0A & (1<<RXC0)){
+  d4:	e0 ec       	ldi	r30, 0xC0	; 192
+  d6:	f0 e0       	ldi	r31, 0x00	; 0
+		rx[i++] = UDR0;
+  d8:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <_edata>
+  dc:	90 91 01 01 	lds	r25, 0x0101	; 0x800101 <_edata+0x1>
+  e0:	9c 01       	movw	r18, r24
+  e2:	2f 5f       	subi	r18, 0xFF	; 255
+  e4:	3f 4f       	sbci	r19, 0xFF	; 255
+  e6:	30 93 01 01 	sts	0x0101, r19	; 0x800101 <_edata+0x1>
+  ea:	20 93 00 01 	sts	0x0100, r18	; 0x800100 <_edata>
+  ee:	2c 91       	ld	r18, X
+  f0:	ec 01       	movw	r28, r24
+  f2:	ce 5f       	subi	r28, 0xFE	; 254
+  f4:	de 4f       	sbci	r29, 0xFE	; 254
+  f6:	28 83       	st	Y, r18
+#include "UART.h"
+#include "ADC.h"
+volatile uint8_t rx[4]; // rx buffer;
+int i = 0;
+ISR(USART_RX_vect) {
+	while(UCSR0A & (1<<RXC0)){
+  f8:	80 81       	ld	r24, Z
+  fa:	88 23       	and	r24, r24
+  fc:	6c f3       	brlt	.-38     	; 0xd8 <__vector_18+0x36>
+		rx[i++] = UDR0;
+	}
+	if(i > 3){
+  fe:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <_edata>
+ 102:	90 91 01 01 	lds	r25, 0x0101	; 0x800101 <_edata+0x1>
+ 106:	04 97       	sbiw	r24, 0x04	; 4
+ 108:	44 f0       	brlt	.+16     	; 0x11a <__vector_18+0x78>
+		i = 0;
+ 10a:	10 92 01 01 	sts	0x0101, r1	; 0x800101 <_edata+0x1>
+ 10e:	10 92 00 01 	sts	0x0100, r1	; 0x800100 <_edata>
+		USART_Transmit_String(rx);
+ 112:	82 e0       	ldi	r24, 0x02	; 2
+ 114:	91 e0       	ldi	r25, 0x01	; 1
+ 116:	0e 94 c2 00 	call	0x184	; 0x184 <USART_Transmit_String>
+	}
+}
+ 11a:	ff 91       	pop	r31
+ 11c:	ef 91       	pop	r30
+ 11e:	df 91       	pop	r29
+ 120:	cf 91       	pop	r28
+ 122:	bf 91       	pop	r27
+ 124:	af 91       	pop	r26
+ 126:	9f 91       	pop	r25
+ 128:	8f 91       	pop	r24
+ 12a:	7f 91       	pop	r23
+ 12c:	6f 91       	pop	r22
+ 12e:	5f 91       	pop	r21
+ 130:	4f 91       	pop	r20
+ 132:	3f 91       	pop	r19
+ 134:	2f 91       	pop	r18
+ 136:	0f 90       	pop	r0
+ 138:	0f be       	out	0x3f, r0	; 63
+ 13a:	0f 90       	pop	r0
+ 13c:	1f 90       	pop	r1
+ 13e:	18 95       	reti
+
+00000140 <main>:
+
+int main(void){
+	uart_init(); // Initialize UART
+ 140:	0e 94 a6 00 	call	0x14c	; 0x14c <uart_init>
+	ADC_init();
+ 144:	0e 94 48 00 	call	0x90	; 0x90 <ADC_init>
+	sei();
+ 148:	78 94       	sei
+ 14a:	ff cf       	rjmp	.-2      	; 0x14a <main+0xa>
+
+0000014c <uart_init>:
+	/* Wait for data to be received */
+	while ( !(UCSR0A & (1<<RXC0)) );
+	/* Get and return received data from
+	buffer */
+	return UDR0;
+}
+ 14c:	80 e1       	ldi	r24, 0x10	; 16
+ 14e:	90 e0       	ldi	r25, 0x00	; 0
+ 150:	90 93 c5 00 	sts	0x00C5, r25	; 0x8000c5 <__TEXT_REGION_LENGTH__+0x7e00c5>
+ 154:	80 93 c4 00 	sts	0x00C4, r24	; 0x8000c4 <__TEXT_REGION_LENGTH__+0x7e00c4>
+ 158:	e1 ec       	ldi	r30, 0xC1	; 193
+ 15a:	f0 e0       	ldi	r31, 0x00	; 0
+ 15c:	80 81       	ld	r24, Z
+ 15e:	88 69       	ori	r24, 0x98	; 152
+ 160:	80 83       	st	Z, r24
+ 162:	8e e0       	ldi	r24, 0x0E	; 14
+ 164:	80 93 c2 00 	sts	0x00C2, r24	; 0x8000c2 <__TEXT_REGION_LENGTH__+0x7e00c2>
+ 168:	e0 ec       	ldi	r30, 0xC0	; 192
+ 16a:	f0 e0       	ldi	r31, 0x00	; 0
+ 16c:	80 81       	ld	r24, Z
+ 16e:	82 60       	ori	r24, 0x02	; 2
+ 170:	80 83       	st	Z, r24
+ 172:	08 95       	ret
+
+00000174 <USART_Transmit>:
+ 174:	e0 ec       	ldi	r30, 0xC0	; 192
+ 176:	f0 e0       	ldi	r31, 0x00	; 0
+ 178:	90 81       	ld	r25, Z
+ 17a:	95 ff       	sbrs	r25, 5
+ 17c:	fd cf       	rjmp	.-6      	; 0x178 <USART_Transmit+0x4>
+ 17e:	80 93 c6 00 	sts	0x00C6, r24	; 0x8000c6 <__TEXT_REGION_LENGTH__+0x7e00c6>
+ 182:	08 95       	ret
+
+00000184 <USART_Transmit_String>:
+
+void USART_Transmit_String(char string[]){
+ 184:	0f 93       	push	r16
+ 186:	1f 93       	push	r17
+ 188:	cf 93       	push	r28
+ 18a:	df 93       	push	r29
+ 18c:	ec 01       	movw	r28, r24
+ 18e:	8c 01       	movw	r16, r24
+ 190:	0c 5f       	subi	r16, 0xFC	; 252
+ 192:	1f 4f       	sbci	r17, 0xFF	; 255
+	for(int i = 0; i <= sizeof(string) + 1 ; i++){
+		USART_Transmit(string[i]);
+ 194:	89 91       	ld	r24, Y+
+ 196:	0e 94 ba 00 	call	0x174	; 0x174 <USART_Transmit>
+	buffer */
+	return UDR0;
+}
+
+void USART_Transmit_String(char string[]){
+	for(int i = 0; i <= sizeof(string) + 1 ; i++){
+ 19a:	c0 17       	cp	r28, r16
+ 19c:	d1 07       	cpc	r29, r17
+ 19e:	d1 f7       	brne	.-12     	; 0x194 <USART_Transmit_String+0x10>
+		USART_Transmit(string[i]);
+	}
+}
+ 1a0:	df 91       	pop	r29
+ 1a2:	cf 91       	pop	r28
+ 1a4:	1f 91       	pop	r17
+ 1a6:	0f 91       	pop	r16
+ 1a8:	08 95       	ret
+
+000001aa <_exit>:
+ 1aa:	f8 94       	cli
+
+000001ac <__stop_program>:
+ 1ac:	ff cf       	rjmp	.-2      	; 0x1ac <__stop_program>

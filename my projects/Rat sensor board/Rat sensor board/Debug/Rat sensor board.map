@@ -5881,8 +5881,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x3f src/ASF/sam0/drivers/system/interrupt/system_interrupt.o
  .debug_macro   0x00000000      0x3df src/ASF/sam0/drivers/system/interrupt/system_interrupt.o
  .debug_macro   0x00000000       0x2e src/ASF/sam0/drivers/system/interrupt/system_interrupt.o
- .debug_line    0x00000000      0x936 src/ASF/sam0/drivers/system/interrupt/system_interrupt.o
- .debug_str     0x00000000    0x7c3b9 src/ASF/sam0/drivers/system/interrupt/system_interrupt.o
+ .debug_line    0x00000000      0x938 src/ASF/sam0/drivers/system/interrupt/system_interrupt.o
+ .debug_str     0x00000000    0x7c3f5 src/ASF/sam0/drivers/system/interrupt/system_interrupt.o
  .comment       0x00000000       0x5a src/ASF/sam0/drivers/system/interrupt/system_interrupt.o
  .debug_frame   0x00000000       0x74 src/ASF/sam0/drivers/system/interrupt/system_interrupt.o
  .ARM.attributes
@@ -6607,8 +6607,8 @@ Discarded input sections
  .debug_macro   0x00000000      0x34c src/ASF/sam0/utils/cmsis/samd21/source/system_samd21.o
  .debug_macro   0x00000000      0xf7a src/ASF/sam0/utils/cmsis/samd21/source/system_samd21.o
  .debug_macro   0x00000000       0x7b src/ASF/sam0/utils/cmsis/samd21/source/system_samd21.o
- .debug_line    0x00000000      0x598 src/ASF/sam0/utils/cmsis/samd21/source/system_samd21.o
- .debug_str     0x00000000    0x6680f src/ASF/sam0/utils/cmsis/samd21/source/system_samd21.o
+ .debug_line    0x00000000      0x59a src/ASF/sam0/utils/cmsis/samd21/source/system_samd21.o
+ .debug_str     0x00000000    0x6684b src/ASF/sam0/utils/cmsis/samd21/source/system_samd21.o
  .comment       0x00000000       0x5a src/ASF/sam0/utils/cmsis/samd21/source/system_samd21.o
  .debug_frame   0x00000000       0x30 src/ASF/sam0/utils/cmsis/samd21/source/system_samd21.o
  .ARM.attributes
@@ -6703,7 +6703,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x35 src/ASF/sam0/utils/syscalls/gcc/syscalls.o
  .debug_macro   0x00000000      0x122 src/ASF/sam0/utils/syscalls/gcc/syscalls.o
  .debug_line    0x00000000      0x3ba src/ASF/sam0/utils/syscalls/gcc/syscalls.o
- .debug_str     0x00000000     0x73f0 src/ASF/sam0/utils/syscalls/gcc/syscalls.o
+ .debug_str     0x00000000     0x742a src/ASF/sam0/utils/syscalls/gcc/syscalls.o
  .comment       0x00000000       0x5a src/ASF/sam0/utils/syscalls/gcc/syscalls.o
  .debug_frame   0x00000000       0xa0 src/ASF/sam0/utils/syscalls/gcc/syscalls.o
  .ARM.attributes
@@ -8142,96 +8142,96 @@ OUTPUT(Rat sensor board.elf elf32-littlearm)
  .debug_macro   0x0001caea      0x788 src/main.o
  .debug_macro   0x0001d272       0x34 src/main.o
 
-.debug_line     0x00000000    0x14e70
- .debug_line    0x00000000      0x952 src/ASF/common2/services/delay/sam0/systick_counter.o
- .debug_line    0x00000952      0x9e5 src/ASF/common/services/sleepmgr/samd/sleepmgr.o
- .debug_line    0x00001337      0x87e src/ASF/sam0/drivers/bod/bod_sam_d_r_h/bod.o
- .debug_line    0x00001bb5      0x9e6 src/ASF/sam0/drivers/events/events_hooks.o
- .debug_line    0x0000259b      0xbf7 src/ASF/sam0/drivers/events/events_sam_d_r_h/events.o
- .debug_line    0x00003192      0x95e src/ASF/sam0/drivers/extint/extint_callback.o
- .debug_line    0x00003af0      0xbbe src/ASF/sam0/drivers/extint/extint_sam_d_r_h/extint.o
- .debug_line    0x000046ae      0xdab src/ASF/sam0/drivers/nvm/nvm.o
- .debug_line    0x00005459      0x888 src/ASF/sam0/drivers/port/port.o
- .debug_line    0x00005ce1      0xbc4 src/ASF/sam0/drivers/rtc/rtc_sam_d_r_h/rtc_count.o
- .debug_line    0x000068a5      0xa51 src/ASF/sam0/drivers/rtc/rtc_sam_d_r_h/rtc_count_interrupt.o
- .debug_line    0x000072f6      0xb43 src/ASF/sam0/drivers/sercom/sercom.o
- .debug_line    0x00007e39      0xa0f src/ASF/sam0/drivers/tc/tc_interrupt.o
- .debug_line    0x00008848      0xd23 src/ASF/sam0/drivers/tc/tc_sam_d_r_h/tc.o
- .debug_line    0x0000956b      0xb5e src/ASF/sam0/services/eeprom/emulator/main_array/eeprom.o
- .debug_line    0x0000a0c9      0xf4e src/SPIMOD.o
- .debug_line    0x0000b017      0xccc src/ASF/sam0/drivers/sercom/usart/usart.o
- .debug_line    0x0000bce3      0xc5a src/ASF/sam0/drivers/sercom/usart/usart_interrupt.o
- .debug_line    0x0000c93d     0x12f6 src/ASF/sam0/drivers/sercom/spi/spi.o
- .debug_line    0x0000dc33      0xcab src/ASF/sam0/drivers/sercom/spi/spi_interrupt.o
- .debug_line    0x0000e8de      0xada src/ASF/sam0/drivers/sercom/sercom_interrupt.o
- .debug_line    0x0000f3b8      0xe9c src/ASF/common2/boards/user_board/init.o
- .debug_line    0x00010254      0x85c src/ASF/common/utils/interrupt/interrupt_sam_nvic.o
- .debug_line    0x00010ab0      0xc77 src/ASF/sam0/drivers/system/clock/clock_samd21_r21_da_ha1/clock.o
- .debug_line    0x00011727      0xc04 src/ASF/sam0/drivers/system/clock/clock_samd21_r21_da_ha1/gclk.o
- .debug_line    0x0001232b      0x8d5 src/ASF/sam0/drivers/system/pinmux/pinmux.o
- .debug_line    0x00012c00      0x97f src/ASF/sam0/drivers/system/system.o
- .debug_line    0x0001357f      0x5da src/ASF/sam0/utils/cmsis/samd21/source/gcc/startup_samd21.o
- .debug_line    0x00013b59     0x1317 src/main.o
+.debug_line     0x00000000    0x14eaa
+ .debug_line    0x00000000      0x954 src/ASF/common2/services/delay/sam0/systick_counter.o
+ .debug_line    0x00000954      0x9e7 src/ASF/common/services/sleepmgr/samd/sleepmgr.o
+ .debug_line    0x0000133b      0x880 src/ASF/sam0/drivers/bod/bod_sam_d_r_h/bod.o
+ .debug_line    0x00001bbb      0x9e8 src/ASF/sam0/drivers/events/events_hooks.o
+ .debug_line    0x000025a3      0xbf9 src/ASF/sam0/drivers/events/events_sam_d_r_h/events.o
+ .debug_line    0x0000319c      0x960 src/ASF/sam0/drivers/extint/extint_callback.o
+ .debug_line    0x00003afc      0xbc0 src/ASF/sam0/drivers/extint/extint_sam_d_r_h/extint.o
+ .debug_line    0x000046bc      0xdad src/ASF/sam0/drivers/nvm/nvm.o
+ .debug_line    0x00005469      0x88a src/ASF/sam0/drivers/port/port.o
+ .debug_line    0x00005cf3      0xbc6 src/ASF/sam0/drivers/rtc/rtc_sam_d_r_h/rtc_count.o
+ .debug_line    0x000068b9      0xa53 src/ASF/sam0/drivers/rtc/rtc_sam_d_r_h/rtc_count_interrupt.o
+ .debug_line    0x0000730c      0xb45 src/ASF/sam0/drivers/sercom/sercom.o
+ .debug_line    0x00007e51      0xa11 src/ASF/sam0/drivers/tc/tc_interrupt.o
+ .debug_line    0x00008862      0xd25 src/ASF/sam0/drivers/tc/tc_sam_d_r_h/tc.o
+ .debug_line    0x00009587      0xb60 src/ASF/sam0/services/eeprom/emulator/main_array/eeprom.o
+ .debug_line    0x0000a0e7      0xf50 src/SPIMOD.o
+ .debug_line    0x0000b037      0xcce src/ASF/sam0/drivers/sercom/usart/usart.o
+ .debug_line    0x0000bd05      0xc5c src/ASF/sam0/drivers/sercom/usart/usart_interrupt.o
+ .debug_line    0x0000c961     0x12f8 src/ASF/sam0/drivers/sercom/spi/spi.o
+ .debug_line    0x0000dc59      0xcad src/ASF/sam0/drivers/sercom/spi/spi_interrupt.o
+ .debug_line    0x0000e906      0xadc src/ASF/sam0/drivers/sercom/sercom_interrupt.o
+ .debug_line    0x0000f3e2      0xe9e src/ASF/common2/boards/user_board/init.o
+ .debug_line    0x00010280      0x85e src/ASF/common/utils/interrupt/interrupt_sam_nvic.o
+ .debug_line    0x00010ade      0xc79 src/ASF/sam0/drivers/system/clock/clock_samd21_r21_da_ha1/clock.o
+ .debug_line    0x00011757      0xc06 src/ASF/sam0/drivers/system/clock/clock_samd21_r21_da_ha1/gclk.o
+ .debug_line    0x0001235d      0x8d7 src/ASF/sam0/drivers/system/pinmux/pinmux.o
+ .debug_line    0x00012c34      0x981 src/ASF/sam0/drivers/system/system.o
+ .debug_line    0x000135b5      0x5dc src/ASF/sam0/utils/cmsis/samd21/source/gcc/startup_samd21.o
+ .debug_line    0x00013b91     0x1319 src/main.o
 
-.debug_str      0x00000000    0x87785
- .debug_str     0x00000000    0x7b41b src/ASF/common2/services/delay/sam0/systick_counter.o
-                              0x7bcdb (size before relaxing)
- .debug_str     0x0007b41b      0x1d2 src/ASF/common/services/sleepmgr/samd/sleepmgr.o
-                              0x7bc7d (size before relaxing)
- .debug_str     0x0007b5ed      0x89a src/ASF/sam0/drivers/bod/bod_sam_d_r_h/bod.o
-                              0x7c382 (size before relaxing)
- .debug_str     0x0007be87      0xb15 src/ASF/sam0/drivers/events/events_hooks.o
-                              0x7c853 (size before relaxing)
- .debug_str     0x0007c99c      0x828 src/ASF/sam0/drivers/events/events_sam_d_r_h/events.o
-                              0x7cc64 (size before relaxing)
- .debug_str     0x0007d1c4      0x58b src/ASF/sam0/drivers/extint/extint_callback.o
-                              0x7c30e (size before relaxing)
- .debug_str     0x0007d74f      0x4fa src/ASF/sam0/drivers/extint/extint_sam_d_r_h/extint.o
-                              0x7d2bd (size before relaxing)
- .debug_str     0x0007dc49      0xd51 src/ASF/sam0/drivers/nvm/nvm.o
-                              0x7d2e8 (size before relaxing)
- .debug_str     0x0007e99a      0x299 src/ASF/sam0/drivers/port/port.o
-                              0x7bee2 (size before relaxing)
- .debug_str     0x0007ec33     0x18e2 src/ASF/sam0/drivers/rtc/rtc_sam_d_r_h/rtc_count.o
-                              0x7e1a7 (size before relaxing)
- .debug_str     0x00080515      0x106 src/ASF/sam0/drivers/rtc/rtc_sam_d_r_h/rtc_count_interrupt.o
-                              0x7d5fc (size before relaxing)
- .debug_str     0x0008061b      0xcf3 src/ASF/sam0/drivers/sercom/sercom.o
-                              0x7d01a (size before relaxing)
- .debug_str     0x0008130e      0x66a src/ASF/sam0/drivers/tc/tc_interrupt.o
-                              0x7c81c (size before relaxing)
- .debug_str     0x00081978      0x527 src/ASF/sam0/drivers/tc/tc_sam_d_r_h/tc.o
-                              0x7d120 (size before relaxing)
- .debug_str     0x00081e9f      0x68e src/ASF/sam0/services/eeprom/emulator/main_array/eeprom.o
-                              0x7c974 (size before relaxing)
- .debug_str     0x0008252d     0x105c src/SPIMOD.o
-                              0x7f701 (size before relaxing)
- .debug_str     0x00083589      0x9e4 src/ASF/sam0/drivers/sercom/usart/usart.o
-                              0x7ddff (size before relaxing)
- .debug_str     0x00083f6d      0x16b src/ASF/sam0/drivers/sercom/usart/usart_interrupt.o
-                              0x7d045 (size before relaxing)
- .debug_str     0x000840d8      0x5f8 src/ASF/sam0/drivers/sercom/spi/spi.o
-                              0x7e3aa (size before relaxing)
- .debug_str     0x000846d0      0x159 src/ASF/sam0/drivers/sercom/spi/spi_interrupt.o
-                              0x7d2b2 (size before relaxing)
- .debug_str     0x00084829      0x158 src/ASF/sam0/drivers/sercom/sercom_interrupt.o
-                              0x7ce1d (size before relaxing)
- .debug_str     0x00084981       0x3e src/ASF/common2/boards/user_board/init.o
-                              0x7e561 (size before relaxing)
- .debug_str     0x000849bf       0x66 src/ASF/common/utils/interrupt/interrupt_sam_nvic.o
-                              0x7bacb (size before relaxing)
- .debug_str     0x00084a25     0x12ec src/ASF/sam0/drivers/system/clock/clock_samd21_r21_da_ha1/clock.o
-                              0x7ed47 (size before relaxing)
- .debug_str     0x00085d11      0x1c2 src/ASF/sam0/drivers/system/clock/clock_samd21_r21_da_ha1/gclk.o
-                              0x7c78e (size before relaxing)
- .debug_str     0x00085ed3      0x179 src/ASF/sam0/drivers/system/pinmux/pinmux.o
-                              0x7bf6d (size before relaxing)
- .debug_str     0x0008604c       0x47 src/ASF/sam0/drivers/system/system.o
-                              0x7bba8 (size before relaxing)
- .debug_str     0x00086093      0xef8 src/ASF/sam0/utils/cmsis/samd21/source/gcc/startup_samd21.o
-                              0x6797c (size before relaxing)
- .debug_str     0x00086f8b      0x7fa src/main.o
-                              0x82798 (size before relaxing)
+.debug_str      0x00000000    0x877c1
+ .debug_str     0x00000000    0x7b457 src/ASF/common2/services/delay/sam0/systick_counter.o
+                              0x7bd17 (size before relaxing)
+ .debug_str     0x0007b457      0x1d2 src/ASF/common/services/sleepmgr/samd/sleepmgr.o
+                              0x7bcb9 (size before relaxing)
+ .debug_str     0x0007b629      0x89a src/ASF/sam0/drivers/bod/bod_sam_d_r_h/bod.o
+                              0x7c3be (size before relaxing)
+ .debug_str     0x0007bec3      0xb15 src/ASF/sam0/drivers/events/events_hooks.o
+                              0x7c88f (size before relaxing)
+ .debug_str     0x0007c9d8      0x828 src/ASF/sam0/drivers/events/events_sam_d_r_h/events.o
+                              0x7cca0 (size before relaxing)
+ .debug_str     0x0007d200      0x58b src/ASF/sam0/drivers/extint/extint_callback.o
+                              0x7c34a (size before relaxing)
+ .debug_str     0x0007d78b      0x4fa src/ASF/sam0/drivers/extint/extint_sam_d_r_h/extint.o
+                              0x7d2f9 (size before relaxing)
+ .debug_str     0x0007dc85      0xd51 src/ASF/sam0/drivers/nvm/nvm.o
+                              0x7d324 (size before relaxing)
+ .debug_str     0x0007e9d6      0x299 src/ASF/sam0/drivers/port/port.o
+                              0x7bf1e (size before relaxing)
+ .debug_str     0x0007ec6f     0x18e2 src/ASF/sam0/drivers/rtc/rtc_sam_d_r_h/rtc_count.o
+                              0x7e1e3 (size before relaxing)
+ .debug_str     0x00080551      0x106 src/ASF/sam0/drivers/rtc/rtc_sam_d_r_h/rtc_count_interrupt.o
+                              0x7d638 (size before relaxing)
+ .debug_str     0x00080657      0xcf3 src/ASF/sam0/drivers/sercom/sercom.o
+                              0x7d056 (size before relaxing)
+ .debug_str     0x0008134a      0x66a src/ASF/sam0/drivers/tc/tc_interrupt.o
+                              0x7c858 (size before relaxing)
+ .debug_str     0x000819b4      0x527 src/ASF/sam0/drivers/tc/tc_sam_d_r_h/tc.o
+                              0x7d15c (size before relaxing)
+ .debug_str     0x00081edb      0x68e src/ASF/sam0/services/eeprom/emulator/main_array/eeprom.o
+                              0x7c9b0 (size before relaxing)
+ .debug_str     0x00082569     0x105c src/SPIMOD.o
+                              0x7f73d (size before relaxing)
+ .debug_str     0x000835c5      0x9e4 src/ASF/sam0/drivers/sercom/usart/usart.o
+                              0x7de3b (size before relaxing)
+ .debug_str     0x00083fa9      0x16b src/ASF/sam0/drivers/sercom/usart/usart_interrupt.o
+                              0x7d081 (size before relaxing)
+ .debug_str     0x00084114      0x5f8 src/ASF/sam0/drivers/sercom/spi/spi.o
+                              0x7e3e6 (size before relaxing)
+ .debug_str     0x0008470c      0x159 src/ASF/sam0/drivers/sercom/spi/spi_interrupt.o
+                              0x7d2ee (size before relaxing)
+ .debug_str     0x00084865      0x158 src/ASF/sam0/drivers/sercom/sercom_interrupt.o
+                              0x7ce59 (size before relaxing)
+ .debug_str     0x000849bd       0x3e src/ASF/common2/boards/user_board/init.o
+                              0x7e59d (size before relaxing)
+ .debug_str     0x000849fb       0x66 src/ASF/common/utils/interrupt/interrupt_sam_nvic.o
+                              0x7bb07 (size before relaxing)
+ .debug_str     0x00084a61     0x12ec src/ASF/sam0/drivers/system/clock/clock_samd21_r21_da_ha1/clock.o
+                              0x7ed83 (size before relaxing)
+ .debug_str     0x00085d4d      0x1c2 src/ASF/sam0/drivers/system/clock/clock_samd21_r21_da_ha1/gclk.o
+                              0x7c7ca (size before relaxing)
+ .debug_str     0x00085f0f      0x179 src/ASF/sam0/drivers/system/pinmux/pinmux.o
+                              0x7bfa9 (size before relaxing)
+ .debug_str     0x00086088       0x47 src/ASF/sam0/drivers/system/system.o
+                              0x7bbe4 (size before relaxing)
+ .debug_str     0x000860cf      0xef8 src/ASF/sam0/utils/cmsis/samd21/source/gcc/startup_samd21.o
+                              0x679b8 (size before relaxing)
+ .debug_str     0x00086fc7      0x7fa src/main.o
+                              0x827d4 (size before relaxing)
 
 .debug_frame    0x00000000     0x1678
  .debug_frame   0x00000000       0x64 src/ASF/common2/services/delay/sam0/systick_counter.o

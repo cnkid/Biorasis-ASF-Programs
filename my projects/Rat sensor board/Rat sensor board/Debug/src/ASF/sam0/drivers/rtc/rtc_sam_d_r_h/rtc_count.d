@@ -20,7 +20,7 @@ src/ASF/sam0/drivers/rtc/rtc_sam_d_r_h/rtc_count.d \
  ../src/ASF/sam0/utils/header_files/io.h \
  d:\atmel\ studio\7.0\toolchain\arm\arm-gnu-toolchain\lib\gcc\arm-none-eabi\6.3.1\include\stdbool.h \
  ../src/ASF/sam0/utils/cmsis/samd21/include/samd21.h \
- ../src/ASF/sam0/utils/cmsis/samd21/include/samd21e16b.h \
+ ../src/ASF/sam0/utils/cmsis/samd21/include/samd21e16bu.h \
  ../src/ASF/thirdparty/CMSIS/Include/core_cm0plus.h \
  ../src/ASF/thirdparty/CMSIS/Include/core_cmInstr.h \
  ../src/ASF/thirdparty/CMSIS/Include/core_cmFunc.h \
@@ -78,7 +78,7 @@ src/ASF/sam0/drivers/rtc/rtc_sam_d_r_h/rtc_count.d \
  ../src/ASF/sam0/utils/cmsis/samd21/include/instance/tcc2.h \
  ../src/ASF/sam0/utils/cmsis/samd21/include/instance/usb.h \
  ../src/ASF/sam0/utils/cmsis/samd21/include/instance/wdt.h \
- ../src/ASF/sam0/utils/cmsis/samd21/include/pio/samd21e16b.h \
+ ../src/ASF/sam0/utils/cmsis/samd21/include/pio/samd21e16bu.h \
  d:\atmel\ studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-none-eabi\include\stdio.h \
  d:\atmel\ studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-none-eabi\include\_ansi.h \
  d:\atmel\ studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-none-eabi\include\newlib.h \
@@ -155,7 +155,7 @@ d:\atmel\ studio\7.0\toolchain\arm\arm-gnu-toolchain\lib\gcc\arm-none-eabi\6.3.1
 
 ../src/ASF/sam0/utils/cmsis/samd21/include/samd21.h:
 
-../src/ASF/sam0/utils/cmsis/samd21/include/samd21e16b.h:
+../src/ASF/sam0/utils/cmsis/samd21/include/samd21e16bu.h:
 
 ../src/ASF/thirdparty/CMSIS/Include/core_cm0plus.h:
 
@@ -271,7 +271,7 @@ d:\atmel\ studio\7.0\toolchain\arm\arm-gnu-toolchain\lib\gcc\arm-none-eabi\6.3.1
 
 ../src/ASF/sam0/utils/cmsis/samd21/include/instance/wdt.h:
 
-../src/ASF/sam0/utils/cmsis/samd21/include/pio/samd21e16b.h:
+../src/ASF/sam0/utils/cmsis/samd21/include/pio/samd21e16bu.h:
 
 d:\atmel\ studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-none-eabi\include\stdio.h:
 

@@ -6,6 +6,8 @@ src\ASF\common2\services\delay\sam0\systick_counter.c
 
 src\ASF\common\services\sleepmgr\samd\sleepmgr.c
 
+src\ASF\sam0\drivers\bod\bod_sam_d_r_h\bod.c
+
 src\ASF\sam0\drivers\events\events_hooks.c
 
 src\ASF\sam0\drivers\events\events_sam_d_r_h\events.c
@@ -13,6 +15,8 @@ src\ASF\sam0\drivers\events\events_sam_d_r_h\events.c
 src\ASF\sam0\drivers\extint\extint_callback.c
 
 src\ASF\sam0\drivers\extint\extint_sam_d_r_h\extint.c
+
+src\ASF\sam0\drivers\nvm\nvm.c
 
 src\ASF\sam0\drivers\port\port.c
 
@@ -25,6 +29,8 @@ src\ASF\sam0\drivers\sercom\sercom.c
 src\ASF\sam0\drivers\tc\tc_interrupt.c
 
 src\ASF\sam0\drivers\tc\tc_sam_d_r_h\tc.c
+
+src\ASF\sam0\services\eeprom\emulator\main_array\eeprom.c
 
 src\SPIMOD.c
 

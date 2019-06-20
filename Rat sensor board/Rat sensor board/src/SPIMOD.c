@@ -42,8 +42,8 @@ enum status_code spi_status_register(struct packet datain){
 enum status_code spi_read_256(struct packet datain){
 	command_buffer[0] = FLASH_FAST_READ;
 	command_buffer[1] = (datain.address & 0x00ff0000) >> 16;
-	command_buffer[2] = (datain.address & 0x00ff0000) >> 8;
-	command_buffer[3] = (datain.address & 0x00ff0000);
+	command_buffer[2] = (datain.address & 0x0000ff00) >> 8;
+	command_buffer[3] = (datain.address & 0x000000ff);
 	spi_select_slave(&datain.master, &datain.slave, true);
 	spi_transceive_buffer_wait(&datain.master, command_buffer ,datain.data,261);
 	spi_select_slave(&datain.master, &datain.slave, false);
@@ -54,8 +54,8 @@ enum status_code spi_write_page(struct packet datain){
 	spi_enable_write(datain);
 	command_buffer[0] = FLASH_PAGE_PROGRAM;
 	command_buffer[1] = (datain.address & 0x00ff0000) >> 16;
-	command_buffer[2] = (datain.address & 0x00ff0000) >> 8;
-	command_buffer[3] = (datain.address & 0x00ff0000);
+	command_buffer[2] = (datain.address & 0x0000ff00) >> 8;
+	command_buffer[3] = (datain.address & 0x000000ff);
 	memcpy(command_buffer + 4, datain.data,256);
 	spi_select_slave(&datain.master, &datain.slave, true);
 	spi_write_buffer_wait(&datain.master,command_buffer,260);

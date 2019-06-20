@@ -193,7 +193,7 @@ void SysTick_Handler             ( void );
 void PM_Handler                  ( void );
 void SYSCTRL_Handler             ( void );
 void WDT_Handler                 ( void );
-void RTC_Handler                 ( void );
+//void RTC_Handler                 ( void );
 void EIC_Handler                 ( void );
 void NVMCTRL_Handler             ( void );
 void DMAC_Handler                ( void );

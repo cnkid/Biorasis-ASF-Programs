@@ -41,7 +41,10 @@
           <option id="sam0.drivers.sercom.spi" value="Add" config="callback" content-id="Atmel.ASF" />
           <option id="sam0.drivers.sercom.usart" value="Add" config="callback" content-id="Atmel.ASF" />
           <option id="sam0.drivers.system" value="Add" config="" content-id="Atmel.ASF" />
+          <option id="sam0.drivers.system.power" value="Add" config="" content-id="Atmel.ASF" />
           <option id="sam0.drivers.tc" value="Add" config="callback" content-id="Atmel.ASF" />
+          <option id="sam0.services.eeprom_emulator" value="Add" config="" content-id="Atmel.ASF" />
+          <option id="sam0.drivers.bod" value="Add" config="" content-id="Atmel.ASF" />
           <option id="sam0.utils.linker_scripts" value="Add" config="" content-id="Atmel.ASF" />
         </options>
         <configurations />
@@ -253,13 +256,22 @@
           <file path="src/ASF/sam0/drivers/events/events_common.h" framework="" version="3.35.1" source="sam0\drivers\events\events_common.h" changed="False" content-id="Atmel.ASF" />
           <file path="src/ASF/sam0/drivers/events/events_hooks.h" framework="" version="3.35.1" source="sam0\drivers\events\events_hooks.h" changed="False" content-id="Atmel.ASF" />
           <file path="src/ASF/sam0/drivers/rtc/rtc_count.h" framework="" version="3.35.1" source="sam0\drivers\rtc\rtc_count.h" changed="False" content-id="Atmel.ASF" />
-          <file path="src/ASF/sam0/drivers/rtc/rtc_count_interrupt.h" framework="" version="3.35.1" source="sam0\drivers\rtc\rtc_count_interrupt.h" changed="False" content-id="Atmel.ASF" />
           <file path="src/ASF/sam0/drivers/rtc/rtc_sam_d_r_h/rtc_count.c" framework="" version="3.35.1" source="sam0\drivers\rtc\rtc_sam_d_r_h\rtc_count.c" changed="False" content-id="Atmel.ASF" />
-          <file path="src/ASF/sam0/drivers/rtc/rtc_sam_d_r_h/rtc_count_interrupt.c" framework="" version="3.35.1" source="sam0\drivers\rtc\rtc_sam_d_r_h\rtc_count_interrupt.c" changed="False" content-id="Atmel.ASF" />
           <file path="src/ASF/common/services/sleepmgr/samd/sleepmgr.c" framework="" version="3.35.1" source="common\services\sleepmgr\samd\sleepmgr.c" changed="False" content-id="Atmel.ASF" />
           <file path="src/ASF/common/services/sleepmgr/sleepmgr.h" framework="" version="3.35.1" source="common\services\sleepmgr\sleepmgr.h" changed="False" content-id="Atmel.ASF" />
           <file path="src/ASF/common/services/sleepmgr/samd/sleepmgr.h" framework="" version="3.35.1" source="common\services\sleepmgr\samd\sleepmgr.h" changed="False" content-id="Atmel.ASF" />
           <file path="src/Config/conf_sleepmgr.h" framework="" version="3.35.1" source="common\services\sleepmgr\samd\module_config\conf_sleepmgr.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/sam0/drivers/rtc/rtc_count_interrupt.h" framework="" version="3.35.1" source="sam0\drivers\rtc\rtc_count_interrupt.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/sam0/drivers/rtc/rtc_sam_d_r_h/rtc_count_interrupt.c" framework="" version="3.35.1" source="sam0\drivers\rtc\rtc_sam_d_r_h\rtc_count_interrupt.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/sam0/drivers/nvm/nvm.c" framework="" version="3.35.1" source="sam0\drivers\nvm\nvm.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/sam0/drivers/nvm/quick_start_basic/qs_nvm_basic.h" framework="" version="3.35.1" source="sam0\drivers\nvm\quick_start_basic\qs_nvm_basic.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/sam0/drivers/nvm/nvm.h" framework="" version="3.35.1" source="sam0\drivers\nvm\nvm.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/sam0/services/eeprom/emulator/main_array/eeprom.c" framework="" version="3.35.1" source="sam0\services\eeprom\emulator\main_array\eeprom.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/sam0/services/eeprom/emulator/main_array/eeprom.h" framework="" version="3.35.1" source="sam0\services\eeprom\emulator\main_array\eeprom.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/sam0/services/eeprom/emulator/main_array/quick_start/qs_emulator_basic.h" framework="" version="3.35.1" source="sam0\services\eeprom\emulator\main_array\quick_start\qs_emulator_basic.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/sam0/drivers/bod/bod_sam_d_r_h/bod.c" framework="" version="3.35.1" source="sam0\drivers\bod\bod_sam_d_r_h\bod.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/sam0/drivers/bod/bod_sam_d_r_h/bod_feature.h" framework="" version="3.35.1" source="sam0\drivers\bod\bod_sam_d_r_h\bod_feature.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/sam0/drivers/bod/bod.h" framework="" version="3.35.1" source="sam0\drivers\bod\bod.h" changed="False" content-id="Atmel.ASF" />
         </files>
         <documentation help="http://asf.atmel.com/docs/3.35.1/common.applications.user_application.sam0_system.user_board.atsamd21e16b/html/index.html" />
         <offline-documentation help="" />
@@ -359,6 +371,10 @@
       <Value>../src/ASF/sam0/drivers/events/events_sam_d_r_h</Value>
       <Value>../src/ASF/sam0/drivers/events</Value>
       <Value>../src/ASF/common/services/sleepmgr</Value>
+      <Value>../src/ASF/sam0/drivers/nvm</Value>
+      <Value>../src/ASF/sam0/services/eeprom/emulator/main_array</Value>
+      <Value>../src/ASF/sam0/drivers/bod</Value>
+      <Value>../src/ASF/sam0/drivers/bod/bod_sam_d_r_h</Value>
     </ListValues>
   </armgcc.compiler.directories.IncludePaths>
   <armgcc.compiler.optimization.level>Optimize for size (-Os)</armgcc.compiler.optimization.level>
@@ -419,6 +435,10 @@
       <Value>../src/ASF/sam0/drivers/events/events_sam_d_r_h</Value>
       <Value>../src/ASF/sam0/drivers/events</Value>
       <Value>../src/ASF/common/services/sleepmgr</Value>
+      <Value>../src/ASF/sam0/drivers/nvm</Value>
+      <Value>../src/ASF/sam0/services/eeprom/emulator/main_array</Value>
+      <Value>../src/ASF/sam0/drivers/bod</Value>
+      <Value>../src/ASF/sam0/drivers/bod/bod_sam_d_r_h</Value>
     </ListValues>
   </armgcc.assembler.general.IncludePaths>
   <armgcc.preprocessingassembler.general.AssemblerFlags>-DARM_MATH_CM0PLUS=true -DBOARD=USER_BOARD -DSPI_CALLBACK_MODE=true -DUSART_CALLBACK_MODE=true -DSYSTICK_MODE -DTC_ASYNC=true -DEXTINT_CALLBACK_MODE=true -DEVENTS_INTERRUPT_HOOKS_MODE=true -DRTC_COUNT_ASYNC=true</armgcc.preprocessingassembler.general.AssemblerFlags>
@@ -461,6 +481,10 @@
       <Value>../src/ASF/sam0/drivers/events/events_sam_d_r_h</Value>
       <Value>../src/ASF/sam0/drivers/events</Value>
       <Value>../src/ASF/common/services/sleepmgr</Value>
+      <Value>../src/ASF/sam0/drivers/nvm</Value>
+      <Value>../src/ASF/sam0/services/eeprom/emulator/main_array</Value>
+      <Value>../src/ASF/sam0/drivers/bod</Value>
+      <Value>../src/ASF/sam0/drivers/bod/bod_sam_d_r_h</Value>
     </ListValues>
   </armgcc.preprocessingassembler.general.IncludePaths>
 </ArmGcc>
@@ -527,6 +551,10 @@
       <Value>../src/ASF/sam0/drivers/events/events_sam_d_r_h</Value>
       <Value>../src/ASF/sam0/drivers/events</Value>
       <Value>../src/ASF/common/services/sleepmgr</Value>
+      <Value>../src/ASF/sam0/drivers/nvm</Value>
+      <Value>../src/ASF/sam0/services/eeprom/emulator/main_array</Value>
+      <Value>../src/ASF/sam0/drivers/bod</Value>
+      <Value>../src/ASF/sam0/drivers/bod/bod_sam_d_r_h</Value>
     </ListValues>
   </armgcc.compiler.directories.IncludePaths>
   <armgcc.compiler.optimization.level>Optimize (-O1)</armgcc.compiler.optimization.level>
@@ -588,6 +616,10 @@
       <Value>../src/ASF/sam0/drivers/events/events_sam_d_r_h</Value>
       <Value>../src/ASF/sam0/drivers/events</Value>
       <Value>../src/ASF/common/services/sleepmgr</Value>
+      <Value>../src/ASF/sam0/drivers/nvm</Value>
+      <Value>../src/ASF/sam0/services/eeprom/emulator/main_array</Value>
+      <Value>../src/ASF/sam0/drivers/bod</Value>
+      <Value>../src/ASF/sam0/drivers/bod/bod_sam_d_r_h</Value>
     </ListValues>
   </armgcc.assembler.general.IncludePaths>
   <armgcc.assembler.debugging.DebugLevel>Default (-g)</armgcc.assembler.debugging.DebugLevel>
@@ -631,6 +663,10 @@
       <Value>../src/ASF/sam0/drivers/events/events_sam_d_r_h</Value>
       <Value>../src/ASF/sam0/drivers/events</Value>
       <Value>../src/ASF/common/services/sleepmgr</Value>
+      <Value>../src/ASF/sam0/drivers/nvm</Value>
+      <Value>../src/ASF/sam0/services/eeprom/emulator/main_array</Value>
+      <Value>../src/ASF/sam0/drivers/bod</Value>
+      <Value>../src/ASF/sam0/drivers/bod/bod_sam_d_r_h</Value>
     </ListValues>
   </armgcc.preprocessingassembler.general.IncludePaths>
   <armgcc.preprocessingassembler.debugging.DebugLevel>Default (-Wa,-g)</armgcc.preprocessingassembler.debugging.DebugLevel>
@@ -655,10 +691,14 @@
     <Folder Include="src\ASF\common\utils\interrupt\" />
     <Folder Include="src\ASF\sam0\" />
     <Folder Include="src\ASF\sam0\drivers\" />
+    <Folder Include="src\ASF\sam0\drivers\bod\" />
+    <Folder Include="src\ASF\sam0\drivers\bod\bod_sam_d_r_h\" />
     <Folder Include="src\ASF\sam0\drivers\events\" />
     <Folder Include="src\ASF\sam0\drivers\events\events_sam_d_r_h\" />
     <Folder Include="src\ASF\sam0\drivers\extint\" />
     <Folder Include="src\ASF\sam0\drivers\extint\extint_sam_d_r_h\" />
+    <Folder Include="src\ASF\sam0\drivers\nvm\" />
+    <Folder Include="src\ASF\sam0\drivers\nvm\quick_start_basic\" />
     <Folder Include="src\ASF\sam0\drivers\port\" />
     <Folder Include="src\ASF\sam0\drivers\port\quick_start\" />
     <Folder Include="src\ASF\sam0\drivers\rtc\" />
@@ -688,6 +728,11 @@
     <Folder Include="src\ASF\sam0\drivers\system\reset\reset_sam_d_r_h\" />
     <Folder Include="src\ASF\sam0\drivers\tc\" />
     <Folder Include="src\ASF\sam0\drivers\tc\tc_sam_d_r_h\" />
+    <Folder Include="src\ASF\sam0\services\" />
+    <Folder Include="src\ASF\sam0\services\eeprom\" />
+    <Folder Include="src\ASF\sam0\services\eeprom\emulator\" />
+    <Folder Include="src\ASF\sam0\services\eeprom\emulator\main_array\" />
+    <Folder Include="src\ASF\sam0\services\eeprom\emulator\main_array\quick_start\" />
     <Folder Include="src\ASF\sam0\utils\" />
     <Folder Include="src\ASF\sam0\utils\cmsis\" />
     <Folder Include="src\ASF\sam0\utils\cmsis\samd21\" />
@@ -740,6 +785,15 @@
     <None Include="src\ASF\common\services\sleepmgr\samd\sleepmgr.h">
       <SubType>compile</SubType>
     </None>
+    <None Include="src\ASF\sam0\drivers\bod\bod.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\ASF\sam0\drivers\bod\bod_sam_d_r_h\bod.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\ASF\sam0\drivers\bod\bod_sam_d_r_h\bod_feature.h">
+      <SubType>compile</SubType>
+    </None>
     <Compile Include="src\ASF\sam0\drivers\events\events_hooks.c">
       <SubType>compile</SubType>
     </Compile>
@@ -758,6 +812,15 @@
     <Compile Include="src\ASF\sam0\drivers\extint\extint_sam_d_r_h\extint.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\ASF\sam0\drivers\nvm\nvm.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\ASF\sam0\drivers\nvm\quick_start_basic\qs_nvm_basic.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\sam0\drivers\nvm\nvm.h">
+      <SubType>compile</SubType>
+    </None>
     <Compile Include="src\ASF\sam0\drivers\port\port.c">
       <SubType>compile</SubType>
     </Compile>
@@ -795,6 +858,15 @@
       <SubType>compile</SubType>
     </None>
     <None Include="src\config\conf_sleepmgr.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\ASF\sam0\services\eeprom\emulator\main_array\eeprom.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\ASF\sam0\services\eeprom\emulator\main_array\eeprom.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\ASF\sam0\services\eeprom\emulator\main_array\quick_start\qs_emulator_basic.h">
       <SubType>compile</SubType>
     </None>
     <Compile Include="src\SPIMOD.c">
